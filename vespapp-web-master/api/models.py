@@ -210,7 +210,7 @@ class ExpertComment(models.Model):
     user = models.ForeignKey(User, related_name="expert_comments", null=True)
     sighting = models.ForeignKey(Sighting, related_name="expert_comments")
 
-    body = models.CharField(null=False, blank=False, max_length=512, verbose_name='Comentario')
+    body = models.CharField(null=False, blank=False, max_length=1024, verbose_name='Comentario')
 
     is_valid = models.NullBooleanField(verbose_name="Avistamiento válido")
 
