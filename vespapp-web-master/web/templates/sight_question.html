@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+
+{% block title %}Preguntas{% endblock %}
+{% block description %}Preguntas sobre el avistamiento{% endblock %}
+
+{% block body %}
+<div class="backgroundQuestions">
+	<section id="{{question.id}}">  {# References with ID #}   	
+		{% if question.sighting_type == sighting.type and question.is_active %} {# WASP or NEST and check if is ACTIVE #}
+   			<form id="sight_question" enctype="multipart/form-data" method="post">
+
+			<h1>{{ question.title }}</h1> {# Title #}				
+        	{% if question.question_type == 1  %} {# Check type question Radio #}
+				<h3 class="text-center">(Escoge solo una de estas opciones)</h3> {# Type Radio message #}	
+				<div class="text-center">
+					<div class="btn-group container col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2" data-toggle="buttons">
+			{% else %}
+			    <h3 class="text-center">(Puedes escoger una o varias de estas opciones)</h3> {# Type Checkbox message #}
+			{% endif %}	
+			{% for a in answer %}
+				{% if question.id == a.question.id %} {# Check foreign key of answer #}					
+                	{% if question.question_type == 1  %} {# Check type question Radio #}
+						<div class="row">
+					        <div class="form-group">
+					            <div class="searchable-container">
+					                <div class="items col-xs-offset-1 col-sm-offset-3 col-xs-12 col-sm-7 col-md-7 col-lg-7 ">
+					                    <div class="info-block block-info clearfix">
+					                        <div class="square-box pull-left">
+					                        </div>	
+					                        <div data-toggle="buttons" class="btn-group bizmoduleselect">
+					                            <label class="btn btn-default answer questionRadio">
+				                                   <input type="radio" name="value" value="{{a.id}}">
+				                                    <h4>{{ a.value }}</h4> {# Answer #}
+					                            </label>
+				                            </div>
+					                    </div>
+				                    </div>
+				                </div>
+		                    </div>
+		                </div>
+    				{% endif %}
+                    {% if question.question_type == 2  %} {# Check type question Checkbox #}
+						<div class="">
+					        <div class="form-group">
+					            <div class="searchable-container">
+					                <div class="items col-xs-offset-3 col-sm-offset-3 col-xs-7 col-sm-7 col-md-7 col-lg-7 ">
+					                    <div class="info-block block-info clearfix">
+					                        <div class="square-box pull-left">
+					                        </div>	
+					                        <div data-toggle="buttons" class="btn-group bizmoduleselect">
+					                            <label class="btn btn-default answer">
+				                                   <input type="checkbox" name="value" value="{{a.id}}">
+				                                    <h4>{{ a.value }}</h4> {# Answer #}
+					                            </label>
+				                            </div>
+					                    </div>
+				                    </div>
+				                </div>
+		                    </div>
+		                </div>
+    				{% endif %}   	
+				{% endif %}   	    	  	
+			{% endfor %}
+			{% if question.question_type == 1  %} {# Check type question Radio #}
+					</div>
+				</div>
+			{% endif %}
+			<input type="hidden" name="actualQuestion" value="{{q.id}}">
+			<br>
+			<br>
+    		<button type="submit" id="submit-all" class="btn btn-primary col-xs-4 col-sm-2 col-md-2 col-lg-2 col-xs-offset-4 col-sm-offset-5 col-md-offset-5 col-lg-offset-5">Siguiente</button>
+			<br>
+			<br>
+			<br>
+    		</form>
+		{% endif %}  	
+	</section>	 
+</div>
+
+
+{% endblock %}

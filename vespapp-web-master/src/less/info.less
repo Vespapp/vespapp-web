@@ -1,0 +1,95 @@
+
+.fontTitle{
+  color: #FFFFFF;
+  font-weight: bold;
+  text-align: center;
+}
+
+.fontHelp{
+  font-size: 22px;
+  color: black;
+}
+
+.boxInfo{
+  background-color: #fff;
+  height: 400px;
+  margin-bottom: 70px;
+}
+
+/* For md and down */
+@media only screen and (max-width: 400px) {
+    .boxInfo{
+      background-color: #fff;
+      height: 200px;
+      margin-bottom: 70px;
+    }
+}
+
+.boxInfo img {
+  height: 100%;
+  width: 100%;
+  &:hover {      
+    cursor: pointer;
+    }
+}
+
+.titleFront{
+  /*background-color: @brand-primary;*/
+  background-color: rgba(253, 150, 39, 0.7);
+  box-sizing: border-box;
+  color: white;
+  display: block;
+  font-weight: bold;
+  padding: 10px;
+  position: absolute;
+  text-align: center;
+  top: 50px;
+  width: 100%;
+}
+
+//CardFlip
+
+#f1_container{
+  width: 100%;
+  height: 100%;  
+  cursor: pointer;
+}
+
+#f1_card {
+  transform-style: preserve-3d;
+  transition: all 1.0s linear;
+  box-shadow: 0 10px 6px -6px #777;
+  width: 100%;
+  height: 100%;
+}
+#f1_container:hover #f1_card {
+  transform: rotateY(180deg);
+  box-shadow: -5px 5px 5px #aaa;
+}
+.face {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+}
+.face.back {
+  display: block;
+  transform: rotateY(180deg);
+  box-sizing: border-box;
+  padding: 10px;
+  color: white;
+  text-align: center;
+  background-color: @brand-primary;
+}
+
+.modalTitle{
+  background-color: @brand-primary;
+}
+
+.modalFont{
+  color: white;
+}
+
+.modal-body {
+  text-align: justify;
+}

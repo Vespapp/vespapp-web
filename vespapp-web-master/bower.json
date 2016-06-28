@@ -1,0 +1,26 @@
+{
+  "name": "avispamiento",
+  "description": "Plataforma web per a la detecció de la vespa asiàtica",
+  "main": "index.js",
+  "authors": [
+    "habitissimo"
+  ],
+  "homepage": "https://github.com/CarlosTenorio/vespapp-web",
+  "moduleType": [
+    "amd"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.3.6",
+    "font-awesome": "~4.6.3",
+    "sweetalert": "~1.1.3"
+  },
+  "license": "ISC",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

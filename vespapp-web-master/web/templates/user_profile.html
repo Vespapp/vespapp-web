@@ -1,0 +1,95 @@
+{% extends "layout.html" %}
+{% load staticfiles %}
+
+{% block title %}Perfil de usuario{% endblock %}
+{% block body %}
+    <div class="container">
+        <section>
+            <div class="row">      
+                <div class="col-xs-12">
+                    <h1 class="text-center section-tittle">Mi perfil</h1>
+                </div>
+                <div class="col-md-3 profile-content">
+                    <div class="photo-frame">
+                        {% if user_profile.photo %}
+                        <img src="{{ user_profile.photo.url }}" class="img-rounded img-responsive" />
+                        {% endif %}
+                    </div>
+                    <form method="post" action="" enctype="multipart/form-data">
+                        {% csrf_token %}
+                        <input id="hola" type="file" name="photo" class="hidden">
+                        <label for="hola" class="text-center lab">
+                          <span>
+                            Actualizar foto
+                          </span>
+                        </label>
+                        <input type="submit" name="PhotoProfile" id="submit" class="hidden" />
+                    </form>
+                </div>                    
+                <div class="col-md-5">
+                    <h3>Datos de tu perfil</h3>
+                    <div class="profile-content">
+                        <form method="post" action="" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <input type="text" id="username" name="username" value="{{request.user.username}}" />
+                            <label for="username"><span class="fa fa-user"></span> Nombre de usuario</label>
+                            <input type="text" id="email" name="email" value="{{request.user.email}}" />
+                            <label for="email"><span class="fa fa-envelope"></span> Correo electrónico</label>
+                            <br>
+                            <input type="submit" name="UserProfile" id="submit" value="Actualizar perfil"/>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h3>Cambiar tu contraseña</h3>
+                    <div class="profile-content">
+                        <form method="post" action="" enctype="multipart/form-data">
+                            {% csrf_token %}
+                            <input type="password" id="actual_password" name="actual_password"/>
+                            <label for="actual_password"><span class="fa fa-lock"></span> Contraseña actual</label>
+                            <input type="password" id="password" name="password"/>
+                            <label for="password"><span class="fa fa-lock"></span> Nueva contraseña</label>
+                            <input type="password" id="password2" name="password2"/>
+                            <label for="password2"><span class="fa fa-lock"></span> Repita la contraseña</label>
+                            <br>
+                            <input type="submit" name="PasswordProfile" id="submit" value="Actualizar contraseña"/>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <script>
+        var error = "";
+        {% if userForm.username.errors %}
+            console.log("hola");
+            error = 'Nombre de usuario: ' + '{{userForm.username.errors|striptags}}';
+        {% endif %}
+        {% if userForm.email.errors %}
+            error = error + '\nCorreo electrónico: ' + '{{userForm.email.errors|striptags}}';
+        {% endif %}
+
+        {% if passwordForm.actual_password.errors %}
+            error = error + 'Contraseña actual: ' + '{{passwordForm.actual_password.errors|striptags}}';
+        {% endif %}
+        {% if passwordForm.password.errors %}
+            error = error + '\nContraseña: ' + '{{passwordForm.password.errors|striptags}}';
+        {% endif %}
+        {% if passwordForm.password2.errors %}
+            error = error + '\nRepita la contraseña: ' + '{{passwordForm.password2.errors|striptags}}';
+        {% endif %}
+        if(error){
+            errorForm(error);
+        }
+
+        {% if message %}
+        console.log('{{message|striptags}}');
+            successProfile('{{message|striptags}}');
+        {% endif %}
+
+        $('input[type=file]').change(function() {
+            $("input[name='PhotoProfile']").click();
+        });
+    </script>
+{% endblock %}

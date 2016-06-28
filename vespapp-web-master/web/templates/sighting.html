@@ -1,0 +1,266 @@
+{% extends "layout.html" %}
+
+{% block title %}Avistamiento{% endblock %}
+{% block description %}Avistamiento en concreto{% endblock %}
+
+{% block body %}
+
+{% if sighting.public %}
+<div class="container sighting-page">
+  <div class="row">
+    <div class="col-xs-12">
+      {% if sighting.type == 1 %}
+      <h1 class="section-tittle">Avistamiento avispa</h1>
+      {% elif sighting.type == 2 %}
+      <h1 class="section-tittle">Avistamiento nido</h1>
+      {% else %}
+      <h1 class="section-tittle">Avistamiento</h1>      
+      {% endif %}          
+    </div>
+    <div class="col-xs-12 col-sm-6 col-md-6">
+      <div class="info-group source">
+        <span class="sighting-label">Notificado por:</span>
+        {% if sighting.source == "twitter" %}
+        <i class="fa fa-twitter-square"></i><span class="sighting-type">Notificado por Twitter</span>
+        {% elif sighting.source == "telegram"%}
+        <i class="fa fa-weixin"></i><span class="sighting-type">Notificado por Telegram</span>
+        {% elif sighting.source == "web"%}
+        <i class="fa fa-envelope-square"></i><span class="sighting-type">Notificado por Web</span>
+        {% elif sighting.source == "app"%}
+        <i class="fa fa-mobile-phone"></i><span class="sighting-type">Notificado por App</span>
+        {% endif %}
+      </div>
+
+      <div class="info-group user">
+        <span class="sighting-label">Usuario:</span>
+        {% if sighting.user %}
+        <span>{{sighting.user}}</span>
+        {% else %}
+        <span>Anónimo</span>
+        {% endif %}
+      </div>
+
+
+      {% if sighting.lat or sighting.location.lat %}
+      <div class="info-group position">
+        <span class="sighting-label">Latitud:</span>
+        {% if sighting.lat %}
+        <span>{{ sighting.lat }}</span>
+        {% elif sighting.location.lat %}
+        <span>{{ sighting.location.lat }}</span>
+        {% endif %}        
+      </div>
+      <div class="info-group position">
+        <span class="sighting-label">Longitud:</span>
+        {% if sighting.lng %}
+        <span>{{ sighting.lng }}</span>
+        {% elif sighting.location.lng %}
+        <span>{{ sighting.location.lng }}</span>
+        {% endif %}  
+      </div>
+      {% endif %}  
+
+      {% if sighting.location %}
+      <div class="info-group position">
+        <span class="sighting-label">Localización:</span>
+        <span>{{ sighting.location.name }}</span>
+      </div>
+      {% endif %}
+
+      <div class="info-group position">
+        <span class="sighting-label">Tipo:</span>
+        {% if sighting.type == 1 %}
+        <i class="fa fa-bug"></i><span>Avispa</span>
+        {% elif sighting.type == 2 %}
+        <i class="fa fa-fort-awesome"></i><span>Nido</span>
+        {% endif %}
+      </div>    
+
+      <div class="info-group position">
+        <span class="sighting-label">Estado:</span>
+        {% if sighting.status == 0 %}
+        <span class="label label-danger">Pendiente</span>
+        {% elif sighting.status == 1%}
+        <span class="label label-warning">Procesando</span>
+        {% elif sighting.status == 2%}
+        <span class="label label-success">Procesado</span>
+        {% endif %} 
+      </div>  
+
+      <div class="info-group position">
+        <span class="sighting-label">Resultado:</span>
+        {% if sighting.is_valid == True %}
+        <span class="label label-success">Positivo</span>
+        {% elif sighting.is_valid == False %}
+        <span class="label label-danger">Negativo</span>
+        {% else %}
+        <span class="label label-warning">Desconocido</span>
+        {% endif %} 
+      </div>  
+
+      <div class="info-group position">
+        <span class="sighting-label">Fecha:</span>
+        <span>{{ sighting.created_at }}</span>
+      </div>  
+
+      <div class="info-group position">
+        <span class="sighting-label">Observaciones:</span>
+        <span>{{ sighting.free_text }}</span>
+      </div>  
+    </div>
+
+    <div class="col-xs-12 col-sm-6 col-md-6">
+      {% if sighting.pictures.count < 2 %}
+        <div class="info-group position">     
+          <img src="{{ sighting.first_picture.file.url }}" class="img-responsive sighting-image"/>     
+        </div>      
+      {% else %}   
+        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+          <!-- Indicators -->
+          <ol class="carousel-indicators">
+            {% for picture in sighting.pictures.all %}
+            <li data-target="#carousel-example-generic" data-slide-to="{{ forloop.counter0 }}" class="active"></li>
+            {% endfor %}
+          </ol>
+
+          <!-- Wrapper for slides -->
+          <div class="carousel-inner" role="listbox">
+            {% for picture in sighting.pictures.all %}
+            <div class="item {% if forloop.counter0 == 0 %}active{% endif %}">
+              <img src="{{ picture.file.url }}" class="img-responsive sighting-image">
+            </div>
+            {% endfor %}
+          </div>
+
+          <!-- Controls -->
+          <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+            <span class="fa fa-chevron-left" aria-hidden="true"></span>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+            <span class="fa fa-chevron-right" aria-hidden="true"></span>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      {% endif %}
+    </div>
+
+    {% if sighting.lat or sighting.location.lat %}
+      <div class="col-xs-12">
+        <div id="map_wrapper">
+          <div id="map_canvas" class="mapping"></div>
+        </div>
+      </div>
+    {% endif %}
+
+    <div class="col-xs-12 comment-container">
+      {% if sighting.user_comments.count %}
+        <h2>{{sighting.user_comments.count}} Comentarios:</h2>
+        {% for x in sighting.user_comments.all %}
+            <div class="well">
+              <div class="row">
+                {% if x.user.user_profile.photo %}
+                  <div class="col-xs-12 col-md-1">
+                    <img class="img-rounded img-responsive" src="{{ x.user.user_profile.photo.url }}">
+                  </div>
+                {% endif %}
+                <div class="col-xs-12 col-md-9">
+                  <span> <strong> {{ x.user.username }} </strong></span>
+                  </br>
+                  <span> <strong> {{ x.created_at }} </strong></span>
+                </div>
+              </div>
+              <div class="row">
+                <div class="col-xs-12">
+                  <p> {{ x.body|safe|linebreaks }} </p>
+                </div>
+              </div>
+            </div>
+        {% endfor %}
+      {% else %}
+        <h2>Comentarios:</h2>
+        <p>No hay comentarios.</p>
+      {% endif %}
+      {% if user.is_authenticated %} 
+          <form method="post" action="">
+              {% csrf_token %}
+              <textarea name="body" placeholder="Escribe tu comentario..." maxlength="512"></textarea>
+              <input type="submit" id="submit" value="Enviar comentario"/>
+          </form>
+      {% endif %}
+    </div>
+  </div>
+</div>
+
+<script type="text/javascript">
+jQuery(function($) {
+    // Asynchronously Load the map API 
+    var script = document.createElement('script');
+    script.src = "http://maps.googleapis.com/maps/api/js?sensor=false&callback=initialize";
+    document.body.appendChild(script);
+});
+
+function initialize() {
+  var map;
+  var bounds = new google.maps.LatLngBounds();
+  var mapOptions = {
+      mapTypeId: 'roadmap'
+  };
+                  
+  // Display a map on the page
+  map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
+  map.setTilt(45);
+      
+  // Multiple Markers
+  var markers = [
+      ['{{ sighting.location }}', parseFloat('{{sighting.location.lat}}'.replace(',','.')), parseFloat('{{sighting.location.lng}}'.replace(',','.')), parseFloat('{{sighting.lat}}'.replace(',','.')), parseFloat('{{sighting.lng}}'.replace(',', '.'))],
+  ];
+  
+  // Loop through our array of markers & place each one on the map  
+  for( i = 0; i < markers.length; i++ ) {
+      var lat = markers[i][3];
+      var lng = markers[i][4];
+      if (!lat || !lng) {
+          lat = markers[i][1];
+          lng = markers[i][2];
+      }
+      if (lat && lng) {
+        var position = new google.maps.LatLng(lat, lng);
+        bounds.extend(position);
+        marker = new google.maps.Marker({
+            position: position,
+            map: map,
+            title: markers[i][0]
+        });
+
+        // Automatically center the map fitting all markers on the screen
+        map.fitBounds(bounds);
+      }
+  }
+  // Override our map zoom level once our fitBounds function runs (Make sure it only runs once)
+  var boundsListener = google.maps.event.addListener((map), 'bounds_changed', function(event) {
+      this.setZoom(14);
+      google.maps.event.removeListener(boundsListener);
+  });
+    
+}
+</script>
+
+{% else %}
+<div class="error404Container">
+  <div class="content">
+    <div>
+      <h1 class="h1404">¡Shhh! Este avispamiento está durmiendo.</h1>
+      <h2 class="h2404">O puede que no esté disponible</h2>
+      <h2 class="h2404">O que lo hayamos retirado. Una de estas será.</h2> 
+    </div>
+    <div class="buttom404">
+      <div class="seach_bar404">
+        <p>Puedes volver a Inicio haciendo clic <span><a href="{% url 'home' %}">aquí</a></span></p>
+      </div>
+    </div>
+  </div>
+</div>     
+{% endif %}
+
+{% endblock %}

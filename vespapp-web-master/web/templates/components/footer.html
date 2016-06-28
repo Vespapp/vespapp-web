@@ -1,0 +1,42 @@
+{% load staticfiles %}
+
+<footer class="footer" role="contentinfo">
+
+  <div class="footer-links">
+    <ul>
+      <li><h3>Avispamientos</h3></li>
+      <li><a href="{% url 'new_sighting' %}">Añade tu avispamiento</a></li>
+      <li><a href="{% url 'sightings' %}">Mapa de avispamientos</a></li>
+      <li><a href="{% url 'info' %}">Infórmate</a></li>
+      <li><a href="{% url 'signup' %}">Regístrate</a></li>
+    </ul>
+    <ul>
+      <li><h3>Sobre Vespapp</h3></li>
+      <li><a href="{% url 'about' %}">Acerca de</a></li>
+      <li><a href="{% url 'team' %}">Equipo</a></li>
+      <li><a href="{% url 'contact' %}">Contacto</a></li>
+    </ul>
+    <ul>
+      <li><h3>Síguenos</h3></li>
+      <li><a href="https://twitter.com/vespapp" target="_blank"><i class="fa fa-twitter"></i> Twitter</a></li>
+      <li><a href="https://github.com/CarlosTenorio/vespapp-web" target="_blank"><i class="fa fa-github"></i> GitHub</a></li>
+    </ul>
+  </div>
+  <hr>
+
+  <div class="footer-logo">
+    <img src="{% static "img/logo4.png" %}" alt="Logo image">
+    <img src="{% static "img/logo1.png" %}" alt="Logo image">
+    <img src="{% static "img/logo2.png" %}" alt="Logo image">
+    <a href="http://www.habitissimo.es/" target="_blank"><img src="{% static "img/logo3.png" %}" alt="Logo image"></a>
+    <img src="{% static "img/logo5.png" %}" alt="Logo image">
+  </div>
+
+  <div class="mobile-app">
+    <a target="_blank" href="https://play.google.com/store/apps/details?id=com.habitissimo.vespapp&hl=es">
+      <img src="{% static "img/googleplay.png" %}" alt="Disponible en Google Play">
+    </a>
+  </div>
+
+  <p>Made with <span class="love">♥</span> for the bees of the world. </p>
+</footer>
