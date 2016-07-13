@@ -1,21 +1,30 @@
-{% extends "layout.html" %}
 
-{% block title %}Preguntas{% endblock %}
-{% block description %}Preguntas sobre el avistamiento{% endblock %}
+{% extends "layout.html" %}
+{% load i18n %}
+
+{% block title %}{% trans "Preguntas" %}{% endblock %}
+{% block description %}{% trans "Preguntas sobre el avistamiento" %}{% endblock %}
 
 {% block body %}
 <div class="backgroundQuestions">
 	<section id="{{question.id}}">  {# References with ID #}   	
 		{% if question.sighting_type == sighting.type and question.is_active %} {# WASP or NEST and check if is ACTIVE #}
    			<form id="sight_question" enctype="multipart/form-data" method="post">
-
-			<h1>{{ question.title }}</h1> {# Title #}				
+			{% if request.LANGUAGE_CODE == 'ca' %}
+			<h1>{{ question.title_ca }}</h1> {# Title #}
+			{% elif request.LANGUAGE_CODE == 'en' %}
+			<h1>{{ question.title_en }}</h1> {# Title #}
+			{% elif request.LANGUAGE_CODE == 'de' %}
+			<h1>{{ question.title_de }}</h1> {# Title #}
+			{% else %}
+			<h1>{{ question.title }}</h1> {# Title #}
+			{% endif %}
         	{% if question.question_type == 1  %} {# Check type question Radio #}
-				<h3 class="text-center">(Escoge solo una de estas opciones)</h3> {# Type Radio message #}	
+				<h3 class="text-center">{% trans "(Escoge solo una de estas opciones)" %}</h3> {# Type Radio message #}	
 				<div class="text-center">
 					<div class="btn-group container col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xs-offset-2 col-sm-offset-2 col-md-offset-2 col-lg-offset-2" data-toggle="buttons">
 			{% else %}
-			    <h3 class="text-center">(Puedes escoger una o varias de estas opciones)</h3> {# Type Checkbox message #}
+			    <h3 class="text-center">{% trans "(Puedes escoger una o varias de estas opciones)" %}</h3> {# Type Checkbox message #}
 			{% endif %}	
 			{% for a in answer %}
 				{% if question.id == a.question.id %} {# Check foreign key of answer #}					
@@ -30,7 +39,15 @@
 					                        <div data-toggle="buttons" class="btn-group bizmoduleselect">
 					                            <label class="btn btn-default answer questionRadio">
 				                                   <input type="radio" name="value" value="{{a.id}}">
-				                                    <h4>{{ a.value }}</h4> {# Answer #}
+				                                    {% if request.LANGUAGE_CODE == 'ca' %}
+				                                        <h4>{{ a.value_ca }}</h4> {# Answer #}
+				                                    {% elif request.LANGUAGE_CODE == 'en' %}
+				                                        <h4>{{ a.value_en }}</h4> {# Answer #}
+				                                    {% elif request.LANGUAGE_CODE == 'de' %}
+				                                        <h4>{{ a.value_de }}</h4> {# Answer #}
+				                                    {% else %}
+				                                        <h4>{{ a.value }}</h4> {# Answer #}
+				                                    {% endif %}
 					                            </label>
 				                            </div>
 					                    </div>
@@ -50,7 +67,15 @@
 					                        <div data-toggle="buttons" class="btn-group bizmoduleselect">
 					                            <label class="btn btn-default answer">
 				                                   <input type="checkbox" name="value" value="{{a.id}}">
-				                                    <h4>{{ a.value }}</h4> {# Answer #}
+				                                    {% if request.LANGUAGE_CODE == 'ca' %}
+				                                        <h4>{{ a.value_ca }}</h4> {# Answer #}
+				                                    {% elif request.LANGUAGE_CODE == 'en' %}
+				                                        <h4>{{ a.value_en }}</h4> {# Answer #}
+				                                    {% elif request.LANGUAGE_CODE == 'de' %}
+				                                        <h4>{{ a.value_de }}</h4> {# Answer #}
+				                                    {% else %}
+				                                        <h4>{{ a.value }}</h4> {# Answer #}
+				                                    {% endif %}
 					                            </label>
 				                            </div>
 					                    </div>
@@ -68,7 +93,7 @@
 			<input type="hidden" name="actualQuestion" value="{{q.id}}">
 			<br>
 			<br>
-    		<button type="submit" id="submit-all" class="btn btn-primary col-xs-4 col-sm-2 col-md-2 col-lg-2 col-xs-offset-4 col-sm-offset-5 col-md-offset-5 col-lg-offset-5">Siguiente</button>
+    		<button type="submit" id="submit-all" class="btn btn-primary col-xs-4 col-sm-2 col-md-2 col-lg-2 col-xs-offset-4 col-sm-offset-5 col-md-offset-5 col-lg-offset-5">{% trans "Siguiente" %}</button>
 			<br>
 			<br>
 			<br>

@@ -1,9 +1,10 @@
 {% extends "layout.html" %}
+{% load i18n %}
 {% load staticfiles %}
 
-{% block title %}Equipo{% endblock %}
+{% block title %}{% trans "Equipo" %}{% endblock %}
 
-{% block description %}Preguntas más frecuentes{% endblock %}
+{% block description %}{% trans "Preguntas más frecuentes" %}{% endblock %}
 
 {% block body %}  
 
@@ -12,14 +13,14 @@
   <div class="container">
     <div class="row text-center">
       <div class="col-md-12">
-        <h2>Nuestro equipo</h2>
+        <h2>{% trans "Nuestro equipo" %}</h2>
       </div><!-- /.col-md-12 -->
 
       <div class="container">
         <div class="row">
 
           <div class="col-md-12">
-            <h3 class="caption gray">Equipo investigador</h3>
+            <h3 class="caption gray">{% trans "Equipo investigador" %}</h3>
           </div><!-- /.col-md-12 -->
 
           <div class="col-md-4">
@@ -27,14 +28,14 @@
               <figure>
                 <img src="{% static "img/MarLeza.jpg" %}" alt="" class="img-responsive">
                 <figcaption>
-                  <p>Laboratorio de Zoología. Departamento de Biología</p>
+                  <p>{% trans "Laboratorio de Zoología. Departamento de Biología" %}</p>
                   <ul>
                     <li><a href="https://twitter.com/mar_leza_salord" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
                   </ul>
                 </figcaption>
               </figure>
-              <h4>Dra. Mar Leza</h4>
-              <p>Laboratorio de Zoología. Departamento de Biología</p>
+              <h4>{% trans "Dra. Mar Leza" %}</h4>
+              <p>{% trans "Laboratorio de Zoología. Departamento de Biología" %}</p>
             </div><!-- /.team-member-->
           </div><!-- /.col-md-4 -->
 
@@ -43,13 +44,13 @@
               <figure>
                 <img src="{% static "img/MiquelMiranda.jpg" %}" alt="" class="img-responsive">
                 <figcaption>
-                  <p>Laboratorio de Zoología. Departamento de Biología</p>
+                  <p>{% trans "Laboratorio de Zoología. Departamento de Biología" %}</p>
                   <ul>
                   </ul>
                 </figcaption>
               </figure>
-              <h4>Dr. Miguel Ángel Miranda</h4>
-              <p>Laboratorio de Zoología. Departamento de Biología</p>
+              <h4>{% trans "Dr. Miguel Ángel Miranda" %} </h4>
+              <p>{% trans "Laboratorio de Zoología. Departamento de Biología" %}</p>
             </div><!-- /.team-member-->
           </div><!-- /.col-md-4 -->
 
@@ -58,15 +59,15 @@
               <figure>
                 <img src="{% static "img/CarlosGuerrero.png" %}" alt="" class="img-responsive">
                 <figcaption>
-                  <p>Arquitectura y comportamiento de sistemas informáticos y de comunicaciones (ACSIC). Departamento de Ciencias Matemáticas e Informática</p>
+                  <p>{% trans "Arquitectura y comportamiento de sistemas informáticos y de comunicaciones (ACSIC). Departamento de Ciencias Matemáticas e Informática" %}</p>
                   <ul>
                     <li><a href="https://twitter.com/guerrerotome" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
                     <li><a href="http://www.guerrerotome.com" target="_blank"><i class="fa fa-link fa-2x"></i></a></li>
                   </ul>
                 </figcaption>
               </figure>
-              <h4>Dr. Carlos Guerrero</h4>
-              <p>Arquitectura y comportamiento de sistemas informáticos y de comunicaciones (ACSIC). Departamento de Ciencias Matemáticas e Informática</p>
+              <h4>{% trans "Dr. Carlos Guerrero" %}</h4>
+              <p>{% trans "Arquitectura y comportamiento de sistemas informáticos y de comunicaciones (ACSIC). Departamento de Ciencias Matemáticas e Informática" %}</p>
             </div><!-- /.team-member-->
           </div><!-- /.col-md-4 -->
 
@@ -75,13 +76,13 @@
               <figure>
                 <img src="{% static "img/MauriciRuiz.jpg" %}" alt="" class="img-responsive">
                 <figcaption>
-                  <p>Servicio de Sistemas de Información Geográfica (SIG) y Teledetección</p>
+                  <p>{% trans "Servicio de Sistemas de Información Geográfica (SIG) y Teledetección" %}</p>
                   <ul>
                   </ul>
                 </figcaption>
               </figure>
-              <h4>Dr. Maurici Ruíz</h4>
-              <p>Servicio de Sistemas de Información Geográfica (SIG) y Teledetección</p>
+              <h4>{% trans "Dr. Maurici Ruíz" %}</h4>
+              <p>{% trans "Servicio de Sistemas de Información Geográfica (SIG) y Teledetección" %}</p>
             </div><!-- /.team-member-->
           </div><!-- /.col-md-4 -->
 
@@ -90,13 +91,13 @@
               <figure>
                 <img src="{% static "img/TonaPou.jpg" %}" alt="" class="img-responsive">
                 <figcaption>
-                  <p>Comunicación, participación y redes sociales</p>
+                  <p>{% trans "Comunicación, participación y redes sociales" %}</p>
                   <ul>
                   </ul>
                 </figcaption>
               </figure>
-              <h4>Sra. Tona Pou</h4>
-              <p>Comunicación, participación y redes sociales</p>
+              <h4>{% trans "Sra. Tona Pou" %}</h4>
+              <p>{% trans "Comunicación, participación y redes sociales" %}</p>
             </div><!-- /.team-member-->
           </div><!-- /.col-md-4 -->
 
@@ -109,7 +110,7 @@
         <div class="row">
 
           <div class="col-md-12">
-            <h3 class="caption gray">Equipo beca Cátedra Santander UIB de Innovación y Transferencia del Conocimiento (CSUIT)</h3>
+            <h3 class="caption gray">{% trans "Equipo beca Cátedra Santander UIB de Innovación y Transferencia del Conocimiento (CSUIT)" %}</h3>
           </div><!-- /.col-md-12 -->
 
           <div class="col-md-4">
@@ -117,7 +118,7 @@
               <figure>
                 <img src="{% static "img/JuanMartin.png" %}" alt="" class="img-responsive">
                 <figcaption>
-                  <p>Escuela Politécnica Superior de la Universidad de las Islas Baleares</p>
+                  <p>{% trans "Escuela Politécnica Superior de la Universidad de las Islas Baleares" %}</p>
                   <ul>
                     <li><a href="https://github.com/JoanMartin" target="_blank"><i class="fa fa-github fa-2x"></i></a></li>
                     <li><a href="https://twitter.com/JoanMarMir" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
@@ -126,7 +127,7 @@
                 </figcaption>
               </figure>
               <h4>Juan José Martín Miralles</h4>
-              <p>Estudiante de Ingeniería Informática</p>
+              <p>{% trans "Estudiante de Ingeniería Informática" %}</p>
             </div><!-- /.team-member-->
           </div><!-- /.col-md-4 -->
 
@@ -135,7 +136,7 @@
               <figure>
                 <img src="{% static "img/CamilaPerez.png" %}" alt="" class="img-responsive">
                 <figcaption>
-                  <p>Escuela Politécnica Superior de la Universidad de las Islas Baleares</p>
+                  <p>{% trans "Escuela Politécnica Superior de la Universidad de las Islas Baleares" %}</p>
                   <ul> 
                     <li><a href="https://github.com/CamPerez" target="_blank"><i class="fa fa-github fa-2x"></i></a></li>
                     <li><a href="https://twitter.com/cdefyinggravity" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
@@ -144,7 +145,7 @@
                 </figcaption>
               </figure>
               <h4>Camila Ángela Pérez Arévalo</h4>
-              <p>Estudiante de Ingeniería Informática</p>
+              <p>{% trans "Estudiante de Ingeniería Informática" %}</p>
             </div><!-- /.team-member-->
           </div><!-- /.col-md-4 -->
 
@@ -153,7 +154,7 @@
               <figure>
                 <img src="{% static "img/CarlosTenorio.png" %}" alt="" class="img-responsive">
                 <figcaption>
-                  <p>Escuela Politécnica Superior de la Universidad de las Islas Baleares</p>
+                  <p>{% trans "Escuela Politécnica Superior de la Universidad de las Islas Baleares" %}</p>
                   <ul>
                     <li><a href="https://github.com/CarlosTenorio" target="_blank"><i class="fa fa-github fa-2x"></i></a></li>
                     <li><a href="https://twitter.com/ctenoriop" target="_blank"><i class="fa fa-twitter fa-2x"></i></a></li>
@@ -162,7 +163,7 @@
                 </figcaption>
               </figure>
               <h4>Carlos Tenorio Pérez</h4>
-              <p>Estudiante de Ingeniería Informática</p>
+              <p>{% trans "Estudiante de Ingeniería Informática" %}</p>
             </div><!-- /.team-member-->
           </div><!-- /.col-md-4 -->
 
@@ -176,7 +177,7 @@
         <div class="row">
 
           <div class="col-md-12">
-            <h3 class="caption gray">Equipo hackathon solidario</h3>
+            <h3 class="caption gray">{% trans "Equipo hackathon solidario" %}</h3>
           </div><!-- /.col-md-12 -->
 
 

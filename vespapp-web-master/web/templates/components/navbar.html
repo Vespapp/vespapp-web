@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load template %}
 {% load staticfiles %}
 <div class="row">
@@ -19,28 +20,66 @@
       <!-- Collect the nav links, forms, and other content for toggling -->
       <div class="collapse navbar-collapse navbar-right" id="main-navbar">
         <ul class="nav navbar-nav">
-          <li class="{% active 'home' %}"><a href="{% url 'home' %}">Inicio</a></li>
-          <li class="{% active 'new_sighting' %}"><a href="{% url 'new_sighting' %}">Añade avispamiento</a></li>
-          <li class="{% active 'sightings' %}"><a href="{% url 'sightings' %}">Mapa</a></li>
+          <li class="{% active 'home' %}"><a href="{% url 'home' %}">{% trans "Inicio" %}</a></li>
+          <li class="{% active 'new_sighting' %}"><a href="{% url 'new_sighting' %}">{% trans "Añade avispamiento" %}</a></li>
+          <li class="{% active 'sightings' %}"><a href="{% url 'sightings' %}">{% trans "Mapa" %}</a></li>
 
           {% if user.is_authenticated %} 
-          <li class="{% active 'user_profile' %}"><a href="{% url 'user_profile' %}">Mi perfil</a></li> 
-          <li class="{% active 'logout' %}"><a href="{% url 'logout' %}">Cerrar sesión</a></li>              
+          <li class="{% active 'user_profile' %}"><a href="{% url 'user_profile' %}">{% trans "Mi perfil" %}</a></li> 
+          <li class="{% active 'logout' %}"><a href="{% url 'logout' %}">{% trans "Cerrar sesión" %}</a></li>              
           {% else %}  
-          <li class="{% active 'login' %}"><a href="{% url 'login' %}">Iniciar sesión</a></li>      
-          <li class="{% active 'signup' %}"><a href="{% url 'signup' %}">Registrarse</a></li>         
-          {% endif %}         
-          <li class="{% active 'info' %}"><a href="{% url 'info' %}">Infórmate</a></li>
-          <li class="{% active 'contact' %}"><a href="{% url 'contact' %}">Contacto</a></li>  
+          <li class="{% active 'login' %}"><a href="{% url 'login' %}">{% trans "Iniciar sesión" %}</a></li>      
+          <li class="{% active 'signup' %}"><a href="{% url 'signup' %}">{% trans "Registrarse" %}</a></li>         
+          {% endif %}
+          
+          <li class="{% active 'info' %}"><a href="{% url 'info' %}">{% trans "Infórmate" %}</a></li>
+          <li class="{% active 'contact' %}"><a href="{% url 'contact' %}">{% trans "Contacto" %}</a></li> 
+          
+          <li class="{% active 'languages' %}">
+          <!--
+          <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+		<input name="next" type="hidden" value="{{ redirect_to }}" />
+		  <select name="language" onchange="this.form.submit()">
+		      {% get_current_language as LANGUAGE_CODE %}
+		      {% get_available_languages as LANGUAGES %}
+		      {% get_language_info_list for LANGUAGES as languages %}
+		      {% for language in languages %}
+			  <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+			      {{ language.code }}
+			  </option>
+		      {% endfor %}
+		  </select>
+	      </form>
+          
+          //OTROO
+          {% if request.LANGUAGE_CODE == 'ca' %}
+              <a href="http://localhost/es">
+                  <img src="{% static "img/icono_castellano.png" %}" alt="">
+              </a>
+          {% else %}
+              <a href="http://localhost/ca">
+                  <img src="{% static "img/catala.gif" %}" alt="">
+              </a>
+          {% endif %}-->
+          </li>
         </ul>
+        
       </div><!-- /.navbar-collapse -->
 
       <div id="mobile-app">
+      {% if request.LANGUAGE_CODE == 'ca' %}
+        <a target="_blank" href="https://play.google.com/store/apps/details?id=com.habitissimo.vespapp&hl=ca">
+          <img src="{% static "img/googleplay.png" %}" alt="Disponible a Google Play">
+        </a>
+      {% else %}
         <a target="_blank" href="https://play.google.com/store/apps/details?id=com.habitissimo.vespapp&hl=es">
           <img src="{% static "img/googleplay.png" %}" alt="Disponible en Google Play">
         </a>
+      {% endif %}
       </div>
 
     </div><!-- /.container-fluid -->
+    
   </nav>
+  
 </div>

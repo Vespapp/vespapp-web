@@ -1,20 +1,21 @@
 {% extends "layout.html" %}
+{% load i18n %}
 {% load staticfiles %}
-{% block description %}Registro{% endblock %}
+{% block description %}{% trans "Registro" %}{% endblock %}
 {% block body %}
 <section class="login-box">
   <header class="login-header">
-    <h1>Iniciar sesión</h1>
-    <h2>¿Aún no tienes cuenta? <a href="{% url 'signup' %}" class="login-sign">Regístrate ya</a></h2>
+    <h1>{% trans "Iniciar sesión" %}</h1>
+    <h2>{% trans "¿Aún no tienes cuenta?" %} <a href="{% url 'signup' %}" class="login-sign">{% trans "Regístrate ya" %}</a></h2>
   </header>
   <div class="login-content">
     <form method="post" action="" enctype="multipart/form-data">
       {% csrf_token %}
       <input type="text" id="first-name" name="username"/>
-      <label for="first-name"><span class="fa fa-user"></span> Nombre de usuario</label>
+      <label for="first-name"><span class="fa fa-user"></span> {% trans "Nombre de usuario" %}</label>
       <input type="password" id="password" name="password"/>
-      <label for="password"><span class="fa fa-lock"></span> Contraseña</label>
-      <input type="submit" id="submit" value="ENTRAR"/>
+      <label for="password"><span class="fa fa-lock"></span> {% trans "Contraseña" %}</label>
+      <input type="submit" id="submit" value={% trans "ENTRAR" %} />
     </form>
   </div>
 </section>

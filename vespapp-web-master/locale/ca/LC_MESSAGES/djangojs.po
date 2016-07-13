@@ -1,0 +1,242 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-07 12:36+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: src/js/main.js:20 src/js/main.js:31 src/js/main.js:42 src/js/main.js:53
+#: src/js/main.js:78 src/js/main.js:97 vespapp/static/js/main.min.js:1857
+#: vespapp/static/js/main.min.js:1868 vespapp/static/js/main.min.js:1879
+#: vespapp/static/js/main.min.js:1890 vespapp/static/js/main.min.js:1915
+#: vespapp/static/js/main.min.js:1934
+msgid "Vale"
+msgstr "D'acord"
+
+#: src/js/main.js:37 vespapp/static/js/main.min.js:1874
+msgid "¡Te echaremos de menos!"
+msgstr "Et trobarem a faltar!"
+
+#: src/js/main.js:48 vespapp/static/js/main.min.js:1885
+msgid "¡Gracias por enviar tu avispamiento!"
+msgstr "Gràcies per enviar la teva detecció!"
+
+#: src/js/main.js:49 src/js/main.js:75 vespapp/static/js/main.min.js:1886
+#: vespapp/static/js/main.min.js:1912
+msgid "Muchas gracias por tu colaboración ;)"
+msgstr "Moltes gràcies per la teva col·laboració ;)"
+
+#: src/js/main.js:59 vespapp/static/js/main.min.js:1896
+msgid ""
+"¡Gracias por enviar tu avispamiento!\n"
+"\n"
+"Por favor, regístrate para que podamos contactar contigo en caso de "
+"emergencia."
+msgstr ""
+"Gràcies per enviar la teva detecció!\n"
+"\n"
+"Per favor, registra't per que poguem contactar amb tu en cas d'emergència."
+
+#: src/js/main.js:63 vespapp/static/js/main.min.js:1900
+msgid "No, gracias."
+msgstr "No, gràcies."
+
+#: src/js/main.js:65 vespapp/static/js/main.min.js:1902
+msgid "¡Registrarme! o Login"
+msgstr "Registra'm! o Login"
+
+#: src/js/main.js:74 vespapp/static/js/main.min.js:1911
+msgid "Puedes registrarte en cualquier otro momento"
+msgstr "Pots registrar-te en qualsevol altre moment"
+
+#: src/js/main.js:92 vespapp/static/js/main.min.js:1929
+msgid "¡Gracias por contactar con nosotros!"
+msgstr "Gràcies per contactar amb nosaltres!"
+
+#: vespapp/static/admin/js/SelectFilter2.js:47
+#, javascript-format
+msgid "Available %s"
+msgstr ""
+
+#: vespapp/static/admin/js/SelectFilter2.js:53
+#, javascript-format
+msgid ""
+"This is the list of available %s. You may choose some by selecting them in "
+"the box below and then clicking the \"Choose\" arrow between the two boxes."
+msgstr ""
+
+#: vespapp/static/admin/js/SelectFilter2.js:69
+#, javascript-format
+msgid "Type into this box to filter down the list of available %s."
+msgstr ""
+
+#: vespapp/static/admin/js/SelectFilter2.js:74
+msgid "Filter"
+msgstr ""
+
+#: vespapp/static/admin/js/SelectFilter2.js:78
+msgid "Choose all"
+msgstr ""
+
+#: vespapp/static/admin/js/SelectFilter2.js:78
+#, javascript-format
+msgid "Click to choose all %s at once."
+msgstr ""
+
+#: vespapp/static/admin/js/SelectFilter2.js:84
+msgid "Choose"
+msgstr ""
+
+#: vespapp/static/admin/js/SelectFilter2.js:86
+msgid "Remove"
+msgstr ""
+
+#: vespapp/static/admin/js/SelectFilter2.js:92
+#, javascript-format
+msgid "Chosen %s"
+msgstr ""
+
+#: vespapp/static/admin/js/SelectFilter2.js:98
+#, javascript-format
+msgid ""
+"This is the list of chosen %s. You may remove some by selecting them in the "
+"box below and then clicking the \"Remove\" arrow between the two boxes."
+msgstr ""
+
+#: vespapp/static/admin/js/SelectFilter2.js:108
+msgid "Remove all"
+msgstr ""
+
+#: vespapp/static/admin/js/SelectFilter2.js:108
+#, javascript-format
+msgid "Click to remove all chosen %s at once."
+msgstr ""
+
+#: vespapp/static/admin/js/actions.js:47
+#: vespapp/static/admin/js/actions.min.js:2
+msgid "%(sel)s of %(cnt)s selected"
+msgid_plural "%(sel)s of %(cnt)s selected"
+msgstr[0] ""
+msgstr[1] ""
+
+#: vespapp/static/admin/js/actions.js:116
+#: vespapp/static/admin/js/actions.min.js:4
+msgid ""
+"You have unsaved changes on individual editable fields. If you run an "
+"action, your unsaved changes will be lost."
+msgstr ""
+
+#: vespapp/static/admin/js/actions.js:128
+#: vespapp/static/admin/js/actions.min.js:5
+msgid ""
+"You have selected an action, but you haven't saved your changes to "
+"individual fields yet. Please click OK to save. You'll need to re-run the "
+"action."
+msgstr ""
+
+#: vespapp/static/admin/js/actions.js:130
+#: vespapp/static/admin/js/actions.min.js:5
+msgid ""
+"You have selected an action, and you haven't made any changes on individual "
+"fields. You're probably looking for the Go button rather than the Save "
+"button."
+msgstr ""
+
+#: vespapp/static/admin/js/admin/DateTimeShortcuts.js:74
+#, javascript-format
+msgid "Note: You are %s hour ahead of server time."
+msgid_plural "Note: You are %s hours ahead of server time."
+msgstr[0] ""
+msgstr[1] ""
+
+#: vespapp/static/admin/js/admin/DateTimeShortcuts.js:82
+#, javascript-format
+msgid "Note: You are %s hour behind server time."
+msgid_plural "Note: You are %s hours behind server time."
+msgstr[0] ""
+msgstr[1] ""
+
+#: vespapp/static/admin/js/admin/DateTimeShortcuts.js:109
+#: vespapp/static/admin/js/admin/DateTimeShortcuts.js:149
+msgid "Now"
+msgstr ""
+
+#: vespapp/static/admin/js/admin/DateTimeShortcuts.js:116
+msgid "Choose a Time"
+msgstr ""
+
+#: vespapp/static/admin/js/admin/DateTimeShortcuts.js:146
+msgid "Choose a time"
+msgstr ""
+
+#: vespapp/static/admin/js/admin/DateTimeShortcuts.js:150
+msgid "Midnight"
+msgstr ""
+
+#: vespapp/static/admin/js/admin/DateTimeShortcuts.js:151
+msgid "6 a.m."
+msgstr ""
+
+#: vespapp/static/admin/js/admin/DateTimeShortcuts.js:152
+msgid "Noon"
+msgstr ""
+
+#: vespapp/static/admin/js/admin/DateTimeShortcuts.js:153
+msgid "6 p.m."
+msgstr ""
+
+#: vespapp/static/admin/js/admin/DateTimeShortcuts.js:157
+#: vespapp/static/admin/js/admin/DateTimeShortcuts.js:281
+msgid "Cancel"
+msgstr ""
+
+#: vespapp/static/admin/js/admin/DateTimeShortcuts.js:217
+#: vespapp/static/admin/js/admin/DateTimeShortcuts.js:274
+msgid "Today"
+msgstr ""
+
+#: vespapp/static/admin/js/admin/DateTimeShortcuts.js:224
+msgid "Choose a Date"
+msgstr ""
+
+#: vespapp/static/admin/js/admin/DateTimeShortcuts.js:272
+msgid "Yesterday"
+msgstr ""
+
+#: vespapp/static/admin/js/admin/DateTimeShortcuts.js:276
+msgid "Tomorrow"
+msgstr ""
+
+#: vespapp/static/admin/js/calendar.js:11
+msgid ""
+"January February March April May June July August September October November "
+"December"
+msgstr ""
+
+#: vespapp/static/admin/js/calendar.js:12
+msgid "S M T W T F S"
+msgstr ""
+
+#: vespapp/static/admin/js/collapse.js:10
+#: vespapp/static/admin/js/collapse.js:21
+#: vespapp/static/admin/js/collapse.min.js:1
+msgid "Show"
+msgstr ""
+
+#: vespapp/static/admin/js/collapse.js:18
+#: vespapp/static/admin/js/collapse.min.js:1
+msgid "Hide"
+msgstr ""

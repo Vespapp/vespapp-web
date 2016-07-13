@@ -1,17 +1,23 @@
 {% extends "layout.html" %}
+{% load i18n %}
 {% load staticfiles %}
-{% block title %}Nuevo avispamiento{% endblock %}
-{% block description %}Nuevo avistamiento{% endblock %}
 
+{% block title %}{% trans "Nuevo avispamiento" %} {% endblock %}
+{% block description %}{% trans "Nuevo avistamiento" %}{% endblock %}
+
+<script type="text/javascript"
+            src="{% url 'django.views.i18n.javascript_catalog' %}"></script>
 {% block body %}
 <div class="container">
   <div class="row">
     <div class="col-xs-12 text-center">
-      <h1 class="section-tittle">Envía tu avispamiento</h1>
+      <h1 class="section-tittle">{% trans "Envía tu avispamiento" %}</h1>
 
       <form id="new_sighting" enctype="multipart/form-data" method="post">
         <div class="col-xs-12 col-md-6">
-          <div id="mydz" class="dropzone"></div>
+       
+          <div id="mydz" class="dropzone">{% trans "Arrastra tus fotos sobre este cuadro o haz clic en el mismo" %}</div>
+          
         </div>        
 
         <div class="radio-type col-xs-12 col-md-6">
@@ -20,7 +26,7 @@
             <label for="radio-avispa" class="text-center lab">
               <img src="{% static "img/vespaicon.png" %}" class="iconradio">
               <span>
-                Avispa
+                {% trans "Avispa" %}
               </span>
             </label>
           </div>
@@ -29,27 +35,35 @@
             <label for="radio-nido" class="text-center lab">
               <img src="{% static "img/nidoicon.png" %}" class="iconradio">
               <span>
-                Nido
+                {% trans "Nido" %}
               </span>
             </label>
           </div>
 
           <div class="col-xs-12">
-            <textarea name="free_text" class="freetext" placeholder="Escribe aquí si deseas detallar la zona del avispamiento o si tienes algún dato que pueda sernos útil"></textarea>
+            <textarea name="free_text" class="freetext" placeholder={%blocktrans%} "Escribe aquí si deseas detallar la zona del avispamiento o si tienes algún dato que pueda sernos útil (como alguna información de contacto, que se utilizará solamente para contactar en caso de EMERGENCIA)." {%endblocktrans%}></textarea>
           </div>
         </div>
 
         <div class="col-xs-12 form-group location">
           <select class="form-control" name="location">
-            <option value="">Selecciona población</option>
+            <option value="">{% trans "Selecciona población" %}</option>
             {% for location in locations %}
-                <option value="{{location.id}}">{{location.name}}</option>
+                {% if request.LANGUAGE_CODE == 'ca' %}
+                    <option value="{{location.id}}">{{location.name_ca}}</option>
+                {% elif request.LANGUAGE_CODE == 'en' %}
+                    <option value="{{location.id}}">{{location.name_en}}</option>
+                {% elif request.LANGUAGE_CODE == 'de' %}
+                    <option value="{{location.id}}">{{location.name_de}}</option>
+                {% else %}
+                    <option value="{{location.id}}">{{location.name}}</option>
+                {% endif %}
             {% endfor %}
           </select>
         </div>
 
         <div class="col-xs-12">
-          <h1>Mueve el marcador para ajustar la posición</h1>
+          <h1>{% trans "Mueve el marcador para ajustar la posición" %}</h1>
         </div>
 
         <div class="col-xs-12">
@@ -59,7 +73,7 @@
         </div>
 
         <div class="col-xs-12">
-          <button type="submit" id="submit-all">Enviar avispamiento</button>
+          <button type="submit" id="submit-all">{% trans "Enviar avispamiento" %}</button>
         </div>
         
       </form>
@@ -68,10 +82,11 @@
 </div>
 
 <script>
+
   jQuery(function($) {
       // Asynchronously Load the map API 
       var script = document.createElement('script');
-      script.src = "http://maps.googleapis.com/maps/api/js?sensor=false&callback=initialize";
+      script.src = "http://maps.googleapis.com/maps/api/js?sensor=false&callback=initialize&key=AIzaSyDdu6wWUWkf9A3b6L9i0M1YitIBt0wR6as";
       document.body.appendChild(script);
   });
 
@@ -133,10 +148,10 @@
         renameFilename: "file", // does not work
         maxFiles: 5,
         parallelUploads : 5,
-        dictDefaultMessage: "Arrastra tus fotos o haz clic aquí",
-        dictFallbackMessage: "Your browser does not support drag and drop file uploads.",
-        dictInvalidFileType: "No puedes subir archivos de este tipo",
-        dictRemoveFile: 'Borrar'
+        dictDefaultMessage: gettext(""),
+        dictFallbackMessage: gettext("Your browser does not support drag and drop file uploads."),
+        dictInvalidFileType: gettext("No puedes subir archivos de este tipo"),
+        dictRemoveFile: gettext("Borrar")
       });
 
       var submitButton = document.getElementById("submit-all");

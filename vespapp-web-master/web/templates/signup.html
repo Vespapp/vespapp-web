@@ -1,26 +1,27 @@
 {% extends "layout.html" %}
+{% load i18n %}
 {% load staticfiles %}
-{% block description %}Registro de usuario{% endblock %}
+{% block description %}{% trans "Registro de usuario" %}{% endblock %}
 {% block body %}
 <div id="formSignup" class="animated">
   <div class="left-col">
-    <h2 id="tittleformsignup">¡Sigue tus avispamientos más de cerca!</h2>
+    <h2 id="tittleformsignup">{% trans "¡Sigue tus avispamientos más de cerca!" %}</h2>
     <hr/>
-    <p>Si quieres conocer el estado de tu avispamiento REGÍSTRATE para hacer comentarios y visualizar todas las fotos que nos has mandado</p>
+    <p>{% trans "Si quieres conocer el estado de tu avispamiento REGÍSTRATE para hacer comentarios y visualizar todas las fotos que nos has mandado" %}</p>
   </div>
   <div class="right-col">
     <form method="post" action="" enctype="multipart/form-data">
       {% csrf_token %}
       <input type="text" id="first-name" name="username"/>
-      <label for="first-name"><span class="fa fa-user"></span> Nombre de usuario</label>
+      <label for="first-name"><span class="fa fa-user"></span> {% trans "Nombre de usuario" %}</label>
       <input type="text" id="email" name="email"/>
-      <label for="email"><span class="fa fa-envelope"></span> Correo electrónico</label>
+      <label for="email"><span class="fa fa-envelope"></span> {% trans "Correo electrónico" %}</label>
       <input type="password" id="password" name="password"/>
-      <label for="password"><span class="fa fa-lock"></span> Contraseña</label>
+      <label for="password"><span class="fa fa-lock"></span> {% trans "Contraseña" %}</label>
       <input type="password" id="password2" name="password2"/>
-      <label for="password2"><span class="fa fa-lock"></span> Repita la contraseña</label>
-      <input type="submit" id="submit" value="REGISTRARSE"/>
-      <p><span class="asterisc">*</span>Registrándote aceptas los <a data-toggle="modal" data-target="#privacity">términos legales</a></p>
+      <label for="password2"><span class="fa fa-lock"></span> {% trans "Repita la contraseña" %}</label>
+      <input type="submit" id="submit" value= {% trans "REGISTRARSE" %} >
+      <p><span class="asterisc">*</span>{% trans "Registrándote aceptas los " %}<a data-toggle="modal" data-target="#privacity">{% trans "términos legales" %}</a></p>
     </form>
   </div>
 </div>
@@ -32,17 +33,17 @@
     <div class="modal-content">
       <div class="modal-header modalTitle">
         <button type="button" class="close" data-dismiss="modal">&times;</button>
-        <h4 class="modal-title modalFont">Términos legales</h4>
+        <h4 class="modal-title modalFont">{% trans "Términos legales" %}</h4>
       </div>
       <div class="modal-body">
-            En cumplimiento del que dispone la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal, os informamos que los datos recogidos en vuestra solicitud serán incluidos en varios ficheros gestionados por la UIB, la finalidad de los cuales es poder contactar con usted en caso de que fuera necesario. Los datos solicitados son necesarios para cumplir con la mencionada finalidad y, por lo tanto, el hecho de no obtenerlos impide conseguirla.
+            {% trans "En cumplimiento del que dispone la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal, os informamos que los datos recogidos en vuestra solicitud serán incluidos en varios ficheros gestionados por la UIB, la finalidad de los cuales es poder contactar con usted en caso de que fuera necesario. Los datos solicitados son necesarios para cumplir con la mencionada finalidad y, por lo tanto, el hecho de no obtenerlos impide conseguirla." %}
 
             <br>
 
-            La UIB es la responsable del tratamiento de los datos y, como tal, os garantiza los derechos de acceso, rectificación, cancelación y oposición en cuanto a los datos facilitados. Para ejercer los cuales os tenéis que dirigir por escrito a: Universitat de les Illes Balears, Secretaría General, a la atención del responsable de seguridad, cra. de Valldemossa, km 7,5, 07122 Palma (Islas Baleares). Del mismo modo, la UIB se compromete a respetar la confidencialidad de vuestros datos y a utilizarlos de acuerdo con el fin de los ficheros.
+            {% trans "La UIB es la responsable del tratamiento de los datos y, como tal, os garantiza los derechos de acceso, rectificación, cancelación y oposición en cuanto a los datos facilitados. Para ejercer los cuales os tenéis que dirigir por escrito a: Universitat de les Illes Balears, Secretaría General, a la atención del responsable de seguridad, cra. de Valldemossa, km 7,5, 07122 Palma (Islas Baleares). Del mismo modo, la UIB se compromete a respetar la confidencialidad de vuestros datos y a utilizarlos de acuerdo con el fin de los ficheros." %}
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+        <button type="button" class="btn btn-default" data-dismiss="modal">{% trans "Cerrar" %}</button>
       </div>
     </div>
   </div>
@@ -51,16 +52,16 @@
 <script>
   var error = "";
   {% if form.username.errors %}
-    error = 'Nombre de usuario: ' + '{{form.username.errors|striptags}}';
+    error = {% trans 'Nombre de usuario: '%} + '{{form.username.errors|striptags}}';
   {% endif %}
   {% if form.email.errors %}
-    error = error + '\nCorreo electrónico: ' + '{{form.email.errors|striptags}}';
+    error = error + {% trans '\nCorreo electrónico: '%} + '{{form.email.errors|striptags}}';
   {% endif %}
   {% if form.password.errors %}
-    error = error + '\nContraseña: ' + '{{form.password.errors|striptags}}';
+    error = error + {% trans '\nContraseña: '%} + '{{form.password.errors|striptags}}';
   {% endif %}
   {% if form.password2.errors %}
-    error = error + '\nRepita la contraseña: ' + '{{form.password2.errors|striptags}}';
+    error = error + {% trans '\nRepita la contraseña: '%} + '{{form.password2.errors|striptags}}';
   {% endif %}
   if(error){
     errorForm(error);

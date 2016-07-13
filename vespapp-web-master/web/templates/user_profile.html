@@ -1,13 +1,14 @@
 {% extends "layout.html" %}
+{% load i18n %}
 {% load staticfiles %}
 
-{% block title %}Perfil de usuario{% endblock %}
+{% block title %}{% trans "Perfil de usuario" %}{% endblock %}
 {% block body %}
     <div class="container">
         <section>
             <div class="row">      
                 <div class="col-xs-12">
-                    <h1 class="text-center section-tittle">Mi perfil</h1>
+                    <h1 class="text-center section-tittle">{% trans "Mi perfil" %}</h1>
                 </div>
                 <div class="col-md-3 profile-content">
                     <div class="photo-frame">
@@ -20,39 +21,39 @@
                         <input id="hola" type="file" name="photo" class="hidden">
                         <label for="hola" class="text-center lab">
                           <span>
-                            Actualizar foto
+                            {% trans "Actualizar foto" %}
                           </span>
                         </label>
                         <input type="submit" name="PhotoProfile" id="submit" class="hidden" />
                     </form>
                 </div>                    
                 <div class="col-md-5">
-                    <h3>Datos de tu perfil</h3>
+                    <h3>{% trans "Datos de tu perfil" %}</h3>
                     <div class="profile-content">
                         <form method="post" action="" enctype="multipart/form-data">
                             {% csrf_token %}
                             <input type="text" id="username" name="username" value="{{request.user.username}}" />
-                            <label for="username"><span class="fa fa-user"></span> Nombre de usuario</label>
+                            <label for="username"><span class="fa fa-user"></span> {% trans "Nombre de usuario" %}</label>
                             <input type="text" id="email" name="email" value="{{request.user.email}}" />
-                            <label for="email"><span class="fa fa-envelope"></span> Correo electrónico</label>
+                            <label for="email"><span class="fa fa-envelope"></span> {% trans "Correo electrónico" %}</label>
                             <br>
-                            <input type="submit" name="UserProfile" id="submit" value="Actualizar perfil"/>
+                            <input type="submit" name="UserProfile" id="submit" value={% trans "Actualizar perfil" %}/>
                         </form>
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <h3>Cambiar tu contraseña</h3>
+                    <h3>{% trans "Cambiar tu contraseña" %}</h3>
                     <div class="profile-content">
                         <form method="post" action="" enctype="multipart/form-data">
                             {% csrf_token %}
                             <input type="password" id="actual_password" name="actual_password"/>
-                            <label for="actual_password"><span class="fa fa-lock"></span> Contraseña actual</label>
+                            <label for="actual_password"><span class="fa fa-lock"></span> {% trans "Contraseña actual" %}</label>
                             <input type="password" id="password" name="password"/>
-                            <label for="password"><span class="fa fa-lock"></span> Nueva contraseña</label>
+                            <label for="password"><span class="fa fa-lock"></span> {% trans "Nueva contraseña" %}</label>
                             <input type="password" id="password2" name="password2"/>
-                            <label for="password2"><span class="fa fa-lock"></span> Repita la contraseña</label>
+                            <label for="password2"><span class="fa fa-lock"></span> {% trans "Repita la contraseña" %}</label>
                             <br>
-                            <input type="submit" name="PasswordProfile" id="submit" value="Actualizar contraseña"/>
+                            <input type="submit" name="PasswordProfile" id="submit" value={% trans "Actualizar contraseña" %}/>
                         </form>
                     </div>
                 </div>
@@ -64,20 +65,20 @@
         var error = "";
         {% if userForm.username.errors %}
             console.log("hola");
-            error = 'Nombre de usuario: ' + '{{userForm.username.errors|striptags}}';
+            error = {% trans 'Nombre de usuario: '%} + '{{userForm.username.errors|striptags}}';
         {% endif %}
         {% if userForm.email.errors %}
-            error = error + '\nCorreo electrónico: ' + '{{userForm.email.errors|striptags}}';
+            error = error + {% trans '\nCorreo electrónico: '%} + '{{userForm.email.errors|striptags}}';
         {% endif %}
 
         {% if passwordForm.actual_password.errors %}
-            error = error + 'Contraseña actual: ' + '{{passwordForm.actual_password.errors|striptags}}';
+            error = error + {% trans 'Contraseña actual: '%} + '{{passwordForm.actual_password.errors|striptags}}';
         {% endif %}
         {% if passwordForm.password.errors %}
-            error = error + '\nContraseña: ' + '{{passwordForm.password.errors|striptags}}';
+            error = error + {% trans '\nContraseña: '%} + '{{passwordForm.password.errors|striptags}}';
         {% endif %}
         {% if passwordForm.password2.errors %}
-            error = error + '\nRepita la contraseña: ' + '{{passwordForm.password2.errors|striptags}}';
+            error = error + {% trans '\nRepita la contraseña: '%} + '{{passwordForm.password2.errors|striptags}}';
         {% endif %}
         if(error){
             errorForm(error);

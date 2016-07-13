@@ -1,25 +1,44 @@
+{% load i18n %}
 {% load staticfiles %}
 
 <footer class="footer" role="contentinfo">
 
   <div class="footer-links">
     <ul>
-      <li><h3>Avispamientos</h3></li>
-      <li><a href="{% url 'new_sighting' %}">Añade tu avispamiento</a></li>
-      <li><a href="{% url 'sightings' %}">Mapa de avispamientos</a></li>
-      <li><a href="{% url 'info' %}">Infórmate</a></li>
-      <li><a href="{% url 'signup' %}">Regístrate</a></li>
+      <li><h3>{% trans "Avispamientos" %}</h3></li>
+      <li><a href="{% url 'new_sighting' %}">{% trans "Añade tu avispamiento" %}</a></li>
+      <li><a href="{% url 'sightings' %}">{% trans "Mapa de avispamientos" %}</a></li>
+      <li><a href="{% url 'info' %}">{% trans "Infórmate" %}</a></li>
+      <li><a href="{% url 'signup' %}">{% trans "Regístrate" %}</a></li>
     </ul>
     <ul>
-      <li><h3>Sobre Vespapp</h3></li>
-      <li><a href="{% url 'about' %}">Acerca de</a></li>
-      <li><a href="{% url 'team' %}">Equipo</a></li>
-      <li><a href="{% url 'contact' %}">Contacto</a></li>
+      <li><h3>{% trans "Sobre Vespapp" %}</h3></li>
+      <li><a href="{% url 'about' %}">{% trans "Acerca de" %}</a></li>
+      <li><a href="{% url 'team' %}">{% trans "Equipo" %}</a></li>
+      <li><a href="{% url 'contact' %}">{% trans "Contacto" %}</a></li>
     </ul>
     <ul>
-      <li><h3>Síguenos</h3></li>
+      <li><h3>{% trans "Síguenos" %}</h3></li>
+      <li><a href="https://www.facebook.com/VespApp/" target="_blank"><i class="fa fa-facebook"></i> Facebook</a></li>
       <li><a href="https://twitter.com/vespapp" target="_blank"><i class="fa fa-twitter"></i> Twitter</a></li>
-      <li><a href="https://github.com/CarlosTenorio/vespapp-web" target="_blank"><i class="fa fa-github"></i> GitHub</a></li>
+      <li><a href="https://github.com/Vespapp" target="_blank"><i class="fa fa-github"></i> GitHub</a></li>
+    </ul>
+    <ul>
+      <li><h3>{% trans "Elige idioma:" %}</h3>
+	      <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+		<input name="next" type="hidden" value="{{ redirect_to }}" />
+		  <select name="language" onchange="this.form.submit()">
+		      {% get_current_language as LANGUAGE_CODE %}
+		      {% get_available_languages as LANGUAGES %}
+		      {% get_language_info_list for LANGUAGES as languages %}
+		      {% for language in languages %}
+			  <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+			      {{ language.code }}
+			  </option>
+		      {% endfor %}
+		  </select>
+	      </form>
+      </li>
     </ul>
   </div>
   <hr>
@@ -37,6 +56,5 @@
       <img src="{% static "img/googleplay.png" %}" alt="Disponible en Google Play">
     </a>
   </div>
-
   <p>Made with <span class="love">♥</span> for the bees of the world. </p>
 </footer>

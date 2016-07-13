@@ -1,3 +1,4 @@
+{% load i18n %}
 {% load staticfiles %}
 <!DOCTYPE html>
 <html lang="es">
@@ -6,11 +7,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=7">
   <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <title>{% block title %}Vespapp{% endblock %}</title>
-  <meta name="description" content="{% block description %}Caza la avispa asiática{% endblock %}">
+  <meta name="description" content="{% block description %}"Caza la avispa asiática"{% endblock %}">
   <meta name="description" content="Avispamiento de abejas en las Baleares">
   <meta name="keywords" content="Avispas, avistamiento, china">
   <link rel="stylesheet" href="{% static "css/main.min.css" %}">
   <script src="{% static "js/main.min.js" %}"></script>
+  <script type="text/javascript"
+            src="{% url 'django.views.i18n.javascript_catalog' %}"></script>
 </head>
 <body>
   <div class="container-fluid navbar-container">

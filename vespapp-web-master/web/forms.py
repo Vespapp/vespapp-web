@@ -1,8 +1,10 @@
+# -*- coding: utf-8 -*- 
 from django import forms
 from api.models import Sighting
 from api.models import Answer
 from api.models import UserComment
 from django.contrib.auth.models import User
+from django.utils.translation import gettext_lazy
 
 
 class SightingForm(forms.ModelForm):
@@ -49,14 +51,14 @@ class SignupUserForm(forms.Form):
         """Comprueba que no exista un username igual en la db"""
         username = self.cleaned_data['username']
         if User.objects.filter(username=username):
-            raise forms.ValidationError('Nombre de usuario ya registrado.')
+            raise forms.ValidationError(gettext_lazy('Nombre de usuario ya registrado.'))
         return username
 
     def clean_email(self):
         """Comprueba que no exista un email igual en la db"""
         email = self.cleaned_data['email']
         if User.objects.filter(email=email):
-            raise forms.ValidationError('Ya existe un email igual en la db.')
+            raise forms.ValidationError(gettext_lazy('Ya existe un email igual en la db.'))
         return email
 
     def clean_password2(self):
@@ -64,7 +66,7 @@ class SignupUserForm(forms.Form):
         password = self.cleaned_data['password']
         password2 = self.cleaned_data['password2']
         if password != password2:
-            raise forms.ValidationError('Las contraseñas no coinciden.')
+            raise forms.ValidationError(gettext_lazy('Las contraseñas no coinciden.'))
         return password2
 
 
@@ -90,7 +92,7 @@ class UserProfileForm(forms.Form):
             # Si lo ha cambiado, comprobar que no exista en la db.
             exists = User.objects.filter(email=email)
             if exists:
-                raise forms.ValidationError('Ya existe un usuario con este email.')
+                raise forms.ValidationError(gettext_lazy('Ya existe un usuario con este email.'))
         return email
 
     def clean_username(self):
@@ -101,24 +103,24 @@ class UserProfileForm(forms.Form):
             # Si lo ha cambiado, comprobar que no exista en la db.
             exists = User.objects.filter(username=username)
             if exists:
-                raise forms.ValidationError('Ya existe un usuario con este nombre.')
+                raise forms.ValidationError(gettext_lazy('Ya existe un usuario con este nombre.'))
         return username
 
 
 class PasswordProfileForm(forms.Form):
 
     actual_password = forms.CharField(
-        label='Contraseña actual',
+        label=gettext_lazy('Contraseña actual'),
         min_length=4,
         widget=forms.PasswordInput(attrs={'class': 'form-control'}))
 
     password = forms.CharField(
-        label='Nueva contraseña',
+        label=gettext_lazy('Nueva contraseña'),
         min_length=4,
         widget=forms.PasswordInput(attrs={'class': 'form-control'}))
 
     password2 = forms.CharField(
-        label='Repetir contraseña',
+        label=gettext_lazy('Repetir contraseña'),
         min_length=4,
         widget=forms.PasswordInput(attrs={'class': 'form-control'}))
 
@@ -131,7 +133,7 @@ class PasswordProfileForm(forms.Form):
         """Comprueba que actual_password sean la correcta."""
         actual_password = self.cleaned_data['actual_password']
         if not self.user.check_password(actual_password):
-            raise forms.ValidationError('Contraseña inválida')
+            raise forms.ValidationError(gettext_lazy('Contraseña inválida'))
         return actual_password
 
     def clean_password2(self):
@@ -139,7 +141,7 @@ class PasswordProfileForm(forms.Form):
         password = self.cleaned_data['password']
         password2 = self.cleaned_data['password2']
         if password != password2:
-            raise forms.ValidationError('Las contraseñas no coinciden.')
+            raise forms.ValidationError(gettext_lazy('Las contraseñas no coinciden.'))
         return password2
 
 

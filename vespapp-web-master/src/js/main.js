@@ -1,8 +1,10 @@
+{% load i18n %}
+
 (function(w, $) {
   // Carousel
   jQuery(function($) {
     $('.carousel').carousel({
-      interval: 5000,
+      interval: 6500,
       keyboard: true
     });
   });
@@ -13,9 +15,9 @@ function errorForm(msg){
       title: "Ups!",
       text: msg,
       type: "error",
-      timer: 4000,
+      timer: 10000,
       animation: "pop",
-      confirmButtonText: "Vale"
+      confirmButtonText: gettext("Vale")
   });
 }
 
@@ -24,43 +26,43 @@ function successProfile(msg){
       title: "Yuju!",
       text: msg,
       type: "success",
-      timer: 4000,
+      timer: 10000,
       animation: "pop",
-      confirmButtonText: "Vale"
+      confirmButtonText: gettext("Vale")
   });
 }
 
 function successLogOut(msg){
   swal({
-      title: "¡Te echaremos de menos!",
+      title: gettext("¡Te echaremos de menos!"),
       text: msg,
       type: "success",
-      timer: 4000,
+      timer: 10000,
       animation: "pop",
-      confirmButtonText: "Vale"
+      confirmButtonText: gettext("Vale")
   });
 }
 
 function successUpLogged(){
   swal({
-      title: "¡Gracias por enviar tu avispamiento!",
-      text: "Muchas gracias por tu colaboración ;)",
+      title: gettext("¡Gracias por enviar tu avispamiento!"),
+      text: gettext("Muchas gracias por tu colaboración ;)"),
       type: "success",
-      timer: 4000,
+      timer: 10000,
       animation: "pop",
-      confirmButtonText: "Vale"
+      confirmButtonText: gettext("Vale")
   });
 }
 
 function successUp(msg){   
   swal({
-    title: "¡Gracias por enviar tu avispamiento!",
+    title: gettext("¡Gracias por enviar tu avispamiento!\n\nPor favor, regístrate para que podamos contactar contigo en caso de emergencia."),
     text: msg,
     type: "info",
     showCancelButton: true,
-    cancelButtonText: "No, gracias",
+    cancelButtonText: gettext("No, gracias."),
     confirmButtonColor: "#55dd57",
-    confirmButtonText: "¡Registrarme! o Login",
+    confirmButtonText: gettext("¡Registrarme! o Login"),
     closeOnConfirm: false,
     closeOnCancel: false,
   },
@@ -69,11 +71,11 @@ function successUp(msg){
       window.location = '/login/';
     }else {  
       swal({
-        title: "Puedes registrarte en cualquier otro momento",
-        text: "Muchas gracias por tu colaboración ;)",
+        title: gettext("Puedes registrarte en cualquier otro momento"),
+        text: gettext("Muchas gracias por tu colaboración ;)"),
         type: "success",
-        timer: 4000,
-        confirmButtonText: "Vale",
+        timer: 10000,
+        confirmButtonText: gettext("Vale"),
       },
       function(isConfirm){
         if (isConfirm) {
@@ -87,11 +89,11 @@ function successUp(msg){
 
 function successSendMessage(msg){
   swal({
-      title: "¡Gracias por contactar con nosotros!",
+      title: gettext("¡Gracias por contactar con nosotros!"),
       text: msg,
       type: "success",
-      timer: 4000,
+      timer: 10000,
       animation: "pop",
-      confirmButtonText: "Vale"
+      confirmButtonText: gettext("Vale")
   });
 }

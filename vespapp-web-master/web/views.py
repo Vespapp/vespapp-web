@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*- 
 from django.shortcuts import render
 from django.shortcuts import render_to_response 
 from django.shortcuts import redirect
@@ -14,6 +15,7 @@ from django.core.context_processors import csrf
 from django.core.mail import send_mail
 from django.conf import settings
 from django.db.models import Q
+from django.utils.translation import gettext
 
 from django.contrib.auth.models import User
 from django.contrib.auth import authenticate, login, logout
@@ -42,12 +44,15 @@ from web.forms import PhotoProfileForm
 from web.forms import ContactForm
 
 
+import pdb;
+
+
 
 class HomePageView(TemplateView):
     template_name = "home.html"
 
     def get_context_data(self, *args, **kwargs):
-        context = super().get_context_data(*args, **kwargs)
+        context = super(HomePageView, self).get_context_data(*args, **kwargs)
         context['new_sighting'] = reverse('new_sighting')
         return context
 
@@ -104,8 +109,9 @@ class SightingsView(ListView):
 
     def get_queryset(self, **kwargs):
         if self.request.user.is_authenticated():
+	    #expert_comments = UserComment.objects.get(sighting=self.request.UserComment.sighting)
             user = User.objects.get(username=self.request.user.username)
-            return Sighting.objects.filter(Q(public=True) | Q(user=user))
+            return Sighting.objects.filter(Q(public=True) | Q(user=user)) #| Q(id = sighting))
         else:
             return Sighting.objects.filter(public=True)
 
@@ -145,7 +151,7 @@ class SightQuestionView(TemplateView):
 
     @csrf_exempt
     def sight_question(request):
-
+        
         if "session_id" in request.session:
                     
             sighting_id = request.session['session_id']
@@ -154,14 +160,16 @@ class SightQuestionView(TemplateView):
             request.session['question_order'] = question_order
 
             s = Sighting.objects.get(id=sighting_id)   
-
+            
             if request.POST:
                 form_question = QuestionForm(request.POST)   
 
+                
                 if form_question.is_valid():
                     if request.FILES == None:
                         raise Http404("No objects uploaded")    
 
+                    
                     myArray = request.POST.pop('value')
 
                     for x in myArray:
@@ -175,7 +183,7 @@ class SightQuestionView(TemplateView):
                         url = reverse('sight_question')
                         return HttpResponseRedirect(url)
                     else:
-                        message='Regístrate para conocer el estado de tu avispamiento, enviar comentarios y mucho más'    
+                        message= gettext('Regístrate para conocer el estado de tu avispamiento, enviar comentarios y mucho más')    
                         return render(request, 'home.html', {'message': message})      
                 else:
                     #if click on next button but not select nothing
@@ -195,10 +203,10 @@ class SightQuestionView(TemplateView):
                     }
                     return render_to_response('sight_question.html', context=context, context_instance=RequestContext(request))
                 else:
-                    message='Regístrate para conocer el estado de tu avispamiento, enviar comentarios y mucho más'    
+                    message= gettext('Además, si te registras, podrás conocer el estado de tu avispamiento, enviar comentarios y mucho más.')    
                     return render(request, 'home.html', {'message': message})
         else:
-            raise Http404
+            raise Http404(gettext("No hay sesión iniciada"))
 
 
 class UserSignupView(TemplateView):
@@ -290,7 +298,7 @@ class UserLoginView(TemplateView):
                     return redirect(reverse('home'))
                 else:
                     pass
-            message = 'Nombre de usuario o contraseña no válido'
+            message = gettext('Nombre de usuario o contraseña no válido')
         return render(request, 'login.html', {'message': message})
 
 
@@ -298,7 +306,7 @@ class UserLogoutView(TemplateView):
 
     def logout_view(request):
         logout(request)
-        message='Has cerrado sesión. ¡Vuelve pronto!'    
+        message= gettext('Has cerrado sesión. ¡Vuelve pronto!')
         return render(request, 'home.html', {'message_logout': message})
 
 
@@ -406,7 +414,7 @@ class ContactView(TemplateView):
                     '\n\nMensaje: ' + message, 
                     settings.EMAIL_HOST_USER, [settings.EMAIL_HOST_USER])
 
-                message='Te contestaremos lo antes posible'    
+                message= gettext('Te contestaremos lo antes posible')
 
                 context = {'form': form, 'mensaje': message}
                 return render(request, 'contact.html', context)
@@ -424,3 +432,6 @@ class AboutView(TemplateView):
 
 class TeamView(TemplateView):
     template_name = "team.html"
+    
+class GameView(TemplateView):
+    template_name = "game.html"

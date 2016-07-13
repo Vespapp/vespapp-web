@@ -12,6 +12,7 @@ from web.views import InfoView
 from web.views import ContactView
 from web.views import AboutView
 from web.views import TeamView
+from web.views import GameView
 
 
 urlpatterns = [
@@ -31,4 +32,5 @@ urlpatterns = [
     url(r'^contact/$', ContactView.contact_view, name='contact'),
     url(r'^about/$', AboutView.as_view(), name='about'),
     url(r'^team/$', TeamView.as_view(), name='team'),
+    url(r'^game/$', GameView.as_view(), name='game'),
 ]

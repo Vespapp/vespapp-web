@@ -1,7 +1,8 @@
 {% extends "layout.html" %}
+{% load i18n %}
 {% load staticfiles %}
-{% block title %}Acerca de{% endblock %}
-{% block description %}Contacto por correo electrónico{% endblock %}
+{% block title %}{% trans "Acerca de" %}{% endblock %}
+{% block description %}{% trans "Contacto por correo electrónico" %}{% endblock %}
 {% block body %}
 
 <section id="sectionContact"> 
@@ -9,22 +10,22 @@
   <form id="formContact" method="post" action="" enctype="multipart/form-data">   
       {% csrf_token %}
       <div class="field name-box" >
-          <input type="text" id="nameContact" placeholder="¿Cuál es tu nombre?" name="nameContact"/>
-          <label for="nameContact">Nombre</label>
+          <input type="text" id="nameContact" placeholder={% blocktrans %}"¿Cuál es tu nombre?"{%endblocktrans%} name="nameContact"/>
+          <label for="nameContact">{% trans "Nombre" %}</label>
       </div>
       <div class="field email-box">
-          <input type="text" id="emailContact" placeholder="ejemplo@email.com" name="emailContact"/>
-          <label for="emailContact">Correo</label>
+          <input type="text" id="emailContact" placeholder={% trans "ejemplo@email.com" %} name="emailContact"/>
+          <label for="emailContact">{% trans "Correo" %}</label>
       </div>
       <div class="field phone-box">
-          <input type="text" id="phoneContact" placeholder="(Opcional)" name="phoneContact"/>
-          <label for="phoneContact">Móvil</label>
+          <input type="text" id="phoneContact" placeholder={% trans "(Opcional)" %} name="phoneContact"/>
+          <label for="phoneContact">{% trans "Móvil" %}</label>
       </div>
       <div class="field msg-box">
-          <textarea id="messageContact" rows="4" placeholder="Escribe aquí tu mensaje..." name="messageContact"/></textarea>
-          <label for="messageContact">Mensaje</label>
+          <textarea id="messageContact" rows="4" placeholder= {% blocktrans%} "Escribe aquí tu mensaje..." {%endblocktrans%} name="messageContact"/></textarea>
+          <label for="messageContact">{% trans "Mensaje" %}</label>
       </div>
-      <input class="button" type="submit" value="Enviar" />
+      <input class="button" type="submit" value={% trans "Enviar" %} />
   </form>
 </section>
 
@@ -34,13 +35,13 @@
   {% endif %}
   var error = "";
   {% if form.nameContact.errors %}
-    error = 'Nombre : ' + '{{form.nameContact.errors|striptags}}';
+    error = {% trans 'Nombre : '%} + '{{form.nameContact.errors|striptags}}';
   {% endif %}
   {% if form.emailContact.errors %}
-    error = error + '\nCorreo electrónico: ' + '{{form.emailContact.errors|striptags}}';
+    error = error + {% trans '\nCorreo electrónico: '%} + '{{form.emailContact.errors|striptags}}';
   {% endif %}
   {% if form.messageContact.errors %}
-    error = error + '\nMensaje: ' + '{{form.messageContact.errors|striptags}}';
+    error = error + {% trans '\nMensaje: '%} + '{{form.messageContact.errors|striptags}}';
   {% endif %}
   if(error){
     errorForm(error);

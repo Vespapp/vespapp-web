@@ -1,0 +1,93 @@
+{% load staticfiles %}
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8"/>
+	<style>
+		body {
+			margin: 0;
+			padding: 0;
+			background-color: #FFFFFF;
+            overflow: hidden;
+		}
+        #canvasArea {
+            margin-left: auto;
+            margin-right: auto;
+            overflow: hidden;
+        }
+
+        
+	</style>
+    <!-- Libs and GDJS core files : -->
+		<script src="{% static "game/libs/pixi.js" %}></script>
+	<script src="{% static "game/libs/jshashtable.js %}"></script>
+	<script src="{% static "game/libs/howler.min.js" %}></script>
+	<script src="{% static "game/gd.js"%}></script>
+	<script src="{% static "game/libs/hshg.js"%}></script>
+	<script src="{% static "game/commontools.js"%}></script>
+	<script src="{% static "game/inputmanager.js"%}></script>
+	<script src="{% static "game/timemanager.js"%}></script>
+	<script src="{% static "game/runtimeobject.js"%}></script>
+	<script src="{% static "game/runtimescene.js"%}></script>
+	<script src="{% static "game/scenestack.js"%}></script>
+	<script src="{% static "game/polygon.js"%}></script>
+	<script src="{% static "game/force.js"%}></script>
+	<script src="{% static "game/layer.js"%}></script>
+	<script src="{% static "game/timer.js"% }></script>
+	<script src="{% static "game/imagemanager.js" %}></script>
+	<script src="{% static "game/runtimegame.js" %}></script>
+	<script src="{% static "game/variable.js" %}></script>
+	<script src="{% static "game/variablescontainer.js" %}></script>
+	<script src="{% static "game/eventscontext.js"%}></script>
+	<script src="{% static "game/runtimebehavior.js"%}></script>
+	<script src="{% static "game/spriteruntimeobject.js"%}></script>
+	<script src="{% static "game/soundmanager.js"%}></script>
+	<script src="{% static "game/runtimescenetools.js"%}></script>
+	<script src="{% static "game/inputtools.js"%}></script>
+	<script src="{% static "game/objecttools.js"%}></script>
+	<script src="{% static "game/cameratools.js"%}></script>
+	<script src="{% static "game/soundtools.js"%}></script>
+	<script src="{% static "game/storagetools.js"%}></script>
+	<script src="{% static "game/stringtools.js"%}></script>
+	<script src="{% static "game/windowtools.js"%}></script>
+	<script src="{% static "game/Extensions/TextObject/textruntimeobject.js"%}></script>
+	<script src="{% static "game/code0.js"%}></script>
+	<script src="{% static "game/code1.js"%}></script>
+	<script src="{% static "game/code2.js"%}></script>
+	<script src="{% static "game/code3.js"%}></script>
+	<script src="{% static "game/data.js"%}></script>
+
+
+</head>
+<body>
+    <div id="canvasArea"></div>
+
+    
+	<script>
+
+    (function() {
+        //Initialization
+        
+        gdjs.registerObjects();
+        gdjs.registerBehaviors();
+        gdjs.registerGlobalCallbacks();
+
+        var game = new gdjs.RuntimeGame(gdjs.projectData, {});
+
+        //Create a renderer
+        var canvasArea = document.getElementById("canvasArea");
+        game.createStandardCanvas(canvasArea);
+
+        //Bind keyboards/mouse/touch events
+        game.bindStandardEvents(window, document);
+
+        //Load all assets and start the game
+        game.loadAllAssets(onAssetsLoaded);
+        function onAssetsLoaded() {
+            game.startStandardGameLoop();
+        }
+    })();
+
+	</script>
+</body>
+</html>

@@ -1,3 +1,4 @@
+# -*- coding: utf-8 -*- 
 from django.contrib import admin
 
 from api.models import *
@@ -18,14 +19,14 @@ class SightingAdmin(admin.ModelAdmin):
 
 class QuestionAdmin(admin.ModelAdmin):
     list_display = ('title', 'is_active')
-    fieldsets = [('Pregunta', {'fields': ['title', ('question_type', 'glosario_preguntas'), ('sighting_type', 'glosario_tipo_pregunta'), 'order','is_active']}),]
+    fieldsets = [('Pregunta', {'fields': [('title', 'title_en'), ('title_ca', 'title_de'), ('question_type', 'glosario_preguntas'), ('sighting_type', 'glosario_tipo_pregunta'), 'order','is_active']}),]
     readonly_fields = ['glosario_preguntas','glosario_tipo_pregunta',]
     list_filter = ('question_type',)
 
 
 class AnswerAdmin(admin.ModelAdmin):
     list_display = ('question', 'value', 'created_at')
-    fieldsets = [('Respuesta', {'fields': ['created_at', 'question', 'value']}),]
+    fieldsets = [('Respuesta', {'fields': ['created_at', 'question', ('value', 'value_en'), ('value_ca','value_de')]}),]
     readonly_fields = ['created_at',]
     list_filter = ('question',)
 
@@ -38,8 +39,16 @@ class UserProfileAdmin(admin.ModelAdmin):
 
 class SightingInfoAdmin(admin.ModelAdmin):
     list_display = ('title',)
-    fieldsets = [('INFO', {'fields': ['title', 'quickBody', 'body', ('foto_portada', 'imageCover'), ('foto_info', 'image')]}),]
-    readonly_fields = ['foto_portada', 'foto_info']
+ 
+    fieldsets = [('Título', {'fields': [('title', 'title_en'), ('title_ca', 'title_de')]}),
+    ('Breve explicación', {'fields': ['quickBody', 'quickBody_ca', 'quickBody_en','quickBody_de']}),
+    ('Explicación más detallada', {'fields':['body', 'body_ca', 'body_en', 'body_de']}),
+    ('Foto',{'fields':[('foto_portada', 'imageCover'), ('foto_portada_ca', 'imageCover_ca'),
+                       ('foto_portada_en', 'imageCover_en'), ('foto_portada_de', 'imageCover_de'),
+                       ('foto_info', 'image'), ('foto_info_ca', 'image_ca'),
+                       ('foto_info_en', 'image_en'), ('foto_info_de', 'image_de')]}),]
+ 
+    readonly_fields = ['foto_portada', 'foto_info', 'foto_portada_ca', 'foto_info_ca', 'foto_portada_en', 'foto_info_en', 'foto_portada_de', 'foto_info_de']
 
 
 class PictureAdmin(admin.ModelAdmin):

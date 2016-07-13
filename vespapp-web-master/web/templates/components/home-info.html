@@ -1,27 +1,25 @@
+{% load i18n %}
 <div class="col-xs-12 home-info">
   <div class="row">
     <div class="col-lg-12">
-      <h1 class="info-title text-center"><i class="fa fa-server" aria-hidden="true"></i>Pasos a seguir</h1>
+      <h1 class="info-title text-center"><i class="fa fa-server" aria-hidden="true"></i>{% trans "Pasos a seguir" %}</h1>
     </div>
     <div class="col-lg-4 text-justify">
-      <h2 class="text-center">1) Haz una foto</h2>
+      <h2 class="text-center">{% trans "1) Haz una foto" %}</h2>
       <p>
-        Envía una foto de una avispa o un nido.
-        Puedes hacerlo por web, con la app móvil e incluso desde twitter.
+        {% blocktrans %}Envía una foto de una avispa o un nido. Puedes hacerlo por web, con la app móvil e incluso desde Twitter.{%endblocktrans %}
       </p>
     </div>
     <div class="col-lg-4 text-justify">
-      <h2 class="text-center">2) Envíanos los datos</h2>
+      <h2 class="text-center">{% trans "2) Envíanos los datos" %}</h2>
       <p>
-        Dinos dónde lo has encontrado, qué día y toda la información que puedas
-        aportar para ayudar a su localización.
+        {% blocktrans %}Dinos dónde lo has encontrado, qué día y toda la información que puedas aportar para ayudar a su localización.{%endblocktrans%}
       </p>
     </div>
     <div class="col-lg-4 text-justify">
-      <h2 class="text-center">3) Recibe comentarios</h2>
+      <h2 class="text-center">{% trans "3) Recibe comentarios" %}</h2>
       <p>
-        Si lo deseas, puedes registrarte para recibir información sobre el seguimiento de
-        tu avistamiento y aportar información complementaria si nuestros expertos así lo necesitan.
+      {% blocktrans %}Si lo deseas, puedes registrarte para recibir información sobre el seguimiento de tu avistamiento y aportar información complementaria si nuestros expertos así lo necesitan.{%endblocktrans%}
       </p>
     </div>
   </div>

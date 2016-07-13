@@ -1,0 +1,1237 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-07-13 13:27+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: vespapp/settings.py:88
+msgid "Spanish"
+msgstr "Castellà"
+
+#: vespapp/settings.py:89
+msgid "Catalan"
+msgstr "Català"
+
+#: web/forms.py:54
+msgid "Nombre de usuario ya registrado."
+msgstr "Nom d'usuari ja registrat."
+
+#: web/forms.py:61
+msgid "Ya existe un email igual en la db."
+msgstr "Ja existeix un email igual a base de dades."
+
+#: web/forms.py:69 web/forms.py:144
+msgid "Las contraseñas no coinciden."
+msgstr "Les contrasenyes no coincideixen."
+
+#: web/forms.py:95
+#, fuzzy
+#| msgid "Ya existe un email igual en la db."
+msgid "Ya existe un usuario con este email."
+msgstr "Ja existeix un email igual a base de dades."
+
+#: web/forms.py:106
+msgid "Ya existe un usuario con este nombre."
+msgstr ""
+
+#: web/forms.py:113 web/templates/user_profile.html:50
+msgid "Contraseña actual"
+msgstr "Contrasenya actual"
+
+#: web/forms.py:118 web/templates/user_profile.html:52
+msgid "Nueva contraseña"
+msgstr "Nova contrasenya"
+
+#: web/forms.py:123
+#, fuzzy
+#| msgid "Repita la contraseña"
+msgid "Repetir contraseña"
+msgstr "Repeteix la contrasenya"
+
+#: web/forms.py:136
+#, fuzzy
+#| msgid "Contraseña"
+msgid "Contraseña inválida"
+msgstr "Contrasenya"
+
+#: web/templates/404.html:4 web/templates/sight_question.html:5
+msgid "Preguntas"
+msgstr "Preguntes"
+
+#: web/templates/404.html:5 web/templates/sight_question.html:6
+msgid "Preguntas sobre el avistamiento"
+msgstr "Preguntes sobre la detecció de la vespa"
+
+#: web/templates/404.html:12
+msgid "¡Shhh! Esta página está durmiendo."
+msgstr "Shhh! Aquesta pàgina està dormint."
+
+#: web/templates/404.html:13
+msgid "O puede que el enlace no funcione."
+msgstr "O pot ser que l'enllaç no funcioni."
+
+#: web/templates/404.html:14
+msgid "O que hayamos retirado la página. Una de estas será."
+msgstr "O que l'haguem retirat de la pàgina."
+
+#: web/templates/404.html:18 web/templates/sightings.html:170
+msgid "Puedes volver a Inicio haciendo clic"
+msgstr "Pots tornar a Inici fent clic"
+
+#: web/templates/404.html:18 web/templates/sighting.html:450
+#: web/templates/sightings.html:166 web/templates/sightings.html:170
+msgid "aquí"
+msgstr "aqui"
+
+#: web/templates/about.html:5 web/templates/components/footer.html:16
+#: web/templates/contact.html:4
+msgid "Acerca de"
+msgstr "Quant a"
+
+#: web/templates/about.html:7 web/templates/team.html:7
+msgid "Preguntas más frecuentes"
+msgstr "Preguntes més freqüents"
+
+#: web/templates/about.html:16
+msgid "Vespapp: Ciencia ciudadana para la detección de la avispa asiática"
+msgstr "Vespapp: Ciència ciutadana per a la detecció de la vespa asiàtica"
+
+#: web/templates/about.html:28
+msgid "Octubre de 2015"
+msgstr "Octubre de 2015"
+
+#: web/templates/about.html:29
+msgid "Primera detección de avispa asiática en Mallorca"
+msgstr "Primera detecció de la vespa asiàtica a Mallorca"
+
+#: web/templates/about.html:32
+msgid ""
+"El Laboratorio de Zoología del Departamento de Biología de la Universitat de "
+"les Illes Balears confirmó la detección por primera vez de esta avispa en "
+"Mallorca, gracias a la colaboración de los apicultores."
+msgstr ""
+"El Laboratori de Zoologia del Departament de Biologia de la Universitat de "
+"les Illes Balears va confirmar la detecció per primera vegada d'aquesta "
+"vespa a Mallorca, gràcies a la col·laboració dels apicultors."
+
+#: web/templates/about.html:33 web/templates/about.html:48
+msgid "Más info"
+msgstr "Més info"
+
+#: web/templates/about.html:43
+msgid "Octubre - Noviembre de 2015"
+msgstr "Octubre - Novembre de 2015"
+
+#: web/templates/about.html:44
+msgid "Localización y retirada del nido"
+msgstr "Localització i retirada del niu"
+
+#: web/templates/about.html:47
+msgid ""
+"El Servei de Protecció d’Espècies de la Conselleria de Medi Ambient, "
+"Agricultura i Pesca organiza operativos para la detección del nido de la "
+"avispa asiática. El Equipo de control de fauna del COFIB logra retirar con "
+"éxito el único nido encontrado en la zona de la Vall de Sóller."
+msgstr ""
+"El Servei de Protecció d'Espècies de la Conselleria de Medi Ambient, "
+"Agricultura i Pesca organitza operatius per a la detecció del niu de la "
+"vespa asiàtica. L'equip de control de fauna del COFIB aconsegueix retirar "
+"amb èxit l'únic niu trobat a la zona de la vall de Sóller."
+
+#: web/templates/about.html:58
+msgid "Marzo de 2016"
+msgstr "Març de 2016"
+
+#: web/templates/about.html:59
+msgid "Maratón informático para diseñar una app contra la avispa asiática"
+msgstr "Marató informàtica per dissenyar una app contra la vespa asiàtica"
+
+#: web/templates/about.html:62
+msgid ""
+"La UIB (Laboratorio de Zoología, Escuela Politécnica Superior y "
+"Vicerrectorado de Innovación y Transferencia) y Habitissimo organizan un "
+"maratón informático para diseñar una app contra la avispa asiática. Primera "
+"fase de la creación de Vespapp."
+msgstr ""
+"La UIB (Laboratori de Zoologia, Escola Politècnica Superior i Vicerectorat "
+"d'Innovació i Transferència) i Habitissimo organitzen una marató informàtica "
+"per dissenyar una app contra la vespa asiàtica. Primera fase de la creació "
+"de Vespapp."
+
+#: web/templates/about.html:73
+msgid "Abril – Mayo de 2016"
+msgstr "Abril - Maig de 2016"
+
+#: web/templates/about.html:74
+msgid "Segunda fase de la creación de Vespapp"
+msgstr "Segona fase de la creació de Vespapp"
+
+#: web/templates/about.html:77
+msgid ""
+"El equipo investigador del proyecto de ciencia ciudadana Vespapp "
+"(Laboratorio de Zoología, Informática, Sistemas de Información Geográfica "
+"(SIG) y Comunicación, participación y redes sociales) ha desarrollado la "
+"segunda fase de la aplicación con la colaboración de tres estudiantes de "
+"ingeniería informática, becados por la Cátedra Santander UIB de Innovación y "
+"Transferencia del Conocimiento (CSUIT)."
+msgstr ""
+"L'equip investigador del projecte de ciència ciutadana Vespapp (Laboratori "
+"de Zoologia, àrea d’Informàtica, Servei de Sistemes d'Informació Geogràfica "
+"(SSIG) i àrea de comunicació, participació i xarxes socials) ha desenvolupat "
+"la segona fase de l'aplicació amb la col·laboració de tres estudiants "
+"d'Enginyeria Informàtica becats per la Càtedra Santander-UIB d'Innovació i "
+"Transferència del Coneixement (CSUIT)."
+
+#: web/templates/about.html:83
+msgid "¡Sé parte"
+msgstr "Sigues part"
+
+#: web/templates/about.html:84
+msgid "de nuestra"
+msgstr "de la nostra"
+
+#: web/templates/about.html:85
+msgid "historia!"
+msgstr "història!"
+
+#: web/templates/admin/404.html:4 web/templates/admin/404.html:8
+msgid "Page not found"
+msgstr ""
+
+#: web/templates/admin/404.html:10
+msgid "We're sorry, but the requested page could not be found."
+msgstr ""
+
+#: web/templates/admin/500.html:6 web/templates/admin/app_index.html:9
+#: web/templates/admin/auth/user/change_password.html:13
+#: web/templates/admin/base.html:56 web/templates/admin/change_form.html:18
+#: web/templates/admin/change_list.html:31
+#: web/templates/admin/delete_confirmation.html:13
+#: web/templates/admin/delete_selected_confirmation.html:13
+#: web/templates/admin/invalid_setup.html:6
+#: web/templates/admin/object_history.html:6
+msgid "Home"
+msgstr ""
+
+#: web/templates/admin/500.html:7
+msgid "Server error"
+msgstr "Error del servidor"
+
+#: web/templates/admin/500.html:11
+msgid "Server error (500)"
+msgstr ""
+
+#: web/templates/admin/500.html:14
+msgid "Server Error <em>(500)</em>"
+msgstr ""
+
+#: web/templates/admin/500.html:15
+msgid ""
+"There's been an error. It's been reported to the site administrators via "
+"email and should be fixed shortly. Thanks for your patience."
+msgstr ""
+
+#: web/templates/admin/actions.html:4
+msgid "Run the selected action"
+msgstr ""
+
+#: web/templates/admin/actions.html:4
+msgid "Go"
+msgstr ""
+
+#: web/templates/admin/actions.html:10
+msgid "Click here to select the objects across all pages"
+msgstr ""
+
+#: web/templates/admin/actions.html:10
+#, python-format
+msgid "Select all %(total_count)s %(module_name)s"
+msgstr ""
+
+#: web/templates/admin/actions.html:12
+msgid "Clear selection"
+msgstr ""
+
+#: web/templates/admin/auth/user/add_form.html:6
+msgid ""
+"First, enter a username and password. Then, you'll be able to edit more user "
+"options."
+msgstr ""
+
+#: web/templates/admin/auth/user/add_form.html:8
+msgid "Enter a username and password."
+msgstr ""
+
+#: web/templates/admin/auth/user/change_password.html:17
+#: web/templates/admin/auth/user/change_password.html:54
+#: web/templates/admin/base.html:44
+msgid "Change password"
+msgstr ""
+
+#: web/templates/admin/auth/user/change_password.html:27
+#: web/templates/admin/change_form.html:47
+#: web/templates/admin/change_list.html:58 web/templates/admin/login.html:21
+msgid "Please correct the error below."
+msgstr ""
+
+#: web/templates/admin/auth/user/change_password.html:27
+#: web/templates/admin/change_form.html:47
+#: web/templates/admin/change_list.html:58 web/templates/admin/login.html:21
+msgid "Please correct the errors below."
+msgstr ""
+
+#: web/templates/admin/auth/user/change_password.html:31
+#, python-format
+msgid "Enter a new password for the user <strong>%(username)s</strong>."
+msgstr ""
+
+#: web/templates/admin/base.html:30
+msgid "Welcome,"
+msgstr ""
+
+#: web/templates/admin/base.html:35
+msgid "View site"
+msgstr ""
+
+#: web/templates/admin/base.html:40
+msgid "Documentation"
+msgstr ""
+
+#: web/templates/admin/base.html:46
+msgid "Log out"
+msgstr ""
+
+#: web/templates/admin/change_form.html:21
+#: web/templates/admin/change_list.html:49
+#, python-format
+msgid "Add %(name)s"
+msgstr ""
+
+#: web/templates/admin/change_form.html:33
+#: web/templates/admin/object_history.html:10
+msgid "History"
+msgstr ""
+
+#: web/templates/admin/change_form.html:35
+#: web/templates/admin/edit_inline/stacked.html:14
+#: web/templates/admin/edit_inline/tabular.html:36
+msgid "View on site"
+msgstr ""
+
+#: web/templates/admin/change_list.html:69
+msgid "Filter"
+msgstr ""
+
+#: web/templates/admin/change_list_results.html:17
+msgid "Remove from sorting"
+msgstr ""
+
+#: web/templates/admin/change_list_results.html:18
+#, python-format
+msgid "Sorting priority: %(priority_number)s"
+msgstr ""
+
+#: web/templates/admin/change_list_results.html:19
+msgid "Toggle sorting"
+msgstr ""
+
+#: web/templates/admin/delete_confirmation.html:17
+#: web/templates/admin/related_widget_wrapper.html:23
+#: web/templates/admin/submit_line.html:6
+msgid "Delete"
+msgstr ""
+
+#: web/templates/admin/delete_confirmation.html:23
+#, python-format
+msgid ""
+"Deleting the %(object_name)s '%(escaped_object)s' would result in deleting "
+"related objects, but your account doesn't have permission to delete the "
+"following types of objects:"
+msgstr ""
+
+#: web/templates/admin/delete_confirmation.html:30
+#, python-format
+msgid ""
+"Deleting the %(object_name)s '%(escaped_object)s' would require deleting the "
+"following protected related objects:"
+msgstr ""
+
+#: web/templates/admin/delete_confirmation.html:37
+#, python-format
+msgid ""
+"Are you sure you want to delete the %(object_name)s \"%(escaped_object)s\"? "
+"All of the following related items will be deleted:"
+msgstr ""
+
+#: web/templates/admin/delete_confirmation.html:39
+#: web/templates/admin/delete_selected_confirmation.html:38
+msgid "Objects"
+msgstr ""
+
+#: web/templates/admin/delete_confirmation.html:46
+#: web/templates/admin/delete_selected_confirmation.html:49
+msgid "Yes, I'm sure"
+msgstr ""
+
+#: web/templates/admin/delete_confirmation.html:47
+#: web/templates/admin/delete_selected_confirmation.html:50
+msgid "No, take me back"
+msgstr ""
+
+#: web/templates/admin/delete_selected_confirmation.html:16
+msgid "Delete multiple objects"
+msgstr ""
+
+#: web/templates/admin/delete_selected_confirmation.html:22
+#, python-format
+msgid ""
+"Deleting the selected %(objects_name)s would result in deleting related "
+"objects, but your account doesn't have permission to delete the following "
+"types of objects:"
+msgstr ""
+
+#: web/templates/admin/delete_selected_confirmation.html:29
+#, python-format
+msgid ""
+"Deleting the selected %(objects_name)s would require deleting the following "
+"protected related objects:"
+msgstr ""
+
+#: web/templates/admin/delete_selected_confirmation.html:36
+#, python-format
+msgid ""
+"Are you sure you want to delete the selected %(objects_name)s? All of the "
+"following objects and their related items will be deleted:"
+msgstr ""
+
+#: web/templates/admin/edit_inline/stacked.html:12
+#: web/templates/admin/edit_inline/tabular.html:34
+#: web/templates/admin/index.html:37
+#: web/templates/admin/related_widget_wrapper.html:9
+msgid "Change"
+msgstr ""
+
+#: web/templates/admin/edit_inline/tabular.html:20
+msgid "Delete?"
+msgstr ""
+
+#: web/templates/admin/filter.html:2
+#, python-format
+msgid " By %(filter_title)s "
+msgstr ""
+
+#: web/templates/admin/includes/object_delete_summary.html:2
+msgid "Summary"
+msgstr ""
+
+#: web/templates/admin/index.html:20
+#, python-format
+msgid "Models in the %(name)s application"
+msgstr ""
+
+#: web/templates/admin/index.html:31
+#: web/templates/admin/related_widget_wrapper.html:16
+msgid "Add"
+msgstr ""
+
+#: web/templates/admin/index.html:47
+msgid "You don't have permission to edit anything."
+msgstr ""
+
+#: web/templates/admin/index.html:55
+msgid "Recent actions"
+msgstr ""
+
+#: web/templates/admin/index.html:56
+msgid "My actions"
+msgstr ""
+
+#: web/templates/admin/index.html:60
+msgid "None available"
+msgstr ""
+
+#: web/templates/admin/index.html:74
+msgid "Unknown content"
+msgstr ""
+
+#: web/templates/admin/invalid_setup.html:12
+msgid ""
+"Something's wrong with your database installation. Make sure the appropriate "
+"database tables have been created, and make sure the database is readable by "
+"the appropriate user."
+msgstr ""
+
+#: web/templates/admin/login.html:37
+#, python-format
+msgid ""
+"You are authenticated as %(username)s, but are not authorized to access this "
+"page. Would you like to login to a different account?"
+msgstr ""
+
+#: web/templates/admin/login.html:57
+msgid "Forgotten your password or username?"
+msgstr ""
+
+#: web/templates/admin/login.html:61
+msgid "Log in"
+msgstr ""
+
+#: web/templates/admin/object_history.html:22
+msgid "Date/time"
+msgstr ""
+
+#: web/templates/admin/object_history.html:23
+msgid "User"
+msgstr ""
+
+#: web/templates/admin/object_history.html:24
+msgid "Action"
+msgstr ""
+
+#: web/templates/admin/object_history.html:38
+msgid ""
+"This object doesn't have a change history. It probably wasn't added via this "
+"admin site."
+msgstr ""
+
+#: web/templates/admin/pagination.html:10
+#: web/templates/admin/search_form.html:9
+msgid "Show all"
+msgstr ""
+
+#: web/templates/admin/pagination.html:11
+#: web/templates/admin/submit_line.html:3
+msgid "Save"
+msgstr ""
+
+#: web/templates/admin/popup_response.html:3
+msgid "Popup closing..."
+msgstr ""
+
+#: web/templates/admin/related_widget_wrapper.html:8
+#, python-format
+msgid "Change selected %(model)s"
+msgstr ""
+
+#: web/templates/admin/related_widget_wrapper.html:15
+#, python-format
+msgid "Add another %(model)s"
+msgstr ""
+
+#: web/templates/admin/related_widget_wrapper.html:22
+#, python-format
+msgid "Delete selected %(model)s"
+msgstr ""
+
+#: web/templates/admin/search_form.html:7
+msgid "Search"
+msgstr ""
+
+#: web/templates/admin/search_form.html:9
+#, python-format
+msgid "%(counter)s result"
+msgid_plural "%(counter)s results"
+msgstr[0] ""
+msgstr[1] ""
+
+#: web/templates/admin/search_form.html:9
+#, python-format
+msgid "%(full_result_count)s total"
+msgstr ""
+
+#: web/templates/admin/submit_line.html:8
+msgid "Save as new"
+msgstr ""
+
+#: web/templates/admin/submit_line.html:9
+msgid "Save and add another"
+msgstr ""
+
+#: web/templates/admin/submit_line.html:10
+msgid "Save and continue editing"
+msgstr ""
+
+#: web/templates/components/bee-panel.html:5
+msgid "Salva nuestras abejas"
+msgstr "Salva les nostres abelles"
+
+#: web/templates/components/footer.html:8
+msgid "Avispamientos"
+msgstr "Vespes detectades"
+
+#: web/templates/components/footer.html:9
+msgid "Añade tu avispamiento"
+msgstr "Comunica la detecció d'una vespa"
+
+#: web/templates/components/footer.html:10
+msgid "Mapa de avispamientos"
+msgstr "Mapa de deteccions"
+
+#: web/templates/components/footer.html:11
+#: web/templates/components/navbar.html:35 web/templates/info.html:4
+#: web/templates/info.html:6 web/templates/info.html:12
+msgid "Infórmate"
+msgstr "Informa't"
+
+#: web/templates/components/footer.html:12
+msgid "Regístrate"
+msgstr "Registra't"
+
+#: web/templates/components/footer.html:15
+msgid "Sobre Vespapp"
+msgstr "Quant a Vespapp"
+
+#: web/templates/components/footer.html:17 web/templates/team.html:5
+msgid "Equipo"
+msgstr "Equip"
+
+#: web/templates/components/footer.html:18
+#: web/templates/components/navbar.html:36
+msgid "Contacto"
+msgstr "Contacte"
+
+#: web/templates/components/footer.html:21
+msgid "Síguenos"
+msgstr "Segueix-nos"
+
+#: web/templates/components/footer.html:27
+msgid "Elige idioma:"
+msgstr "Tria idioma:"
+
+#: web/templates/components/home-info.html:5
+msgid "Pasos a seguir"
+msgstr "Passes que s'han de seguir"
+
+#: web/templates/components/home-info.html:8
+msgid "1) Haz una foto"
+msgstr "1) Fes una foto"
+
+#: web/templates/components/home-info.html:10
+msgid ""
+"Envía una foto de una avispa o un nido. Puedes hacerlo por web, con la app "
+"móvil e incluso desde Twitter."
+msgstr ""
+"Envia una foto d'una vespa o un niu. Pots fer-ho per web, amb l'app mòbil i "
+"fins i tot des de Twitter."
+
+#: web/templates/components/home-info.html:14
+msgid "2) Envíanos los datos"
+msgstr "2) Envia'ns les dades"
+
+#: web/templates/components/home-info.html:16
+msgid ""
+"Dinos dónde lo has encontrado, qué día y toda la información que puedas "
+"aportar para ayudar a su localización."
+msgstr ""
+"Digues on l'has trobada, quin dia, i tota la informació que puguis aportar "
+"per ajudar a localitzar-la."
+
+#: web/templates/components/home-info.html:20
+msgid "3) Recibe comentarios"
+msgstr "3) Pots rebre comentaris"
+
+#: web/templates/components/home-info.html:22
+msgid ""
+"Si lo deseas, puedes registrarte para recibir información sobre el "
+"seguimiento de tu avistamiento y aportar información complementaria si "
+"nuestros expertos así lo necesitan."
+msgstr ""
+"Si vols, pots registrar-te per rebre informació sobre el seguiment de la "
+"detecció de la vespa i aportar informació complementària si els nostres "
+"experts en necessiten."
+
+#: web/templates/components/navbar.html:23 web/templates/home.html:4
+msgid "Inicio"
+msgstr "Inici"
+
+#: web/templates/components/navbar.html:24 web/templates/home.html:32
+msgid "Añade avispamiento"
+msgstr "He vist una vespa"
+
+#: web/templates/components/navbar.html:25
+msgid "Mapa"
+msgstr "Mapa"
+
+#: web/templates/components/navbar.html:28 web/templates/user_profile.html:11
+msgid "Mi perfil"
+msgstr "El meu perfil"
+
+#: web/templates/components/navbar.html:29
+msgid "Cerrar sesión"
+msgstr "Tanca sessió"
+
+#: web/templates/components/navbar.html:31 web/templates/login.html:8
+msgid "Iniciar sesión"
+msgstr "Inicia sessió"
+
+#: web/templates/components/navbar.html:32
+msgid "Registrarse"
+msgstr "Registre"
+
+#: web/templates/contact.html:5
+msgid "Contacto por correo electrónico"
+msgstr "Contacte per adreça electrònica"
+
+#: web/templates/contact.html:13
+msgid "\"¿Cuál es tu nombre?\""
+msgstr "\"Què noms?\""
+
+#: web/templates/contact.html:14
+msgid "Nombre"
+msgstr "Nom"
+
+#: web/templates/contact.html:17
+msgid "ejemplo@email.com"
+msgstr "exemple@email.com"
+
+#: web/templates/contact.html:18
+msgid "Correo"
+msgstr "Adreça"
+
+#: web/templates/contact.html:21
+msgid "(Opcional)"
+msgstr "(Opcional)"
+
+#: web/templates/contact.html:22
+msgid "Móvil"
+msgstr "Mòbil"
+
+#: web/templates/contact.html:25
+msgid " \"Escribe aquí tu mensaje...\" "
+msgstr "\"Escriu aquí el teu missatge...\""
+
+#: web/templates/contact.html:26
+msgid "Mensaje"
+msgstr "Missatge"
+
+#: web/templates/contact.html:28
+msgid "Enviar"
+msgstr "Envia"
+
+#: web/templates/contact.html:38
+msgid "Nombre : "
+msgstr "Nom :"
+
+#: web/templates/contact.html:41 web/templates/signup.html:58
+#: web/templates/user_profile.html:71
+msgid "\\nCorreo electrónico: "
+msgstr "\\nAdreça electrònica: "
+
+#: web/templates/contact.html:44
+msgid "\\nMensaje: "
+msgstr "\\nMissatge: "
+
+#: web/templates/home.html:10
+msgid "Lucha contra la avispa asiática"
+msgstr "Lluita contra la vespa asiàtica"
+
+#: web/templates/info.html:84 web/templates/signup.html:46
+msgid "Cerrar"
+msgstr "Tanca"
+
+#: web/templates/info.html:94
+msgid "No hay información disponible"
+msgstr "No hi ha informació disponible"
+
+#: web/templates/login.html:4
+msgid "Registro"
+msgstr "Registre"
+
+#: web/templates/login.html:9
+msgid "¿Aún no tienes cuenta?"
+msgstr "Encara no tens compte?"
+
+#: web/templates/login.html:9
+msgid "Regístrate ya"
+msgstr "Registra't ara"
+
+#: web/templates/login.html:15 web/templates/signup.html:16
+#: web/templates/user_profile.html:36
+msgid "Nombre de usuario"
+msgstr "Nom d'usuari"
+
+#: web/templates/login.html:17 web/templates/signup.html:20
+msgid "Contraseña"
+msgstr "Contrasenya"
+
+#: web/templates/login.html:18
+msgid "ENTRAR"
+msgstr "ENTRA"
+
+#: web/templates/new_sighting.html:5
+msgid "Nuevo avispamiento"
+msgstr "Vespa detectada"
+
+#: web/templates/new_sighting.html:6
+msgid "Nuevo avistamiento"
+msgstr "Vespa detectada"
+
+#: web/templates/new_sighting.html:14
+msgid "Envía tu avispamiento"
+msgstr "Envia la detecció"
+
+#: web/templates/new_sighting.html:19
+msgid "Arrastra tus fotos sobre este cuadro o haz clic en el mismo"
+msgstr "Arrossega les teves fotos cap a aquest quadre o fes clic aquí"
+
+#: web/templates/new_sighting.html:29 web/templates/sighting.html:74
+#: web/templates/sighting.html:316 web/templates/sightings.html:55
+msgid "Avispa"
+msgstr "Vespa"
+
+#: web/templates/new_sighting.html:38 web/templates/sighting.html:76
+#: web/templates/sighting.html:318 web/templates/sightings.html:57
+msgid "Nido"
+msgstr "Niu"
+
+#: web/templates/new_sighting.html:44
+msgid ""
+" \"Escribe aquí si deseas detallar la zona del avispamiento o si tienes "
+"algún dato que pueda sernos útil (como alguna información de contacto, que "
+"se utilizará solamente para contactar en caso de EMERGENCIA).\" "
+msgstr ""
+" \"Escriu aquí si vols detallar la zona on has vist la vespa o si tens "
+"alguna dada que pugui ser útil (com la informació de contacte, que només "
+"s'utilitzarà per contactar en cas d'EMERGÈNCIA).\" "
+
+#: web/templates/new_sighting.html:50
+msgid "Selecciona población"
+msgstr "Selecciona població"
+
+#: web/templates/new_sighting.html:66
+msgid "Mueve el marcador para ajustar la posición"
+msgstr "Mou el marcador per ajustar la posició"
+
+#: web/templates/new_sighting.html:76
+msgid "Enviar avispamiento"
+msgstr "Envia la detecció"
+
+#: web/templates/sight_question.html:23
+msgid "(Escoge solo una de estas opciones)"
+msgstr "(Tria només una d'aquestes opcions)"
+
+#: web/templates/sight_question.html:27
+msgid "(Puedes escoger una o varias de estas opciones)"
+msgstr "(Pots triar una o vàries d'aquestes opcions)"
+
+#: web/templates/sight_question.html:96
+msgid "Siguiente"
+msgstr "Següent"
+
+#: web/templates/sighting.html:4 web/templates/sighting.html:18
+#: web/templates/sighting.html:260 web/templates/sightings.html:51
+msgid "Avistamiento"
+msgstr "Detecció"
+
+#: web/templates/sighting.html:5
+msgid "Avistamiento en concreto"
+msgstr "Detecció en concret"
+
+#: web/templates/sighting.html:14 web/templates/sighting.html:256
+#: web/templates/sightings.html:47
+msgid "Avistamiento avispa"
+msgstr "Detecció de vespa"
+
+#: web/templates/sighting.html:16 web/templates/sighting.html:258
+#: web/templates/sightings.html:49
+msgid "Avistamiento nido"
+msgstr "Detecció de niu"
+
+#: web/templates/sighting.html:23 web/templates/sighting.html:265
+msgid "Notificado por:"
+msgstr "Notificat per:"
+
+#: web/templates/sighting.html:36 web/templates/sighting.html:278
+#: web/templates/sightings.html:84 web/templates/sightings.html:86
+msgid "Usuario:"
+msgstr "Usuari:"
+
+#: web/templates/sighting.html:40 web/templates/sighting.html:282
+#: web/templates/sightings.html:86
+msgid "Anónimo"
+msgstr "Anònim"
+
+#: web/templates/sighting.html:47 web/templates/sighting.html:289
+msgid "Latitud:"
+msgstr "Latitud:"
+
+#: web/templates/sighting.html:55 web/templates/sighting.html:297
+msgid "Longitud:"
+msgstr "Longitud"
+
+#: web/templates/sighting.html:66 web/templates/sighting.html:308
+msgid "Localización:"
+msgstr "Localització"
+
+#: web/templates/sighting.html:72 web/templates/sighting.html:314
+msgid "Tipo:"
+msgstr "Tipus:"
+
+#: web/templates/sighting.html:81 web/templates/sighting.html:323
+#: web/templates/sightings.html:69 web/templates/sightings.html:71
+#: web/templates/sightings.html:73
+msgid "Estado:"
+msgstr "Estat:"
+
+#: web/templates/sighting.html:83 web/templates/sighting.html:325
+#: web/templates/sightings.html:69
+msgid "Pendiente"
+msgstr "Pendent"
+
+#: web/templates/sighting.html:85 web/templates/sighting.html:327
+#: web/templates/sightings.html:71
+msgid "Procesando"
+msgstr "Processant"
+
+#: web/templates/sighting.html:87 web/templates/sighting.html:329
+#: web/templates/sightings.html:73
+msgid "Procesado"
+msgstr "Processat"
+
+#: web/templates/sighting.html:92 web/templates/sighting.html:334
+#: web/templates/sightings.html:61 web/templates/sightings.html:63
+#: web/templates/sightings.html:65
+msgid "Resultado:"
+msgstr "Resultat:"
+
+#: web/templates/sighting.html:94 web/templates/sighting.html:336
+#: web/templates/sightings.html:61
+msgid "Positivo"
+msgstr "Positiu"
+
+#: web/templates/sighting.html:96 web/templates/sighting.html:338
+#: web/templates/sightings.html:63
+msgid "Negativo"
+msgstr "Negatiu"
+
+#: web/templates/sighting.html:98 web/templates/sighting.html:340
+#: web/templates/sightings.html:65
+msgid "Desconocido"
+msgstr "Desconegut"
+
+#: web/templates/sighting.html:103 web/templates/sighting.html:345
+#: web/templates/sightings.html:88
+msgid "Fecha:"
+msgstr "Data:"
+
+#: web/templates/sighting.html:108 web/templates/sighting.html:350
+msgid "Observaciones:"
+msgstr "Observacions:"
+
+#: web/templates/sighting.html:159 web/templates/sighting.html:402
+msgid "comentarios:"
+msgstr "comentaris:"
+
+#: web/templates/sighting.html:182 web/templates/sighting.html:425
+msgid "Comentarios:"
+msgstr "Comentaris:"
+
+#: web/templates/sighting.html:183 web/templates/sighting.html:426
+msgid "No hay comentarios."
+msgstr "No hi ha comentaris."
+
+#: web/templates/sighting.html:188
+msgid "Escribe tu comentario..."
+msgstr "Escriu el teu comentari..."
+
+#: web/templates/sighting.html:189 web/templates/sighting.html:432
+msgid "Enviar comentario"
+msgstr "Envia comentari"
+
+#: web/templates/sighting.html:431
+msgid " Escribe tu comentario..."
+msgstr "Escriu el teu comentari..."
+
+#: web/templates/sighting.html:444
+#, fuzzy
+#| msgid "¡Shhh! Esta página está durmiendo."
+msgid "¡Shhh! Este avispamiento está durmiendo."
+msgstr "Shhh! Aquesta pàgina està dormint."
+
+#: web/templates/sighting.html:445
+msgid "O puede que no esté disponible"
+msgstr ""
+
+#: web/templates/sighting.html:446
+#, fuzzy
+#| msgid "O que hayamos retirado la página. Una de estas será."
+msgid "o que lo hayamos retirado. Una de estas será."
+msgstr "O que l'haguem retirat de la pàgina."
+
+#: web/templates/sighting.html:450
+#, fuzzy
+#| msgid "Puedes volver a Inicio haciendo clic"
+msgid "Puedes volver a Inicio haciendo clic "
+msgstr "Pots tornar a Inici fent clic"
+
+#: web/templates/sighting_expert_comments.html:4
+#: web/templates/sighting_expert_comments.html:7
+msgid "Comentarios de expertos"
+msgstr "Comentaris d'experts"
+
+#: web/templates/sighting_expert_comments.html:5
+msgid "Listado de los comentarios de expertos"
+msgstr "Llistat dels comentaris d'experts"
+
+#: web/templates/sighting_expert_comments.html:9
+msgid "Comentarios de expertos sobre un avistamiento"
+msgstr "Comentaris d'experts quant a una detecció"
+
+#: web/templates/sightings.html:4
+msgid "Avistamientos"
+msgstr "Vespes detectades"
+
+#: web/templates/sightings.html:5
+msgid "Lista de avistamientos"
+msgstr "Llista de deteccions"
+
+#: web/templates/sightings.html:91
+msgid "Más información"
+msgstr "Més informació"
+
+#: web/templates/sightings.html:165
+msgid "Aún estamos validando los avistamientos."
+msgstr "Encara estam validant les deteccions."
+
+#: web/templates/sightings.html:166
+msgid "Sube el tuyo"
+msgstr "Puja el teu"
+
+#: web/templates/signup.html:4
+msgid "Registro de usuario"
+msgstr "Registre d'usuari"
+
+#: web/templates/signup.html:8
+msgid "¡Sigue tus avispamientos más de cerca!"
+msgstr "Segueix les vespes que has vist més de prop!"
+
+#: web/templates/signup.html:10
+msgid ""
+"Si quieres conocer el estado de tu avispamiento REGÍSTRATE para hacer "
+"comentarios y visualizar todas las fotos que nos has mandado"
+msgstr ""
+"Si vols conèixer l'estat de la detecció de la vespa, REGISTRA'T per poder "
+"fer comentaris i veure totes les fotos que ens has enviat"
+
+#: web/templates/signup.html:18 web/templates/user_profile.html:38
+msgid "Correo electrónico"
+msgstr "Adreça electrònica"
+
+#: web/templates/signup.html:22 web/templates/user_profile.html:54
+msgid "Repita la contraseña"
+msgstr "Repeteix la contrasenya"
+
+#: web/templates/signup.html:23
+msgid "REGISTRARSE"
+msgstr "REGISTRE"
+
+#: web/templates/signup.html:24
+msgid "Registrándote aceptas los "
+msgstr "Quan et registres acceptes els "
+
+#: web/templates/signup.html:24
+msgid "términos legales"
+msgstr "termes legals"
+
+#: web/templates/signup.html:36
+msgid "Términos legales"
+msgstr "Termes legals"
+
+#: web/templates/signup.html:39
+msgid ""
+"En cumplimiento del que dispone la Ley Orgánica 15/1999, de 13 de diciembre, "
+"de Protección de Datos de Carácter Personal, os informamos que los datos "
+"recogidos en vuestra solicitud serán incluidos en varios ficheros "
+"gestionados por la UIB, la finalidad de los cuales es poder contactar con "
+"usted en caso de que fuera necesario. Los datos solicitados son necesarios "
+"para cumplir con la mencionada finalidad y, por lo tanto, el hecho de no "
+"obtenerlos impide conseguirla."
+msgstr ""
+"En compliment del que disposa la Llei orgànica 15/1999, de 13 de desembre, "
+"de protecció de dades de caràcter personal, us informam que les dades "
+"recollides a la vostra sol·licitud seran incloses en diversos fitxers "
+"gestionats per la UIB, la finalitat dels quals és poder contactar amb vós en "
+"cas que fos necessari. Les dades sol·licitades són necessàries per complir "
+"aquesta finalitat i, per tant, el fet de no obtenir-les impedeix aconseguir-"
+"la."
+
+#: web/templates/signup.html:43
+msgid ""
+"La UIB es la responsable del tratamiento de los datos y, como tal, os "
+"garantiza los derechos de acceso, rectificación, cancelación y oposición en "
+"cuanto a los datos facilitados. Para ejercer los cuales os tenéis que "
+"dirigir por escrito a: Universitat de les Illes Balears, Secretaría General, "
+"a la atención del responsable de seguridad, cra. de Valldemossa, km 7,5, "
+"07122 Palma (Islas Baleares). Del mismo modo, la UIB se compromete a "
+"respetar la confidencialidad de vuestros datos y a utilizarlos de acuerdo "
+"con el fin de los ficheros."
+msgstr ""
+"La UIB és la responsable del tractament de les dades i, com a tal, us "
+"garanteix els drets d'accés, rectificació, cancel·lació i oposició quant a "
+"les dades facilitades. Per exercir aquests drets us heu d'adreçar per escrit "
+"a: Universitat de les Illes Balears, Secretaria General, a l'atenció del "
+"responsable de seguretat, cra. de Valldemossa, km 7.5, 07122 Palma (Illes "
+"Balears). De la mateixa manera, la UIB es compromet a respectar la "
+"confidencialitat de les vostres dades i a utilitzar-les d'acord amb la "
+"finalitat dels fitxers."
+
+#: web/templates/signup.html:55 web/templates/user_profile.html:68
+msgid "Nombre de usuario: "
+msgstr "Nom d'usuari: "
+
+#: web/templates/signup.html:61 web/templates/user_profile.html:78
+msgid "\\nContraseña: "
+msgstr "\\nContrasenya: "
+
+#: web/templates/signup.html:64 web/templates/user_profile.html:81
+msgid "\\nRepita la contraseña: "
+msgstr "\\nRepeteix la contrasenya: "
+
+#: web/templates/team.html:16
+msgid "Nuestro equipo"
+msgstr "El nostre equip"
+
+#: web/templates/team.html:23
+msgid "Equipo investigador"
+msgstr "Equip investigador"
+
+#: web/templates/team.html:31 web/templates/team.html:38
+#: web/templates/team.html:47 web/templates/team.html:53
+msgid "Laboratorio de Zoología. Departamento de Biología"
+msgstr "Laboratori de Zoologia. Departament de Biologia"
+
+#: web/templates/team.html:37
+msgid "Dra. Mar Leza"
+msgstr "Dra. Mar Leza"
+
+#: web/templates/team.html:52
+msgid "Dr. Miguel Ángel Miranda"
+msgstr "Dr. Miguel Ángel Miranda"
+
+#: web/templates/team.html:62 web/templates/team.html:70
+msgid ""
+"Arquitectura y comportamiento de sistemas informáticos y de comunicaciones "
+"(ACSIC). Departamento de Ciencias Matemáticas e Informática"
+msgstr ""
+"Arquitectura i Comportament de Sistemes Informàtics i de Comunicacions "
+"(ACSIC). Departament de Ciències Matemàtiques i Informàtica"
+
+#: web/templates/team.html:69
+msgid "Dr. Carlos Guerrero"
+msgstr "Dr. Carlos Guerrero"
+
+#: web/templates/team.html:79 web/templates/team.html:85
+msgid "Servicio de Sistemas de Información Geográfica (SIG) y Teledetección"
+msgstr "Servei de Sistemes d'Informació Geogràfica (SIG) i Teledetecció"
+
+#: web/templates/team.html:84
+msgid "Dr. Maurici Ruíz"
+msgstr "Dr.Maurici Ruíz"
+
+#: web/templates/team.html:94 web/templates/team.html:100
+msgid "Comunicación, participación y redes sociales"
+msgstr "Comunicació, participació i xarxes socials"
+
+#: web/templates/team.html:99
+msgid "Sra. Tona Pou"
+msgstr "Sra. Tona Pou"
+
+#: web/templates/team.html:113
+msgid ""
+"Equipo beca Cátedra Santander UIB de Innovación y Transferencia del "
+"Conocimiento (CSUIT)"
+msgstr ""
+"Equip de la beca de la Càtedra Santander-UIB d'Innovació i Transferència del "
+"Coneixement (CSUIT)"
+
+#: web/templates/team.html:121 web/templates/team.html:139
+#: web/templates/team.html:157
+msgid "Escuela Politécnica Superior de la Universidad de las Islas Baleares"
+msgstr "Escola Politècnica Superior de la Universitat de les Illes Balears"
+
+#: web/templates/team.html:130 web/templates/team.html:148
+#: web/templates/team.html:166
+msgid "Estudiante de Ingeniería Informática"
+msgstr "Estudiant d'Enginyeria Informàtica"
+
+#: web/templates/team.html:180
+msgid "Equipo hackathon solidario"
+msgstr "Equip de la hackató solidària"
+
+#: web/templates/user_profile.html:5
+msgid "Perfil de usuario"
+msgstr "Perfil d'usuari"
+
+#: web/templates/user_profile.html:24
+msgid "Actualizar foto"
+msgstr "Actualitza foto"
+
+#: web/templates/user_profile.html:31
+msgid "Datos de tu perfil"
+msgstr "Dades del teu perfil"
+
+#: web/templates/user_profile.html:40
+msgid "Actualizar perfil"
+msgstr "Actualitza perfil"
+
+#: web/templates/user_profile.html:45
+msgid "Cambiar tu contraseña"
+msgstr "Canvia la teva contrasenya"
+
+#: web/templates/user_profile.html:56
+msgid "Actualizar contraseña"
+msgstr "Actualitza contrasenya"
+
+#: web/templates/user_profile.html:75
+msgid "Contraseña actual: "
+msgstr "Contrasenya actual: "
+
+#: web/views.py:186
+msgid ""
+"Regístrate para conocer el estado de tu avispamiento, enviar comentarios y "
+"mucho más"
+msgstr ""
+"Registra't per conèixer l'estat de la teva detecció, enviar comentaris i "
+"molt més"
+
+#: web/views.py:206
+msgid ""
+"Además, si te registras, podrás conocer el estado de tu avispamiento, enviar "
+"comentarios y mucho más."
+msgstr ""
+"A més, si et registres, podràs conèixer l'estat de la teva detecció, enviar "
+"comentaris i molt més."
+
+#: web/views.py:209
+msgid "No hay sesión iniciada"
+msgstr "No hi ha sessió iniciada"
+
+# -*- coding: utf-8 -*-
+#: web/views.py:301
+msgid "Nombre de usuario o contraseña no válido"
+msgstr "Nom de usuari o contrasenya no vàlids"
+
+#: web/views.py:309
+msgid "Has cerrado sesión. ¡Vuelve pronto!"
+msgstr "Has tancat sessió. Torna aviat!"
+
+#: web/views.py:417
+msgid "Te contestaremos lo antes posible"
+msgstr "Et contestarem el més aviat possible"
+
+#~ msgid "Ir"
+#~ msgstr "Vés"

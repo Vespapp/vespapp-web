@@ -1,7 +1,8 @@
 {% extends "layout.html" %}
+{% load i18n %}
 {% load staticfiles %}
-{% block title %}Avistamientos{% endblock %}
-{% block description %}Lista de avistamientos{% endblock %}
+{% block title %}{% trans "Avistamientos" %}{% endblock %}
+{% block description %}{% trans "Lista de avistamientos" %}{% endblock %}
 
 
 {% block body %}
@@ -13,7 +14,7 @@
 jQuery(function($) {
     // Asynchronously Load the map API 
     var script = document.createElement('script');
-    script.src = "http://maps.googleapis.com/maps/api/js?sensor=false&callback=initialize";
+    script.src = "http://maps.googleapis.com/maps/api/js?sensor=false&callback=initialize&key=AIzaSyDdu6wWUWkf9A3b6L9i0M1YitIBt0wR6as";
     document.body.appendChild(script);
 });
 
@@ -43,33 +44,33 @@ function initialize() {
       {% for sighting in sightings_list %}
         ['<div class="info_content_map">' +
         {% if sighting.type == 1 %}
-        '<h3>Avistamiento avispa</h3>' +
+        '<h3>{% trans "Avistamiento avispa" %}</h3>' +
         {% elif sighting.type == 2 %}
-        '<h3>Avistamiento nido</h3>' +
+        '<h3>{% trans "Avistamiento nido" %}</h3>' +
         {% else %}
-        '<h3>Avistamiento</h3>' +      
+        '<h3>{% trans "Avistamiento" %}</h3>' +      
         {% endif %}   
 
         {% if sighting.type == 1 %}
-        '<i class="fa fa-bug"></i><span>Avispa</span>' +
+        '<i class="fa fa-bug"></i><span>{% trans "Avispa" %}</span>' +
         {% elif sighting.type == 2 %}
-        '<i class="fa fa-fort-awesome"></i><span>Nido</span>' +
+        '<i class="fa fa-fort-awesome"></i><span>{% trans "Nido" %}</span>' +
         {% endif %} 
         
         {% if sighting.is_valid == True %}
-        '<span class="label-status">Resultado:</span><span class="label label-success">Positivo</span>' +
+        '<span class="label-status">{% trans "Resultado:" %}</span><span class="label label-success">{% trans "Positivo" %}</span>' +
         {% elif sighting.is_valid == False %}
-        '<span class="label-status">Resultado:</span><span class="label label-danger">Negativo</span>' +
+        '<span class="label-status">{% trans "Resultado:" %}</span><span class="label label-danger">{% trans "Negativo" %}</span>' +
         {% else %}
-        '<span class="label-status">Resultado:</span><span class="label label-warning">Desconocido</span>' +
+        '<span class="label-status">{% trans "Resultado:" %}</span><span class="label label-warning">{% trans "Desconocido" %}</span>' +
         {% endif %}
 
         {% if sighting.status == 0 %}
-        '<span class="label-status">Estado:</span><span class="label label-danger">Pendiente</span>' +
+        '<span class="label-status">{% trans "Estado:" %}</span><span class="label label-danger">{% trans "Pendiente" %}</span>' +
         {% elif sighting.status == 1%}
-        '<span class="label-status">Estado:</span><span class="label label-warning">Procesando</span>' +
+        '<span class="label-status">{% trans "Estado:" %}</span><span class="label label-warning">{% trans "Procesando" %}</span>' +
         {% elif sighting.status == 2%}
-        '<span class="label-status">Estado:</span><span class="label label-success">Procesado</span>' +
+        '<span class="label-status">{% trans "Estado:" %}</span><span class="label label-success">{% trans "Procesado" %}</span>' +
         {% endif %}    
 
         '<div class="details {% if sighting.first_picture %}details-with-photo{% endif %}  ">' +
@@ -80,14 +81,14 @@ function initialize() {
         '</div>' +
         '<div class="text">' +
         {% if sighting.user %}
-        '<p class="text-content"><b>Usuario:</b> {{sighting.user}}</p>' + 
+        '<p class="text-content"><b>{% trans "Usuario:" %}</b> {{sighting.user}}</p>' + 
         {% else %}
-        '<p class="text-content"><b>Usuario:</b> Anónimo</p>' + 
+        '<p class="text-content"><b>{% trans "Usuario:" %}</b> {% trans "Anónimo" %}</p>' + 
         {% endif %} 
-        '<p class="created-content"><b>Fecha:</b> {{sighting.created_at}}</p>' +
+        '<p class="created-content"><b>{% trans "Fecha:" %}</b> {{sighting.created_at}}</p>' +
 
 
-        '<a href="{% url 'sighting_id' sighting.id %}" class="btn btn-sm btn-primary pull-right">Más información</a> '   +    '</div></div></div>'], 
+        '<a href="{% url 'sighting_id' sighting.id %}" class="btn btn-sm btn-primary pull-right">{% trans "Más información" %}</a> '   +    '</div></div></div>'], 
       {% endfor %}
   ];
       
@@ -161,12 +162,12 @@ function initialize() {
 <div class="error404Container">
   <div class="content">
     <div>
-      <h1 class="h1404">Aún estamos validando los avistamientos</h1>
-      <h2 class="h2404">Sube el tuyo <a href="{% url 'new_sighting' %}">aquí</a></h2>
+      <h1 class="h1404">{% trans "Aún estamos validando los avistamientos." %}</h1>
+      <h2 class="h2404">{% trans "Sube el tuyo" %} <a href="{% url 'new_sighting' %}">{% trans "aquí" %}</a></h2>
     </div>
     <div class="buttom404">
       <div class="seach_bar404">
-        <p>Puedes volver a Inicio haciendo clic <span><a href="{% url 'home' %}">aquí</a></span></p>
+        <p>{% trans "Puedes volver a Inicio haciendo clic" %} <span><a href="{% url 'home' %}">{% trans "aquí" %}</a></span></p>
       </div>
     </div>
   </div>

@@ -1,9 +1,13 @@
+# -*- coding: utf-8 -*- 
 from django.db import models
 from django.contrib.auth.models import User
 from django.conf import settings
 
 class Province(models.Model):
     name = models.CharField(max_length=128, null=False, blank=False, verbose_name='Nombre')
+    name_ca = models.CharField(max_length=128, null=False, blank=False, verbose_name='Nom')
+    name_en = models.CharField(max_length=128, null=False, blank=True, verbose_name='Name_en')
+    name_de = models.CharField(max_length=128, null=False, blank=True, verbose_name='Name_de')
 
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de creación')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Fecha de modificación')
@@ -18,6 +22,9 @@ class Province(models.Model):
 
 class Location(models.Model):
     name = models.CharField(max_length=128, null=False, blank=False, verbose_name='Nombre')
+    name_ca = models.CharField(max_length=128, null=False, blank=False, verbose_name='Nom_ca')
+    name_en = models.CharField(max_length=128, null=False, blank=True, verbose_name='Name_en')
+    name_de = models.CharField(max_length=128, null=False, blank=True, verbose_name='Name_de')
 
     lat = models.FloatField(null=False, blank=False, verbose_name='Latitud')
     lng = models.FloatField(null=False, blank=False, verbose_name='Longitud')
@@ -41,6 +48,10 @@ class Question(models.Model):
     TYPE_CHECKBOX = 2
 
     title = models.CharField(max_length=128, null=False, blank=False, verbose_name='Título')
+    title_ca = models.CharField(max_length=128, null=False, blank=False, verbose_name='Títol_ca')
+    title_en = models.CharField(max_length=128, null=False, blank=True, verbose_name='Title_en')
+    title_de = models.CharField(max_length=128, null=False, blank=True, verbose_name='Titel_de')
+    
     question_type = models.IntegerField(verbose_name="Tipo de pregunta")
     sighting_type = models.IntegerField(null=False, blank=False, verbose_name="Tipo de avistamiento")
     is_active = models.BooleanField(default=True, null=False, blank=False, verbose_name="Activa")
@@ -71,6 +82,9 @@ class Answer(models.Model):
     question = models.ForeignKey(Question, related_name="default_answer", verbose_name='Pregunta')
 
     value = models.CharField(max_length=128, null=False, blank=False, verbose_name='Respuesta')
+    value_ca = models.CharField(max_length=128, null=False, blank=False, verbose_name='Resposta_ca')
+    value_en = models.CharField(max_length=128, null=False, blank=True, verbose_name='Answer_en')
+    value_de = models.CharField(max_length=128, null=False, blank=True, verbose_name='Antwort_de')
 
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de creación')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Fecha de modificación')
@@ -228,7 +242,7 @@ class ExpertComment(models.Model):
 class UserComment(models.Model):
     user = models.ForeignKey(User, related_name="user_comments")
     sighting = models.ForeignKey(Sighting, related_name="user_comments")
-    body = models.CharField(null=False, blank=False, max_length=512, verbose_name='Comentario')
+    body = models.CharField(null=False, blank=False, max_length=1024, verbose_name='Comentario')
 
     created_at = models.DateTimeField(auto_now_add=True, verbose_name='Fecha de creación')
     updated_at = models.DateTimeField(auto_now=True, verbose_name='Fecha de modificación')
@@ -243,20 +257,58 @@ class UserComment(models.Model):
 
 class SightingInfo(models.Model):
     title = models.CharField(null=False, blank=False, max_length=128, verbose_name='Título')
+    title_ca = models.CharField(null=False, blank=False, max_length=128, verbose_name='Títol_ca')
+    title_en = models.CharField(null=False, blank=True, max_length=128, verbose_name='Title_en')
+    title_de = models.CharField(null=False, blank=True, max_length=128, verbose_name='Titel_de')
+    
     body = models.TextField(verbose_name='Explicación más detallada')
+    body_ca = models.TextField(verbose_name='Explicació més detallada_ca')
+    body_en = models.TextField(blank=True, verbose_name='Further explanation_en')
+    body_de = models.TextField(blank=True, verbose_name='Weitere Erklärung_de')    
+    
     quickBody = models.TextField(null=False, blank=False, default="Clic para más información", max_length=128, verbose_name='Breve explicación')
+    quickBody_ca = models.TextField(null=False, blank=False, default="Clic per a més informació", max_length=128, verbose_name='Breu explicació_ca')
+    quickBody_en = models.TextField(null=False, blank=True, default="Click for more information", max_length=128, verbose_name='Short explanation_en')
+    quickBody_de = models.TextField(null=False, blank=True, default="Klicken Sie für weitere Informationen", max_length=128, verbose_name='Kurze Erklärung_de')
+    
+    
     image = models.ImageField(upload_to="info_images/", blank=True, null=True)
+    image_ca = models.ImageField(upload_to="info_images/", blank=True, null=True)
+    image_en = models.ImageField(upload_to="info_images/", blank=True, null=True)
+    image_de = models.ImageField(upload_to="info_images/", blank=True, null=True)
+    
     imageCover = models.ImageField(upload_to="info_images/", blank=True, null=True)
+    imageCover_ca = models.ImageField(upload_to="info_images/", blank=True, null=True)
+    imageCover_en = models.ImageField(upload_to="info_images/", blank=True, null=True)
+    imageCover_de = models.ImageField(upload_to="info_images/", blank=True, null=True)
     
     def foto_portada(self):
         return '<a href="%s"><img src="%s" width=250px heigth=250px/></a>'%(self.imageCover.url, self.imageCover.url)
+    def foto_portada_ca(self):
+        return '<a href="%s"><img src="%s" width=250px heigth=250px/></a>'%(self.imageCover_ca.url, self.imageCover_ca.url)
+    def foto_portada_en(self):
+        return '<a href="%s"><img src="%s" width=250px heigth=250px/></a>'%(self.imageCover_en.url, self.imageCover_en.url)
+    def foto_portada_de(self):
+        return '<a href="%s"><img src="%s" width=250px heigth=250px/></a>'%(self.imageCover_de.url, self.imageCover_de.url)
 
     foto_portada.allow_tags = True
+    foto_portada_ca.allow_tags = True
+    foto_portada_en.allow_tags = True
+    foto_portada_de.allow_tags = True
     
     def foto_info(self):
         return '<a href="%s"><img src="%s" width=250px heigth=250px/></a>'%(self.image.url, self.image.url)
+    def foto_info_ca(self):
+        return '<a href="%s"><img src="%s" width=250px heigth=250px/></a>'%(self.image_ca.url, self.image_ca.url)
+    def foto_info_en(self):
+        return '<a href="%s"><img src="%s" width=250px heigth=250px/></a>'%(self.image_en.url, self.image_en.url)
+    def foto_info_de(self):
+        return '<a href="%s"><img src="%s" width=250px heigth=250px/></a>'%(self.image_de.url, self.image_de.url)
 
     foto_info.allow_tags = True
+    foto_info_ca.allow_tags = True
+    foto_info_en.allow_tags = True
+    foto_info_de.allow_tags = True
 
     class Meta:
         verbose_name = 'Info'

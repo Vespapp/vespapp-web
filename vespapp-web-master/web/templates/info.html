@@ -1,15 +1,15 @@
 {% extends "layout.html" %}
+{% load i18n %}
 
+{% block title %}{% trans "Infórmate" %}{% endblock %}
 
-{% block title %}Infórmate{% endblock %}
-
-{% block description %}Infórmate{% endblock %}
+{% block description %}{% trans "Infórmate" %}{% endblock %}
 
 {% block body %}
 <div class="container">
 <div class="row">
   <div class="col-xs-12">
-    <h1 class="text-center section-tittle"><i class="fa fa-question-circle"></i>Infórmate</h1>
+    <h1 class="text-center section-tittle"><i class="fa fa-question-circle"></i>{% trans "Infórmate" %}</h1>
   </div>
 
 
@@ -22,11 +22,30 @@
             <div id="f1_card"> 
               <div class="front face">
                 <img class="img-responsive imgInfo" src="{{ info.imageCover.url }}"/>
+                {% if request.LANGUAGE_CODE == 'ca' %}
+                <h4 class="titleFront">{{info.title_ca}}</h4>
+                {% elif request.LANGUAGE_CODE == 'en' %}
+                <h4 class="titleFront">{{info.title_en}}</h4>
+                {% elif request.LANGUAGE_CODE == 'de' %}
+                <h4 class="titleFront">{{info.title_de}}</h4>
+                {% else %}
                 <h4 class="titleFront">{{info.title}}</h4>
+                {% endif %}
               </div>
               <div class="back face center">
+              {% if request.LANGUAGE_CODE == 'ca' %}
+                <p class="fontTitle">{{info.title_ca}}</p>
+                <p>{{info.quickBody_ca|linebreaks}}</p>
+              {% elif request.LANGUAGE_CODE == 'en' %}
+                <p class="fontTitle">{{info.title_en}}</p>
+                <p>{{info.quickBody_en|linebreaks}}</p>
+              {% elif request.LANGUAGE_CODE == 'de' %}
+                <p class="fontTitle">{{info.title_de}}</p>
+                <p>{{info.quickBody_de|linebreaks}}</p>
+              {% else %}
                 <p class="fontTitle">{{info.title}}</p>
                 <p>{{info.quickBody|linebreaks}}</p>
+              {% endif %}
               </div>
             </div>
           </div> 
@@ -37,17 +56,32 @@
               <div class="modal-content">
                 <div class="modal-header modalTitle">
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  {% if request.LANGUAGE_CODE == 'ca' %}
+                  <h4 class="modal-title modalFont">{{info.title_ca}}</h4>
+                  {% elif request.LANGUAGE_CODE == 'en' %}
+                  <h4 class="modal-title modalFont">{{info.title_en}}</h4>
+                  {% elif request.LANGUAGE_CODE == 'de' %}
+                  <h4 class="modal-title modalFont">{{info.title_de}}</h4>
+                  {% else %}
                   <h4 class="modal-title modalFont">{{info.title}}</h4>
+                  {% endif %}
                 </div>
                 <div class="modal-body">
                     <img class="img-responsive imgInfo" src="{{ info.image.url }}"/>
 
                     <br>
-
-                    {{info.body|linebreaks}}
+                    {% if request.LANGUAGE_CODE == 'ca' %}
+                        {{info.body_ca|linebreaks}}
+                    {% elif request.LANGUAGE_CODE == 'en' %}
+                        {{info.body_en|linebreaks}}
+                    {% elif request.LANGUAGE_CODE == 'de' %}
+                        {{info.body_de|linebreaks}}                        
+                    {% else %}
+                        {{info.body|linebreaks}}
+                    {% endif %}
                 </div>
                 <div class="modal-footer">
-                  <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+                  <button type="button" class="btn btn-default" data-dismiss="modal">{% trans "Cerrar" %}</button>
                 </div>
               </div>
             </div>
@@ -57,7 +91,7 @@
       </div>    
     </div>
 {% empty %}
-    <p>No hay información disponible</p>
+    <p>{% trans "No hay información disponible" %}</p>
 {% endfor %}
 
 <!-- </div> -->

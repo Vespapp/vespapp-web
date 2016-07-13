@@ -54,6 +54,7 @@ INSTALLED_APPS = BASE_APPS + VENDOR_APPS + MY_APPS
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
+    'django.middleware.locale.LocaleMiddleware',
     'django.middleware.common.CommonMiddleware',
     'django.middleware.csrf.CsrfViewMiddleware',
     'django.contrib.auth.middleware.AuthenticationMiddleware',
@@ -75,10 +76,22 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'django.template.context_processors.i18n',
             ],
         },
     },
 ]
+	    
+from django.utils.translation import ugettext_lazy as _
+_ = lambda s: s
+LANGUAGES = (
+    ('es', _('Spanish')),
+    ('ca', _('Catalan')),
+)
+
+LOCALE_PATHS = (
+    os.path.join(BASE_DIR, 'locale'),
+)
 
 WSGI_APPLICATION = 'vespapp.wsgi.application'
 
@@ -130,6 +143,7 @@ AUTH_PASSWORD_VALIDATORS = [
 # https://docs.djangoproject.com/en/1.9/topics/i18n/
 
 LANGUAGE_CODE = 'es-ES'
+#LANGUAGE_CODE = 'ca'
 
 TIME_ZONE = 'Europe/Madrid'
 
@@ -139,6 +153,10 @@ USE_L10N = True
 
 USE_TZ = True
 
+#LANGUAGES = (
+#    ('ca', ugettext('Catalan')),
+#    ('es-ES', ugettext('Spanish')),
+#)
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.9/howto/static-files/
@@ -177,7 +195,7 @@ LOGOUT_URL = '/accounts/logout/'
 #Email
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_HOST_USER = 'vespapp.uib@gmail.com'
-EMAIL_HOST_PASSWORD = 'vespavelutina'
+EMAIL_HOST_PASSWORD = 'asiakoliztorra25'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 
