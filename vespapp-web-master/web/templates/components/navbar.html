@@ -1,6 +1,8 @@
 {% load i18n %}
 {% load template %}
 {% load staticfiles %}
+<link rel="stylesheet" href="{% static "css/select.css" %}">
+<script src="{% static "js/ddslick.js" %}"></script>
 <div class="row">
   <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -14,6 +16,7 @@
         <a class="navbar-brand" href="{% url 'home' %}">
           <img src="{% static "img/avispa_logo.png" %}" width="45" height="45" alt="My image"/>
           <span>Vespapp</span>
+          
         </a>
       </div>
 
@@ -34,50 +37,29 @@
           
           <li class="{% active 'info' %}"><a href="{% url 'info' %}">{% trans "Infórmate" %}</a></li>
           <li class="{% active 'contact' %}"><a href="{% url 'contact' %}">{% trans "Contacto" %}</a></li> 
-          
-          <li class="{% active 'languages' %}">
-          <!--
-          <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
+         
+        </ul>
+        
+      </div><!-- /.navbar-collapse -->
+      <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
 		<input name="next" type="hidden" value="{{ redirect_to }}" />
-		  <select name="language" onchange="this.form.submit()">
+		  <select id="language_select" name="language" onchange="this.form.submit()" >
 		      {% get_current_language as LANGUAGE_CODE %}
 		      {% get_available_languages as LANGUAGES %}
 		      {% get_language_info_list for LANGUAGES as languages %}
 		      {% for language in languages %}
+		      {% if language.code == 'ca' %}
 			  <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
-			      {{ language.code }}
+			      Català ({{ language.code }})
 			  </option>
+		      {% else %}
+			  <option value="{{ language.code }}"{% if language.code == LANGUAGE_CODE %} selected="selected"{% endif %}>
+			      Castellano ({{ language.code }})
+			  </option>
+		      {% endif %}
 		      {% endfor %}
 		  </select>
 	      </form>
-          
-          //OTROO
-          {% if request.LANGUAGE_CODE == 'ca' %}
-              <a href="http://localhost/es">
-                  <img src="{% static "img/icono_castellano.png" %}" alt="">
-              </a>
-          {% else %}
-              <a href="http://localhost/ca">
-                  <img src="{% static "img/catala.gif" %}" alt="">
-              </a>
-          {% endif %}-->
-          </li>
-        </ul>
-        
-      </div><!-- /.navbar-collapse -->
-
-      <div id="mobile-app">
-      {% if request.LANGUAGE_CODE == 'ca' %}
-        <a target="_blank" href="https://play.google.com/store/apps/details?id=com.habitissimo.vespapp&hl=ca">
-          <img src="{% static "img/googleplay.png" %}" alt="Disponible a Google Play">
-        </a>
-      {% else %}
-        <a target="_blank" href="https://play.google.com/store/apps/details?id=com.habitissimo.vespapp&hl=es">
-          <img src="{% static "img/googleplay.png" %}" alt="Disponible en Google Play">
-        </a>
-      {% endif %}
-      </div>
-
     </div><!-- /.container-fluid -->
     
   </nav>

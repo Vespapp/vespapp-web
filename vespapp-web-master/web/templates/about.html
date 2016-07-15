@@ -30,7 +30,11 @@
                                 </div>
                                 <div class="timeline-body">
                                     <p class="text-muted">{% trans "El Laboratorio de Zoología del Departamento de Biología de la Universitat de les Illes Balears confirmó la detección por primera vez de esta avispa en Mallorca, gracias a la colaboración de los apicultores." %}</p>
-                                    <a target="_blank" href="http://diari.uib.es/arxiu/La-avispa-asiatica-ya-esta-en-Mallorca.cid411005"> {% trans "Más info" %}</a>
+                                    {% if request.LANGUAGE_CODE == 'ca' %}
+                                         <a target="_blank" href="http://diari.uib.cat/arxiu/La-vespa-asiatica-ja-es-a-Mallorca.cid411005"> {% trans "Más info" %}</a>
+                                    {% else %}
+                                         <a target="_blank" href="http://diari.uib.es/arxiu/La-avispa-asiatica-ya-esta-en-Mallorca.cid411005"> {% trans "Más info" %}</a>
+                                    {% endif %}
                                 </div>
                             </div>
                         </li>
@@ -45,7 +49,11 @@
                                 </div>
                                 <div class="timeline-body">
                                     <p class="text-muted">{% trans "El Servei de Protecció d’Espècies de la Conselleria de Medi Ambient, Agricultura i Pesca organiza operativos para la detección del nido de la avispa asiática. El Equipo de control de fauna del COFIB logra retirar con éxito el único nido encontrado en la zona de la Vall de Sóller." %}</p>
-                                    <a target="_blank" href="http://www.caib.es/pidip/dadesComunicat.do?lang=es&codi=8835160"> {% trans "Más info" %}</a>
+                                    {% if request.LANGUAGE_CODE == 'ca' %}
+                                        <a target="_blank" href="http://www.caib.es/govern/pidip/dadesComunicat.do?lang=ca&codi=8835160"> {% trans "Más info" %}</a>
+                                    {% else %}
+                                        <a target="_blank" href="http://www.caib.es/pidip/dadesComunicat.do?lang=es&codi=8835160"> {% trans "Más info" %}</a>
+                                    {% endif %}
                                 </div>
                             </div>
                         </li>
@@ -60,7 +68,11 @@
                                 </div>
                                 <div class="timeline-body">
                                     <p class="text-muted">{% trans "La UIB (Laboratorio de Zoología, Escuela Politécnica Superior y Vicerrectorado de Innovación y Transferencia) y Habitissimo organizan un maratón informático para diseñar una app contra la avispa asiática. Primera fase de la creación de Vespapp." %}</p>
-                                    <a target="_blank" href="http://diari.uib.es/arxiu/La-UIB-y-Habitissimo-organizan-un-maraton.cid432855"> Más info</a>
+                                    {% if request.LANGUAGE_CODE == 'ca' %}
+                                        <a target="_blank" href="http://diari.uib.cat/arxiu/La-UIB-i-Habitissimo-organitzen-una-marato.cid432855"> {% trans "Más info" %}</a>
+                                    {% else %}
+                                        <a target="_blank" href="http://diari.uib.es/arxiu/La-UIB-y-Habitissimo-organizan-un-maraton.cid432855"> {% trans "Más info" %}</a>
+                                    {% endif %}
                                 </div>
                             </div>
                         </li>
@@ -78,7 +90,40 @@
                                 </div>
                             </div>
                         </li>
+                        <li>
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="{% static "img/about_us_5.jpg" %}" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>{% trans "Junio de 2016" %}</h4>
+                                    <h4 class="subheading">{% trans "Presentación de Vespapp" %}</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">{% trans "Día 8 de junio se presentó oficialmente el proyecto Vespapp en la Universitat de les Illes Balears, cuyo objetivo es la detección temprana de la avispa asiática." %}</p>
+                                    {% if request.LANGUAGE_CODE == 'ca' %}                                        
+                                        <a target="_blank" href="http://diari.uib.cat/arxiu/Roda-informativa-Presentacio-de-la-Vespapp-per.cid445787"> {% trans "Más info" %}</a>
+                                    {% else %}
+                                        <a target="_blank" href="http://diari.uib.es/arxiu/Rueda-informativa-Presentacion-de-la-Vespapp-para.cid445787"> {% trans "Más info" %}</a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        </li>
                         <li class="timeline-inverted">
+                            <div class="timeline-image">
+                                <img class="img-circle img-responsive" src="{% static "img/about_us_6.png" %}" alt="">
+                            </div>
+                            <div class="timeline-panel">
+                                <div class="timeline-heading">
+                                    <h4>{% trans "Actualmente" %}</h4>
+                                    <h4 class="subheading">{% trans "¡Viva la ciencia ciudadana!" %}</h4>
+                                </div>
+                                <div class="timeline-body">
+                                    <p class="text-muted">{% trans "La ciudadanía de las Illes Balears se ha volcado con el proyecto de ciencia ciudadana y gracias a eso cada día estamos más cerca de cumplir nuestro objetivo. ¡Muchas gracias a todos! ¡No olvidéis seguirnos en las redes sociales!" %}</p>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
                             <div class="timeline-image">
                                 <h4>{% trans "¡Sé parte" %}
                                     <br>{% trans "de nuestra" %}

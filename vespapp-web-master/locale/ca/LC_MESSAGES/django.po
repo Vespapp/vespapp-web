@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-13 13:27+0200\n"
+"POT-Creation-Date: 2016-07-15 12:40+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -39,14 +39,12 @@ msgid "Las contraseñas no coinciden."
 msgstr "Les contrasenyes no coincideixen."
 
 #: web/forms.py:95
-#, fuzzy
-#| msgid "Ya existe un email igual en la db."
 msgid "Ya existe un usuario con este email."
-msgstr "Ja existeix un email igual a base de dades."
+msgstr "Ja existeix un usuari amb aquest email."
 
 #: web/forms.py:106
 msgid "Ya existe un usuario con este nombre."
-msgstr ""
+msgstr "Ja existeix un usuari amb aquest nom."
 
 #: web/forms.py:113 web/templates/user_profile.html:50
 msgid "Contraseña actual"
@@ -57,16 +55,12 @@ msgid "Nueva contraseña"
 msgstr "Nova contrasenya"
 
 #: web/forms.py:123
-#, fuzzy
-#| msgid "Repita la contraseña"
 msgid "Repetir contraseña"
 msgstr "Repeteix la contrasenya"
 
 #: web/forms.py:136
-#, fuzzy
-#| msgid "Contraseña"
 msgid "Contraseña inválida"
-msgstr "Contrasenya"
+msgstr "Contrasenya invàlida"
 
 #: web/templates/404.html:4 web/templates/sight_question.html:5
 msgid "Preguntas"
@@ -129,6 +123,7 @@ msgstr ""
 "vespa a Mallorca, gràcies a la col·laboració dels apicultors."
 
 #: web/templates/about.html:33 web/templates/about.html:48
+#: web/templates/about.html:92
 msgid "Más info"
 msgstr "Més info"
 
@@ -174,7 +169,7 @@ msgstr ""
 
 #: web/templates/about.html:73
 msgid "Abril – Mayo de 2016"
-msgstr "Abril - Maig de 2016"
+msgstr "Abril – Maig de 2016"
 
 #: web/templates/about.html:74
 msgid "Segunda fase de la creación de Vespapp"
@@ -196,15 +191,53 @@ msgstr ""
 "d'Enginyeria Informàtica becats per la Càtedra Santander-UIB d'Innovació i "
 "Transferència del Coneixement (CSUIT)."
 
-#: web/templates/about.html:83
+#: web/templates/about.html:87
+msgid "Junio de 2016"
+msgstr "Juny de 2016"
+
+#: web/templates/about.html:88
+msgid "Presentación de Vespapp"
+msgstr "Presentació de Vespapp"
+
+#: web/templates/about.html:91
+msgid ""
+"Día 8 de junio se presentó oficialmente el proyecto Vespapp en la "
+"Universitat de les Illes Balears, cuyo objetivo es la detección temprana de "
+"la avispa asiática."
+msgstr ""
+"Dia 8 de juny es va presentar oficialment el projecte Vespapp a la "
+"Universitat de les Illes Balears. El seu objectiu és la detecció precoç de "
+"la vespa asiàtica."
+
+#: web/templates/about.html:102
+msgid "Actualmente"
+msgstr "Actualment"
+
+#: web/templates/about.html:103
+msgid "¡Viva la ciencia ciudadana!"
+msgstr "Visca la ciència ciutadana!"
+
+#: web/templates/about.html:106
+msgid ""
+"La ciudadanía de las Illes Balears se ha volcado con el proyecto de ciencia "
+"ciudadana y gracias a eso cada día estamos más cerca de cumplir nuestro "
+"objetivo. ¡Muchas gracias a todos! ¡No olvidéis seguirnos en las redes "
+"sociales!"
+msgstr ""
+"La ciutadania de les Illes Balears s'ha bolcat amb el projecte de ciència "
+"ciutadana i gràcies a això cada dia estam més a prop de complir el nostre "
+"objectiu. Moltes gràcies a tots! No t'oblidis de seguir-nos a les xarxes "
+"socials!"
+
+#: web/templates/about.html:112
 msgid "¡Sé parte"
 msgstr "Sigues part"
 
-#: web/templates/about.html:84
+#: web/templates/about.html:113
 msgid "de nuestra"
 msgstr "de la nostra"
 
-#: web/templates/about.html:85
+#: web/templates/about.html:114
 msgid "historia!"
 msgstr "història!"
 
@@ -229,7 +262,7 @@ msgstr ""
 
 #: web/templates/admin/500.html:7
 msgid "Server error"
-msgstr "Error del servidor"
+msgstr ""
 
 #: web/templates/admin/500.html:11
 msgid "Server error (500)"
@@ -635,10 +668,12 @@ msgstr "2) Envia'ns les dades"
 #: web/templates/components/home-info.html:16
 msgid ""
 "Dinos dónde lo has encontrado, qué día y toda la información que puedas "
-"aportar para ayudar a su localización."
+"aportar para ayudar a su localización como tu información de contacto, que "
+"se usará solamente en caso de emergencia."
 msgstr ""
 "Digues on l'has trobada, quin dia, i tota la informació que puguis aportar "
-"per ajudar a localitzar-la."
+"per ajudar a localitzar-la com la teva informació de contacte, que "
+"s'utilitzarà només en casos d'emergència."
 
 #: web/templates/components/home-info.html:20
 msgid "3) Recibe comentarios"
@@ -871,11 +906,11 @@ msgstr "Latitud:"
 
 #: web/templates/sighting.html:55 web/templates/sighting.html:297
 msgid "Longitud:"
-msgstr "Longitud"
+msgstr "Longitud:"
 
 #: web/templates/sighting.html:66 web/templates/sighting.html:308
 msgid "Localización:"
-msgstr "Localització"
+msgstr "Localització:"
 
 #: web/templates/sighting.html:72 web/templates/sighting.html:314
 msgid "Tipo:"
@@ -957,24 +992,18 @@ msgid " Escribe tu comentario..."
 msgstr "Escriu el teu comentari..."
 
 #: web/templates/sighting.html:444
-#, fuzzy
-#| msgid "¡Shhh! Esta página está durmiendo."
 msgid "¡Shhh! Este avispamiento está durmiendo."
 msgstr "Shhh! Aquesta pàgina està dormint."
 
 #: web/templates/sighting.html:445
 msgid "O puede que no esté disponible"
-msgstr ""
+msgstr "O potser no està disponible"
 
 #: web/templates/sighting.html:446
-#, fuzzy
-#| msgid "O que hayamos retirado la página. Una de estas será."
 msgid "o que lo hayamos retirado. Una de estas será."
-msgstr "O que l'haguem retirat de la pàgina."
+msgstr "o que l'haguem retirat de la pàgina."
 
 #: web/templates/sighting.html:450
-#, fuzzy
-#| msgid "Puedes volver a Inicio haciendo clic"
 msgid "Puedes volver a Inicio haciendo clic "
 msgstr "Pots tornar a Inici fent clic"
 
@@ -1232,6 +1261,3 @@ msgstr "Has tancat sessió. Torna aviat!"
 #: web/views.py:417
 msgid "Te contestaremos lo antes posible"
 msgstr "Et contestarem el més aviat possible"
-
-#~ msgid "Ir"
-#~ msgstr "Vés"
