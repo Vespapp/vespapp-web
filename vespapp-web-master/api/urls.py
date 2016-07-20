@@ -17,7 +17,9 @@ urlpatterns = [
 
     url(r'provinces/', api_views.ProvincesList.as_view(), name='province_list'),
 
-    url(r'info/', api_views.SightingInfoList.as_view(), name='info_list')
+    url(r'info/', api_views.SightingInfoList.as_view(), name='info_list'),
+    
+    url(r'appversion/', api_views.AppVersionView.as_view(), name='appversion')
 
 
 

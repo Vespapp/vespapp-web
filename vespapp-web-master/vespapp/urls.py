@@ -24,7 +24,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^api/', include('api.urls')),
     url(r'^jsi18n/', include('django.conf.urls.i18n')),
-    url(r'^(?P<filename>(robots.txt)|(humans.txt))', include('web.urls')),
+    url(r'^', include('web.urls')),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
 
 js_info_dict = {

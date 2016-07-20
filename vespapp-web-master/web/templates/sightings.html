@@ -35,7 +35,7 @@ function initialize() {
   // Multiple Markers
   var markers = [
       {% for sighting in sightings_list %}
-          ['{{ sighting.location }}', parseFloat('{{sighting.location.lat}}'.replace(',','.')), parseFloat('{{sighting.location.lng}}'.replace(',','.')), parseFloat('{{sighting.lat}}'.replace(',','.')), parseFloat('{{sighting.lng}}'.replace(',', '.')), '{{ sighting.user.username }}'],    
+          ['{{ sighting.location }}', parseFloat('{{sighting.location.lat}}'.replace(',','.')), parseFloat('{{sighting.location.lng}}'.replace(',','.')), parseFloat('{{sighting.lat}}'.replace(',','.')), parseFloat('{{sighting.lng}}'.replace(',', '.')), '{{ sighting.user.username }}', '{{ sighting.is_valid }}'],    
       {% endfor %}
   ];
 
@@ -126,6 +126,9 @@ function initialize() {
               icon = 'http://maps.google.com/mapfiles/ms/icons/purple-dot.png';
             }
           {% endif %}
+          if (markers[i][6] == "True") {
+              icon = 'http://maps.google.com/mapfiles/ms/icons/green-dot.png';
+          }
 
           bounds.extend(position);
           marker = new google.maps.Marker({

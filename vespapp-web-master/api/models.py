@@ -334,3 +334,19 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.user.username
+      
+class AppVersion(models.Model):
+  
+    version = models.CharField(null=False, blank=False, max_length=128, verbose_name='Versión')
+    
+    message = models.TextField(null=False, blank=False, default="Está usando una versión antigua de Vespapp.", max_length=512, verbose_name='Mensaje')
+    
+    message_ca = models.TextField(null=False, blank=False, default="Està utilitzant una versió antiga de Vespapp.", max_length=512, verbose_name='Missatge_ca')
+    
+    message_en = models.TextField(null=False, blank=False, default="You are using an old version of Vespapp.", max_length=512, verbose_name='Message_en')
+    
+    message_de = models.TextField(null=False, blank=False, default="Sie verwenden eine ältere Version von Vespapp.", max_length=512, verbose_name='Nachricht_de')
+    
+    def __str__(self):
+        return self.message
+    

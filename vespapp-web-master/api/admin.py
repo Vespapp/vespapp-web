@@ -65,6 +65,12 @@ class UserCommentAdmin(admin.ModelAdmin):
 class ExpertCommentAdmin(admin.ModelAdmin):
     list_display = ('user', 'body', 'sighting', 'is_valid')
     list_filter = ('sighting', 'user', 'is_valid')
+    
+class AppVersionAdmin(admin.ModelAdmin):
+    list_display = ('version', 'message')
+    list_filter = ('version', 'message')
+    
+    fieldsets = [('App Android',{'fields': ['version', 'message', 'message_ca', 'message_en', 'message_de']})]
 
 
 admin.site.register(Question, QuestionAdmin)
@@ -77,6 +83,7 @@ admin.site.register(SightingInfo, SightingInfoAdmin)
 admin.site.register(Location)
 admin.site.register(Province)
 admin.site.register(UserProfile, UserProfileAdmin)
+admin.site.register(AppVersion, AppVersionAdmin)
 
 #class AnswerAdmin (admin.ModelAdmin):
  #   model=Sighting

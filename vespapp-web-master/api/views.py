@@ -7,7 +7,8 @@ from api.serializers import SightingSerializer, PictureSerializer, LocationSeria
     AnswerSerializer, MyQuestionSerializer, SightingInfoSerializer
 from api.models import Sighting, UserComment, ExpertComment
 from api.serializers import SightingSerializer, UserCommentSerializer, ExpertCommentSerializer
-
+from api.models import AppVersion
+from api.serializers import AppVersionSerializer
 
 # Sightings list
 class SightingListCreateView(ListCreateAPIView):
@@ -85,7 +86,12 @@ class SightingInfoList(ListAPIView):
 
 
 
+# App Version list
+class AppVersionView(ListAPIView):
+    serializer_class = AppVersionSerializer
 
+    def get_queryset(self):
+        return AppVersion.objects.all()
 
 
 
