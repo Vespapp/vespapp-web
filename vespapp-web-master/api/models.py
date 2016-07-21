@@ -339,6 +339,8 @@ class AppVersion(models.Model):
   
     version = models.CharField(null=False, blank=False, max_length=128, verbose_name='Versión')
     
+    is_last = models.BooleanField(null=False, blank=False, default=False, verbose_name='Es última versión')
+    
     message = models.TextField(null=False, blank=False, default="Está usando una versión antigua de Vespapp.", max_length=512, verbose_name='Mensaje')
     
     message_ca = models.TextField(null=False, blank=False, default="Està utilitzant una versió antiga de Vespapp.", max_length=512, verbose_name='Missatge_ca')
@@ -347,6 +349,10 @@ class AppVersion(models.Model):
     
     message_de = models.TextField(null=False, blank=False, default="Sie verwenden eine ältere Version von Vespapp.", max_length=512, verbose_name='Nachricht_de')
     
+    class Meta:
+        verbose_name = 'Versión App Android'
+        verbose_name_plural = 'Versiones App Android'
+        
     def __str__(self):
         return self.message
     

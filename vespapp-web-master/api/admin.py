@@ -70,7 +70,7 @@ class AppVersionAdmin(admin.ModelAdmin):
     list_display = ('version', 'message')
     list_filter = ('version', 'message')
     
-    fieldsets = [('App Android',{'fields': ['version', 'message', 'message_ca', 'message_en', 'message_de']})]
+    fieldsets = [('App Android',{'fields': ['version', 'is_last', 'message', 'message_ca', 'message_en', 'message_de']})]
 
 
 admin.site.register(Question, QuestionAdmin)
