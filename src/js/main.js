@@ -1,4 +1,4 @@
-{% load i18n %}
+// {% load i18n %}
 
 (function(w, $) {
   // Carousel
@@ -54,7 +54,7 @@ function successUpLogged(){
   });
 }
 
-function successUp(msg){   
+function successUp(msg){
   swal({
     title: gettext("¡Gracias por enviar tu avispamiento!\n\nPor favor, regístrate para que podamos contactar contigo en caso de emergencia."),
     text: msg,
@@ -69,7 +69,7 @@ function successUp(msg){
   function(isConfirm){
     if (isConfirm) {
       window.location = '/login/';
-    }else {  
+    }else {
       swal({
         title: gettext("Puedes registrarte en cualquier otro momento"),
         text: gettext("Muchas gracias por tu colaboración ;)"),
@@ -82,7 +82,7 @@ function successUp(msg){
           window.location = '/';
         }
       });
-    }    
+    }
   });
 }
 
