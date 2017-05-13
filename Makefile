@@ -20,10 +20,14 @@ migrate:
 collectstatic:
 	docker-compose run --rm gulp
 	docker-compose run --rm web collectstatic --noinput
+create-superuser:
+	docker-compose run --rm --service-ports web createsuperuser
 devel:
 	docker-compose run --rm --service-ports dev
 gulp-watch:
 	docker-compose run --rm -T gulp watch
+load_locations:
+	docker-compose run --rm --service-ports web load_locations
 
 # Lenguages
 compile-lang:

@@ -8,6 +8,15 @@ from api.models import Province
 class Command(BaseCommand):
 
     def handle(self, *args, **options):
+        """
+        Insert all location.json file locations on data base
+        """
+        print("Inserting data...")
+
+        p = Province()
+        p.name = "Islas Baleares"
+        p.save()
+
         with open('data/locations.json', 'r') as f:
             location_str = f.read()
             locations = json.loads(location_str)
