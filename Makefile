@@ -18,3 +18,6 @@ makemigrations:
 	docker-compose run --rm --service-ports web makemigrations
 migrate:
 	docker-compose run --rm --service-ports web migrate
+collectstatic:
+	docker-compose run --rm gulp
+	docker-compose run --rm web collectstatic --noinput
