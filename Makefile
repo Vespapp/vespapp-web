@@ -14,3 +14,7 @@ install:
 	docker-compose run --no-deps --rm npm install
 	docker-compose run --no-deps --rm bower install
 	docker-compose run --no-deps --rm -T gulp
+makemigrations:
+	docker-compose run --rm --service-ports web makemigrations
+migrate:
+	docker-compose run --rm --service-ports web migrate
