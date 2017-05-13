@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2016-07-15 12:40+0200\n"
+"POT-Creation-Date: 2017-05-13 12:41+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -46,11 +46,11 @@ msgstr "Ja existeix un usuari amb aquest email."
 msgid "Ya existe un usuario con este nombre."
 msgstr "Ja existeix un usuari amb aquest nom."
 
-#: web/forms.py:113 web/templates/user_profile.html:50
+#: web/forms.py:113 web/templates/user_profile.html.py:50
 msgid "Contraseña actual"
 msgstr "Contrasenya actual"
 
-#: web/forms.py:118 web/templates/user_profile.html:52
+#: web/forms.py:118 web/templates/user_profile.html.py:52
 msgid "Nueva contraseña"
 msgstr "Nova contrasenya"
 
@@ -62,11 +62,11 @@ msgstr "Repeteix la contrasenya"
 msgid "Contraseña inválida"
 msgstr "Contrasenya invàlida"
 
-#: web/templates/404.html:4 web/templates/sight_question.html:5
+#: web/templates/404.html:4 web/templates/sight_question.html.py:5
 msgid "Preguntas"
 msgstr "Preguntes"
 
-#: web/templates/404.html:5 web/templates/sight_question.html:6
+#: web/templates/404.html:5 web/templates/sight_question.html.py:6
 msgid "Preguntas sobre el avistamiento"
 msgstr "Preguntes sobre la detecció de la vespa"
 
@@ -82,21 +82,21 @@ msgstr "O pot ser que l'enllaç no funcioni."
 msgid "O que hayamos retirado la página. Una de estas será."
 msgstr "O que l'haguem retirat de la pàgina."
 
-#: web/templates/404.html:18 web/templates/sightings.html:170
+#: web/templates/404.html:18 web/templates/sightings.html.py:173
 msgid "Puedes volver a Inicio haciendo clic"
 msgstr "Pots tornar a Inici fent clic"
 
-#: web/templates/404.html:18 web/templates/sighting.html:450
-#: web/templates/sightings.html:166 web/templates/sightings.html:170
+#: web/templates/404.html:18 web/templates/sighting.html.py:450
+#: web/templates/sightings.html:169 web/templates/sightings.html.py:173
 msgid "aquí"
 msgstr "aqui"
 
-#: web/templates/about.html:5 web/templates/components/footer.html:16
+#: web/templates/about.html:5 web/templates/components/footer.html.py:16
 #: web/templates/contact.html:4
 msgid "Acerca de"
 msgstr "Quant a"
 
-#: web/templates/about.html:7 web/templates/team.html:7
+#: web/templates/about.html:7 web/templates/team.html.py:7
 msgid "Preguntas más frecuentes"
 msgstr "Preguntes més freqüents"
 
@@ -122,20 +122,22 @@ msgstr ""
 "les Illes Balears va confirmar la detecció per primera vegada d'aquesta "
 "vespa a Mallorca, gràcies a la col·laboració dels apicultors."
 
-#: web/templates/about.html:33 web/templates/about.html:48
-#: web/templates/about.html:92
+#: web/templates/about.html:34 web/templates/about.html.py:36
+#: web/templates/about.html:53 web/templates/about.html.py:55
+#: web/templates/about.html:72 web/templates/about.html.py:74
+#: web/templates/about.html:105 web/templates/about.html.py:107
 msgid "Más info"
 msgstr "Més info"
 
-#: web/templates/about.html:43
+#: web/templates/about.html:47
 msgid "Octubre - Noviembre de 2015"
 msgstr "Octubre - Novembre de 2015"
 
-#: web/templates/about.html:44
+#: web/templates/about.html:48
 msgid "Localización y retirada del nido"
 msgstr "Localització i retirada del niu"
 
-#: web/templates/about.html:47
+#: web/templates/about.html:51
 msgid ""
 "El Servei de Protecció d’Espècies de la Conselleria de Medi Ambient, "
 "Agricultura i Pesca organiza operativos para la detección del nido de la "
@@ -147,15 +149,15 @@ msgstr ""
 "vespa asiàtica. L'equip de control de fauna del COFIB aconsegueix retirar "
 "amb èxit l'únic niu trobat a la zona de la vall de Sóller."
 
-#: web/templates/about.html:58
+#: web/templates/about.html:66
 msgid "Marzo de 2016"
 msgstr "Març de 2016"
 
-#: web/templates/about.html:59
+#: web/templates/about.html:67
 msgid "Maratón informático para diseñar una app contra la avispa asiática"
 msgstr "Marató informàtica per dissenyar una app contra la vespa asiàtica"
 
-#: web/templates/about.html:62
+#: web/templates/about.html:70
 msgid ""
 "La UIB (Laboratorio de Zoología, Escuela Politécnica Superior y "
 "Vicerrectorado de Innovación y Transferencia) y Habitissimo organizan un "
@@ -167,15 +169,15 @@ msgstr ""
 "per dissenyar una app contra la vespa asiàtica. Primera fase de la creació "
 "de Vespapp."
 
-#: web/templates/about.html:73
+#: web/templates/about.html:85
 msgid "Abril – Mayo de 2016"
 msgstr "Abril – Maig de 2016"
 
-#: web/templates/about.html:74
+#: web/templates/about.html:86
 msgid "Segunda fase de la creación de Vespapp"
 msgstr "Segona fase de la creació de Vespapp"
 
-#: web/templates/about.html:77
+#: web/templates/about.html:89
 msgid ""
 "El equipo investigador del proyecto de ciencia ciudadana Vespapp "
 "(Laboratorio de Zoología, Informática, Sistemas de Información Geográfica "
@@ -191,15 +193,15 @@ msgstr ""
 "d'Enginyeria Informàtica becats per la Càtedra Santander-UIB d'Innovació i "
 "Transferència del Coneixement (CSUIT)."
 
-#: web/templates/about.html:87
+#: web/templates/about.html:99
 msgid "Junio de 2016"
 msgstr "Juny de 2016"
 
-#: web/templates/about.html:88
+#: web/templates/about.html:100
 msgid "Presentación de Vespapp"
 msgstr "Presentació de Vespapp"
 
-#: web/templates/about.html:91
+#: web/templates/about.html:103
 msgid ""
 "Día 8 de junio se presentó oficialmente el proyecto Vespapp en la "
 "Universitat de les Illes Balears, cuyo objetivo es la detección temprana de "
@@ -209,15 +211,15 @@ msgstr ""
 "Universitat de les Illes Balears. El seu objectiu és la detecció precoç de "
 "la vespa asiàtica."
 
-#: web/templates/about.html:102
+#: web/templates/about.html:118
 msgid "Actualmente"
 msgstr "Actualment"
 
-#: web/templates/about.html:103
+#: web/templates/about.html:119
 msgid "¡Viva la ciencia ciudadana!"
 msgstr "Visca la ciència ciutadana!"
 
-#: web/templates/about.html:106
+#: web/templates/about.html:122
 msgid ""
 "La ciudadanía de las Illes Balears se ha volcado con el proyecto de ciencia "
 "ciudadana y gracias a eso cada día estamos más cerca de cumplir nuestro "
@@ -229,19 +231,19 @@ msgstr ""
 "objectiu. Moltes gràcies a tots! No t'oblidis de seguir-nos a les xarxes "
 "socials!"
 
-#: web/templates/about.html:112
+#: web/templates/about.html:128
 msgid "¡Sé parte"
 msgstr "Sigues part"
 
-#: web/templates/about.html:113
+#: web/templates/about.html:129
 msgid "de nuestra"
 msgstr "de la nostra"
 
-#: web/templates/about.html:114
+#: web/templates/about.html:130
 msgid "historia!"
 msgstr "història!"
 
-#: web/templates/admin/404.html:4 web/templates/admin/404.html:8
+#: web/templates/admin/404.html:4 web/templates/admin/404.html.py:8
 msgid "Page not found"
 msgstr ""
 
@@ -249,7 +251,7 @@ msgstr ""
 msgid "We're sorry, but the requested page could not be found."
 msgstr ""
 
-#: web/templates/admin/500.html:6 web/templates/admin/app_index.html:9
+#: web/templates/admin/500.html:6 web/templates/admin/app_index.html.py:9
 #: web/templates/admin/auth/user/change_password.html:13
 #: web/templates/admin/base.html:56 web/templates/admin/change_form.html:18
 #: web/templates/admin/change_list.html:31
@@ -615,8 +617,8 @@ msgid "Mapa de avispamientos"
 msgstr "Mapa de deteccions"
 
 #: web/templates/components/footer.html:11
-#: web/templates/components/navbar.html:35 web/templates/info.html:4
-#: web/templates/info.html:6 web/templates/info.html:12
+#: web/templates/components/navbar.html:36 web/templates/info.html.py:4
+#: web/templates/info.html:6 web/templates/info.html.py:12
 msgid "Infórmate"
 msgstr "Informa't"
 
@@ -628,22 +630,18 @@ msgstr "Registra't"
 msgid "Sobre Vespapp"
 msgstr "Quant a Vespapp"
 
-#: web/templates/components/footer.html:17 web/templates/team.html:5
+#: web/templates/components/footer.html:17 web/templates/team.html.py:5
 msgid "Equipo"
 msgstr "Equip"
 
 #: web/templates/components/footer.html:18
-#: web/templates/components/navbar.html:36
+#: web/templates/components/navbar.html:37
 msgid "Contacto"
 msgstr "Contacte"
 
 #: web/templates/components/footer.html:21
 msgid "Síguenos"
 msgstr "Segueix-nos"
-
-#: web/templates/components/footer.html:27
-msgid "Elige idioma:"
-msgstr "Tria idioma:"
 
 #: web/templates/components/home-info.html:5
 msgid "Pasos a seguir"
@@ -689,31 +687,31 @@ msgstr ""
 "detecció de la vespa i aportar informació complementària si els nostres "
 "experts en necessiten."
 
-#: web/templates/components/navbar.html:23 web/templates/home.html:4
+#: web/templates/components/navbar.html:24 web/templates/home.html.py:4
 msgid "Inicio"
 msgstr "Inici"
 
-#: web/templates/components/navbar.html:24 web/templates/home.html:32
+#: web/templates/components/navbar.html:25 web/templates/home.html.py:32
 msgid "Añade avispamiento"
 msgstr "He vist una vespa"
 
-#: web/templates/components/navbar.html:25
+#: web/templates/components/navbar.html:26
 msgid "Mapa"
 msgstr "Mapa"
 
-#: web/templates/components/navbar.html:28 web/templates/user_profile.html:11
+#: web/templates/components/navbar.html:29 web/templates/user_profile.html:11
 msgid "Mi perfil"
 msgstr "El meu perfil"
 
-#: web/templates/components/navbar.html:29
+#: web/templates/components/navbar.html:30
 msgid "Cerrar sesión"
 msgstr "Tanca sessió"
 
-#: web/templates/components/navbar.html:31 web/templates/login.html:8
+#: web/templates/components/navbar.html:32 web/templates/login.html.py:8
 msgid "Iniciar sesión"
 msgstr "Inicia sessió"
 
-#: web/templates/components/navbar.html:32
+#: web/templates/components/navbar.html:33
 msgid "Registrarse"
 msgstr "Registre"
 
@@ -761,7 +759,7 @@ msgstr "Envia"
 msgid "Nombre : "
 msgstr "Nom :"
 
-#: web/templates/contact.html:41 web/templates/signup.html:58
+#: web/templates/contact.html:41 web/templates/signup.html.py:58
 #: web/templates/user_profile.html:71
 msgid "\\nCorreo electrónico: "
 msgstr "\\nAdreça electrònica: "
@@ -774,7 +772,7 @@ msgstr "\\nMissatge: "
 msgid "Lucha contra la avispa asiática"
 msgstr "Lluita contra la vespa asiàtica"
 
-#: web/templates/info.html:84 web/templates/signup.html:46
+#: web/templates/info.html:84 web/templates/signup.html.py:46
 msgid "Cerrar"
 msgstr "Tanca"
 
@@ -794,12 +792,12 @@ msgstr "Encara no tens compte?"
 msgid "Regístrate ya"
 msgstr "Registra't ara"
 
-#: web/templates/login.html:15 web/templates/signup.html:16
+#: web/templates/login.html:15 web/templates/signup.html.py:16
 #: web/templates/user_profile.html:36
 msgid "Nombre de usuario"
 msgstr "Nom d'usuari"
 
-#: web/templates/login.html:17 web/templates/signup.html:20
+#: web/templates/login.html:17 web/templates/signup.html.py:20
 msgid "Contraseña"
 msgstr "Contrasenya"
 
@@ -823,13 +821,13 @@ msgstr "Envia la detecció"
 msgid "Arrastra tus fotos sobre este cuadro o haz clic en el mismo"
 msgstr "Arrossega les teves fotos cap a aquest quadre o fes clic aquí"
 
-#: web/templates/new_sighting.html:29 web/templates/sighting.html:74
-#: web/templates/sighting.html:316 web/templates/sightings.html:55
+#: web/templates/new_sighting.html:29 web/templates/sighting.html.py:74
+#: web/templates/sighting.html:316 web/templates/sightings.html.py:55
 msgid "Avispa"
 msgstr "Vespa"
 
-#: web/templates/new_sighting.html:38 web/templates/sighting.html:76
-#: web/templates/sighting.html:318 web/templates/sightings.html:57
+#: web/templates/new_sighting.html:38 web/templates/sighting.html.py:76
+#: web/templates/sighting.html:318 web/templates/sightings.html.py:57
 msgid "Nido"
 msgstr "Niu"
 
@@ -867,8 +865,8 @@ msgstr "(Pots triar una o vàries d'aquestes opcions)"
 msgid "Siguiente"
 msgstr "Següent"
 
-#: web/templates/sighting.html:4 web/templates/sighting.html:18
-#: web/templates/sighting.html:260 web/templates/sightings.html:51
+#: web/templates/sighting.html:4 web/templates/sighting.html.py:18
+#: web/templates/sighting.html:260 web/templates/sightings.html.py:51
 msgid "Avistamiento"
 msgstr "Detecció"
 
@@ -876,106 +874,106 @@ msgstr "Detecció"
 msgid "Avistamiento en concreto"
 msgstr "Detecció en concret"
 
-#: web/templates/sighting.html:14 web/templates/sighting.html:256
+#: web/templates/sighting.html:14 web/templates/sighting.html.py:256
 #: web/templates/sightings.html:47
 msgid "Avistamiento avispa"
 msgstr "Detecció de vespa"
 
-#: web/templates/sighting.html:16 web/templates/sighting.html:258
+#: web/templates/sighting.html:16 web/templates/sighting.html.py:258
 #: web/templates/sightings.html:49
 msgid "Avistamiento nido"
 msgstr "Detecció de niu"
 
-#: web/templates/sighting.html:23 web/templates/sighting.html:265
+#: web/templates/sighting.html:23 web/templates/sighting.html.py:265
 msgid "Notificado por:"
 msgstr "Notificat per:"
 
-#: web/templates/sighting.html:36 web/templates/sighting.html:278
-#: web/templates/sightings.html:84 web/templates/sightings.html:86
+#: web/templates/sighting.html:36 web/templates/sighting.html.py:278
+#: web/templates/sightings.html:84 web/templates/sightings.html.py:86
 msgid "Usuario:"
 msgstr "Usuari:"
 
-#: web/templates/sighting.html:40 web/templates/sighting.html:282
+#: web/templates/sighting.html:40 web/templates/sighting.html.py:282
 #: web/templates/sightings.html:86
 msgid "Anónimo"
 msgstr "Anònim"
 
-#: web/templates/sighting.html:47 web/templates/sighting.html:289
+#: web/templates/sighting.html:47 web/templates/sighting.html.py:289
 msgid "Latitud:"
 msgstr "Latitud:"
 
-#: web/templates/sighting.html:55 web/templates/sighting.html:297
+#: web/templates/sighting.html:55 web/templates/sighting.html.py:297
 msgid "Longitud:"
 msgstr "Longitud:"
 
-#: web/templates/sighting.html:66 web/templates/sighting.html:308
+#: web/templates/sighting.html:66 web/templates/sighting.html.py:308
 msgid "Localización:"
 msgstr "Localització:"
 
-#: web/templates/sighting.html:72 web/templates/sighting.html:314
+#: web/templates/sighting.html:72 web/templates/sighting.html.py:314
 msgid "Tipo:"
 msgstr "Tipus:"
 
-#: web/templates/sighting.html:81 web/templates/sighting.html:323
-#: web/templates/sightings.html:69 web/templates/sightings.html:71
+#: web/templates/sighting.html:81 web/templates/sighting.html.py:323
+#: web/templates/sightings.html:69 web/templates/sightings.html.py:71
 #: web/templates/sightings.html:73
 msgid "Estado:"
 msgstr "Estat:"
 
-#: web/templates/sighting.html:83 web/templates/sighting.html:325
+#: web/templates/sighting.html:83 web/templates/sighting.html.py:325
 #: web/templates/sightings.html:69
 msgid "Pendiente"
 msgstr "Pendent"
 
-#: web/templates/sighting.html:85 web/templates/sighting.html:327
+#: web/templates/sighting.html:85 web/templates/sighting.html.py:327
 #: web/templates/sightings.html:71
 msgid "Procesando"
 msgstr "Processant"
 
-#: web/templates/sighting.html:87 web/templates/sighting.html:329
+#: web/templates/sighting.html:87 web/templates/sighting.html.py:329
 #: web/templates/sightings.html:73
 msgid "Procesado"
 msgstr "Processat"
 
-#: web/templates/sighting.html:92 web/templates/sighting.html:334
-#: web/templates/sightings.html:61 web/templates/sightings.html:63
+#: web/templates/sighting.html:92 web/templates/sighting.html.py:334
+#: web/templates/sightings.html:61 web/templates/sightings.html.py:63
 #: web/templates/sightings.html:65
 msgid "Resultado:"
 msgstr "Resultat:"
 
-#: web/templates/sighting.html:94 web/templates/sighting.html:336
+#: web/templates/sighting.html:94 web/templates/sighting.html.py:336
 #: web/templates/sightings.html:61
 msgid "Positivo"
 msgstr "Positiu"
 
-#: web/templates/sighting.html:96 web/templates/sighting.html:338
+#: web/templates/sighting.html:96 web/templates/sighting.html.py:338
 #: web/templates/sightings.html:63
 msgid "Negativo"
 msgstr "Negatiu"
 
-#: web/templates/sighting.html:98 web/templates/sighting.html:340
+#: web/templates/sighting.html:98 web/templates/sighting.html.py:340
 #: web/templates/sightings.html:65
 msgid "Desconocido"
 msgstr "Desconegut"
 
-#: web/templates/sighting.html:103 web/templates/sighting.html:345
+#: web/templates/sighting.html:103 web/templates/sighting.html.py:345
 #: web/templates/sightings.html:88
 msgid "Fecha:"
 msgstr "Data:"
 
-#: web/templates/sighting.html:108 web/templates/sighting.html:350
+#: web/templates/sighting.html:108 web/templates/sighting.html.py:350
 msgid "Observaciones:"
 msgstr "Observacions:"
 
-#: web/templates/sighting.html:159 web/templates/sighting.html:402
+#: web/templates/sighting.html:159 web/templates/sighting.html.py:402
 msgid "comentarios:"
 msgstr "comentaris:"
 
-#: web/templates/sighting.html:182 web/templates/sighting.html:425
+#: web/templates/sighting.html:182 web/templates/sighting.html.py:425
 msgid "Comentarios:"
 msgstr "Comentaris:"
 
-#: web/templates/sighting.html:183 web/templates/sighting.html:426
+#: web/templates/sighting.html:183 web/templates/sighting.html.py:426
 msgid "No hay comentarios."
 msgstr "No hi ha comentaris."
 
@@ -983,7 +981,7 @@ msgstr "No hi ha comentaris."
 msgid "Escribe tu comentario..."
 msgstr "Escriu el teu comentari..."
 
-#: web/templates/sighting.html:189 web/templates/sighting.html:432
+#: web/templates/sighting.html:189 web/templates/sighting.html.py:432
 msgid "Enviar comentario"
 msgstr "Envia comentari"
 
@@ -1032,11 +1030,11 @@ msgstr "Llista de deteccions"
 msgid "Más información"
 msgstr "Més informació"
 
-#: web/templates/sightings.html:165
+#: web/templates/sightings.html:168
 msgid "Aún estamos validando los avistamientos."
 msgstr "Encara estam validant les deteccions."
 
-#: web/templates/sightings.html:166
+#: web/templates/sightings.html:169
 msgid "Sube el tuyo"
 msgstr "Puja el teu"
 
@@ -1056,11 +1054,11 @@ msgstr ""
 "Si vols conèixer l'estat de la detecció de la vespa, REGISTRA'T per poder "
 "fer comentaris i veure totes les fotos que ens has enviat"
 
-#: web/templates/signup.html:18 web/templates/user_profile.html:38
+#: web/templates/signup.html:18 web/templates/user_profile.html.py:38
 msgid "Correo electrónico"
 msgstr "Adreça electrònica"
 
-#: web/templates/signup.html:22 web/templates/user_profile.html:54
+#: web/templates/signup.html:22 web/templates/user_profile.html.py:54
 msgid "Repita la contraseña"
 msgstr "Repeteix la contrasenya"
 
@@ -1118,15 +1116,15 @@ msgstr ""
 "confidencialitat de les vostres dades i a utilitzar-les d'acord amb la "
 "finalitat dels fitxers."
 
-#: web/templates/signup.html:55 web/templates/user_profile.html:68
+#: web/templates/signup.html:55 web/templates/user_profile.html.py:68
 msgid "Nombre de usuario: "
 msgstr "Nom d'usuari: "
 
-#: web/templates/signup.html:61 web/templates/user_profile.html:78
+#: web/templates/signup.html:61 web/templates/user_profile.html.py:78
 msgid "\\nContraseña: "
 msgstr "\\nContrasenya: "
 
-#: web/templates/signup.html:64 web/templates/user_profile.html:81
+#: web/templates/signup.html:64 web/templates/user_profile.html.py:81
 msgid "\\nRepita la contraseña: "
 msgstr "\\nRepeteix la contrasenya: "
 
@@ -1138,8 +1136,8 @@ msgstr "El nostre equip"
 msgid "Equipo investigador"
 msgstr "Equip investigador"
 
-#: web/templates/team.html:31 web/templates/team.html:38
-#: web/templates/team.html:47 web/templates/team.html:53
+#: web/templates/team.html:31 web/templates/team.html.py:38
+#: web/templates/team.html:47 web/templates/team.html.py:53
 msgid "Laboratorio de Zoología. Departamento de Biología"
 msgstr "Laboratori de Zoologia. Departament de Biologia"
 
@@ -1151,7 +1149,7 @@ msgstr "Dra. Mar Leza"
 msgid "Dr. Miguel Ángel Miranda"
 msgstr "Dr. Miguel Ángel Miranda"
 
-#: web/templates/team.html:62 web/templates/team.html:70
+#: web/templates/team.html:62 web/templates/team.html.py:70
 msgid ""
 "Arquitectura y comportamiento de sistemas informáticos y de comunicaciones "
 "(ACSIC). Departamento de Ciencias Matemáticas e Informática"
@@ -1163,7 +1161,7 @@ msgstr ""
 msgid "Dr. Carlos Guerrero"
 msgstr "Dr. Carlos Guerrero"
 
-#: web/templates/team.html:79 web/templates/team.html:85
+#: web/templates/team.html:79 web/templates/team.html.py:85
 msgid "Servicio de Sistemas de Información Geográfica (SIG) y Teledetección"
 msgstr "Servei de Sistemes d'Informació Geogràfica (SIG) i Teledetecció"
 
@@ -1171,7 +1169,7 @@ msgstr "Servei de Sistemes d'Informació Geogràfica (SIG) i Teledetecció"
 msgid "Dr. Maurici Ruíz"
 msgstr "Dr.Maurici Ruíz"
 
-#: web/templates/team.html:94 web/templates/team.html:100
+#: web/templates/team.html:94 web/templates/team.html.py:100
 msgid "Comunicación, participación y redes sociales"
 msgstr "Comunicació, participació i xarxes socials"
 
@@ -1187,12 +1185,12 @@ msgstr ""
 "Equip de la beca de la Càtedra Santander-UIB d'Innovació i Transferència del "
 "Coneixement (CSUIT)"
 
-#: web/templates/team.html:121 web/templates/team.html:139
+#: web/templates/team.html:121 web/templates/team.html.py:139
 #: web/templates/team.html:157
 msgid "Escuela Politécnica Superior de la Universidad de las Islas Baleares"
 msgstr "Escola Politècnica Superior de la Universitat de les Illes Balears"
 
-#: web/templates/team.html:130 web/templates/team.html:148
+#: web/templates/team.html:130 web/templates/team.html.py:148
 #: web/templates/team.html:166
 msgid "Estudiante de Ingeniería Informática"
 msgstr "Estudiant d'Enginyeria Informàtica"
@@ -1261,3 +1259,6 @@ msgstr "Has tancat sessió. Torna aviat!"
 #: web/views.py:417
 msgid "Te contestaremos lo antes posible"
 msgstr "Et contestarem el més aviat possible"
+
+#~ msgid "Elige idioma:"
+#~ msgstr "Tria idioma:"

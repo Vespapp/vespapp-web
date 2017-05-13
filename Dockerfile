@@ -10,6 +10,7 @@ WORKDIR $APP_HOME
 
 RUN apt-get update && \
     apt-get install -y postgresql-client && \
+    apt-get install -y gettext && \
     apt-get clean && \
     rm -rf /tmp/* && \
     rm -rf /var/tmp/* && \
