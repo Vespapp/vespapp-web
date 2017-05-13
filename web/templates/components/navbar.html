@@ -1,8 +1,6 @@
 {% load i18n %}
 {% load template %}
 {% load staticfiles %}
-<link rel="stylesheet" href="{% static "css/select.css" %}">
-<script src="{% static "js/ddslick.js" %}"></script>
 <div class="row">
   <nav class="navbar navbar-default">
     <div class="container-fluid">
@@ -16,7 +14,7 @@
         <a class="navbar-brand" href="{% url 'home' %}">
           <img src="{% static "img/avispa_logo.png" %}" width="45" height="45" alt="My image"/>
           <span>Vespapp</span>
-          
+
         </a>
       </div>
 
@@ -27,19 +25,19 @@
           <li class="{% active 'new_sighting' %}"><a href="{% url 'new_sighting' %}">{% trans "Añade avispamiento" %}</a></li>
           <li class="{% active 'sightings' %}"><a href="{% url 'sightings' %}">{% trans "Mapa" %}</a></li>
 
-          {% if user.is_authenticated %} 
-          <li class="{% active 'user_profile' %}"><a href="{% url 'user_profile' %}">{% trans "Mi perfil" %}</a></li> 
-          <li class="{% active 'logout' %}"><a href="{% url 'logout' %}">{% trans "Cerrar sesión" %}</a></li>              
-          {% else %}  
-          <li class="{% active 'login' %}"><a href="{% url 'login' %}">{% trans "Iniciar sesión" %}</a></li>      
-          <li class="{% active 'signup' %}"><a href="{% url 'signup' %}">{% trans "Registrarse" %}</a></li>         
+          {% if user.is_authenticated %}
+          <li class="{% active 'user_profile' %}"><a href="{% url 'user_profile' %}">{% trans "Mi perfil" %}</a></li>
+          <li class="{% active 'logout' %}"><a href="{% url 'logout' %}">{% trans "Cerrar sesión" %}</a></li>
+          {% else %}
+          <li class="{% active 'login' %}"><a href="{% url 'login' %}">{% trans "Iniciar sesión" %}</a></li>
+          <li class="{% active 'signup' %}"><a href="{% url 'signup' %}">{% trans "Registrarse" %}</a></li>
           {% endif %}
-          
+
           <li class="{% active 'info' %}"><a href="{% url 'info' %}">{% trans "Infórmate" %}</a></li>
-          <li class="{% active 'contact' %}"><a href="{% url 'contact' %}">{% trans "Contacto" %}</a></li> 
-         
+          <li class="{% active 'contact' %}"><a href="{% url 'contact' %}">{% trans "Contacto" %}</a></li>
+
         </ul>
-        
+
       </div><!-- /.navbar-collapse -->
       <form action="{% url 'set_language' %}" method="post">{% csrf_token %}
 		<input name="next" type="hidden" value="{{ redirect_to }}" />
@@ -61,7 +59,7 @@
 		  </select>
 	      </form>
     </div><!-- /.container-fluid -->
-    
+
   </nav>
-  
+
 </div>
