@@ -23,9 +23,8 @@
       <input type="password" id="password2" name="password2"/>
       <label for="password2"><span class="fa fa-lock"></span> {% trans "Repita la contraseña" %}</label>
 
-      <input type="checkbox" id="terms" value="terms" value="1">
+      <input type="checkbox" id="terms" value="terms" required>
       <span>{% trans "Confirmo que he leído y acepto los " %} <a data-toggle="modal" data-target="#privacity">{% trans "términos legales" %}</a></span>
-      {# <p><span class="asterisc">*</span>{% trans "Registrándote aceptas los " %}<a data-toggle="modal" data-target="#privacity">{% trans "términos legales" %}</a></p>#}
 
       <input type="submit" id="submit" value= {% trans "REGISTRARSE" %} >
 

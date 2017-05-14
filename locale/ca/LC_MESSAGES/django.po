@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-14 16:51+0200\n"
+"POT-Creation-Date: 2017-05-14 17:46+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -1075,8 +1075,6 @@ msgid "Repita la contraseña"
 msgstr "Repeteix la contrasenya"
 
 #: web/templates/signup.html:27
-#, fuzzy
-#| msgid "Confirmo que he leído y acepto los "
 msgid "Confirmo que he leído y acepto los "
 msgstr "Confirmo que he llegit i accepto els "
 
@@ -1084,15 +1082,15 @@ msgstr "Confirmo que he llegit i accepto els "
 msgid "términos legales"
 msgstr "termes legals"
 
-#: web/templates/signup.html:30
+#: web/templates/signup.html:29
 msgid "REGISTRARSE"
 msgstr "REGISTRE"
 
-#: web/templates/signup.html:43
+#: web/templates/signup.html:42
 msgid "Términos legales"
 msgstr "Termes legals"
 
-#: web/templates/signup.html:47
+#: web/templates/signup.html:46
 msgid ""
 "En cumplimiento del que dispone la Ley Orgánica 15/1999, de 13 de diciembre, "
 "de protección de datos de carácter personal, os informamos que los datos "
