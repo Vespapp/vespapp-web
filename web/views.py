@@ -1,11 +1,11 @@
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 from django.shortcuts import render
-from django.shortcuts import render_to_response 
+from django.shortcuts import render_to_response
 from django.shortcuts import redirect
 from django.template import RequestContext
 from django.http import HttpResponse
 from django.http import HttpResponseRedirect
-from django.http import Http404  
+from django.http import Http404
 from django.views.generic.base import TemplateView
 from django.views.generic.list import ListView
 from django.views.generic.detail import DetailView
@@ -87,8 +87,8 @@ class NewSightingView(TemplateView):
                     picture_id.file.save(f.name, f)
                     picture_id.save()
 
-                request.session['session_id'] = sighting_id.id   
-                request.session['question_order'] = 0  
+                request.session['session_id'] = sighting_id.id
+                request.session['question_order'] = 0
 
                 return HttpResponse(sighting_id.pk)
         else:
@@ -122,7 +122,7 @@ class SightingView(TemplateView):
 
         if request.POST:
             form_comment = CommentSightingForm(request.POST)
-            if form_comment.is_valid():   
+            if form_comment.is_valid():
                 comment_id = form_comment.save(commit=False)
                 sighting = Sighting.objects.get(id=int(sighting_id))
                 comment_id.sighting = sighting
@@ -130,7 +130,7 @@ class SightingView(TemplateView):
                 comment_id.user = user
                 comment_id.save()
 
-                return HttpResponseRedirect('')                   
+                return HttpResponseRedirect('')
         else:
             form_comment = CommentSightingForm()
 
@@ -151,46 +151,46 @@ class SightQuestionView(TemplateView):
 
     @csrf_exempt
     def sight_question(request):
-        
+
         if "session_id" in request.session:
-                    
+
             sighting_id = request.session['session_id']
-            question_order = request.session['question_order'] + 1 
+            question_order = request.session['question_order'] + 1
 
             request.session['question_order'] = question_order
 
-            s = Sighting.objects.get(id=sighting_id)   
-            
-            if request.POST:
-                form_question = QuestionForm(request.POST)   
+            s = Sighting.objects.get(id=sighting_id)
 
-                
+            if request.POST:
+                form_question = QuestionForm(request.POST)
+
+
                 if form_question.is_valid():
                     if request.FILES == None:
-                        raise Http404("No objects uploaded")    
+                        raise Http404("No objects uploaded")
 
-                    
+
                     myArray = request.POST.pop('value')
 
                     for x in myArray:
                         s.answers.add(x)
 
                     q = Question.objects.filter(order=int(question_order), sighting_type=s.type)
-                    if q.exists():           
+                    if q.exists():
                         #Subtracting one so that the next if it comes from one form to add beginning work properly
-                        question_order = request.session['question_order'] - 1                         
+                        question_order = request.session['question_order'] - 1
                         request.session['question_order'] = question_order
                         url = reverse('sight_question')
                         return HttpResponseRedirect(url)
                     else:
-                        message= gettext('Regístrate para conocer el estado de tu avispamiento, enviar comentarios y mucho más')    
-                        return render(request, 'home.html', {'message': message})      
+                        message= gettext('Regístrate para conocer el estado de tu avispamiento, enviar comentarios y mucho más')
+                        return render(request, 'home.html', {'message': message})
                 else:
                     #if click on next button but not select nothing
-                    question_order = request.session['question_order'] - 1                         
+                    question_order = request.session['question_order'] - 1
                     request.session['question_order'] = question_order
                     url = reverse('sight_question')
-                    return HttpResponseRedirect(url)              
+                    return HttpResponseRedirect(url)
             else:
                 form_question = QuestionForm()
 
@@ -203,7 +203,7 @@ class SightQuestionView(TemplateView):
                     }
                     return render_to_response('sight_question.html', context=context, context_instance=RequestContext(request))
                 else:
-                    message= gettext('Además, si te registras, podrás conocer el estado de tu avispamiento, enviar comentarios y mucho más.')    
+                    message= gettext('Además, si te registras, podrás conocer el estado de tu avispamiento, enviar comentarios y mucho más.')
                     return render(request, 'home.html', {'message': message})
         else:
             raise Http404(gettext("No hay sesión iniciada"))
@@ -230,6 +230,7 @@ class UserSignupView(TemplateView):
                 username = cleaned_data.get('username')
                 password = cleaned_data.get('password')
                 email = cleaned_data.get('email')
+                phone = cleaned_data.get('phone')
                 photo = cleaned_data.get('photo')
                 # E instanciamos un objeto User, con el username y password
                 user_model = User.objects.create_user(username=username, password=password)
@@ -244,6 +245,7 @@ class UserSignupView(TemplateView):
                 user_profile.user = user_model
                 # y le asignamos la photo (el campo, permite datos null)
                 user_profile.photo = photo
+                user_profile.phone = phone
                 # Por ultimo, guardamos tambien el objeto UserProfile
                 user_profile.save()
 
@@ -256,7 +258,7 @@ class UserSignupView(TemplateView):
                 #if he comes from new_sighting
                 if 'session_id' in request.session:
                     sighting_id = request.session['session_id']
-                    s = Sighting.objects.get(id=sighting_id)   
+                    s = Sighting.objects.get(id=sighting_id)
                     s.user = user
                     s.save()
 
@@ -292,7 +294,7 @@ class UserLoginView(TemplateView):
                     #if he comes from new_sighting
                     if 'session_id' in request.session:
                         sighting_id = request.session['session_id']
-                        s = Sighting.objects.get(id=sighting_id)   
+                        s = Sighting.objects.get(id=sighting_id)
                         s.user = user
                         s.save()
                     return redirect(reverse('home'))
@@ -311,7 +313,7 @@ class UserLogoutView(TemplateView):
 
 
 class UserProfileView(TemplateView):
-    
+
     @login_required
     def edit_profile(request):
         if request.method == 'POST':
@@ -344,7 +346,7 @@ class UserProfileView(TemplateView):
                     return redirect(reverse('user_profile'))
                 else:
                     userForm = UserProfileForm(
-                        request=request, 
+                        request=request,
                         initial={'email': request.user.email, 'username': request.user.username})
                     photoForm = PhotoProfileForm()
 
@@ -360,26 +362,26 @@ class UserProfileView(TemplateView):
                     user_profile.photo = photo
                     user_profile.save()
 
-                    return redirect(reverse('user_profile'))  
+                    return redirect(reverse('user_profile'))
                 else:
                     userForm = UserProfileForm(
-                        request=request, 
+                        request=request,
                         initial={'email': request.user.email, 'username': request.user.username})
                     passwordForm = PasswordProfileForm()
 
         else:
             userForm = UserProfileForm(
-                request=request, 
+                request=request,
                 initial={'email': request.user.email, 'username': request.user.username})
             passwordForm = PasswordProfileForm(user=request.user)
             photoForm = PhotoProfileForm()
 
         user = User.objects.get(username=request.user.username)
         user_profile = UserProfile.objects.get(user=user)
-        context = {'userForm': userForm, 
-            'passwordForm': passwordForm, 
+        context = {'userForm': userForm,
+            'passwordForm': passwordForm,
             'photoForm': photoForm,
-            'user_profile': user_profile}    
+            'user_profile': user_profile}
 
         return render(request, 'user_profile.html', context)
 
@@ -405,13 +407,13 @@ class ContactView(TemplateView):
                 username = cleaned_data.get('nameContact')
                 email = cleaned_data.get('emailContact')
                 phone = cleaned_data.get('phoneContact')
-                message = cleaned_data.get('messageContact') 
-                        
-                send_mail('Contacto Usuario', 
-                    'Enviado por: ' + username + 
-                    '\n\nCorreo: ' + email + 
+                message = cleaned_data.get('messageContact')
+
+                send_mail('Contacto Usuario',
+                    'Enviado por: ' + username +
+                    '\n\nCorreo: ' + email +
                     '\n\nNúmero de teléfono: ' + phone +
-                    '\n\nMensaje: ' + message, 
+                    '\n\nMensaje: ' + message,
                     settings.EMAIL_HOST_USER, [settings.EMAIL_HOST_USER])
 
                 message= gettext('Te contestaremos lo antes posible')
@@ -420,7 +422,7 @@ class ContactView(TemplateView):
                 return render(request, 'contact.html', context)
         else:
             form = ContactForm()
-  
+
         context = {'form': form}
 
         return render(request, 'contact.html', context)
@@ -432,6 +434,6 @@ class AboutView(TemplateView):
 
 class TeamView(TemplateView):
     template_name = "team.html"
-    
+
 class GameView(TemplateView):
     template_name = "game.html"

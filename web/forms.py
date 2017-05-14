@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 from django import forms
 from api.models import Sighting
 from api.models import Answer
@@ -8,21 +8,21 @@ from django.utils.translation import gettext_lazy
 
 
 class SightingForm(forms.ModelForm):
-    
+
     class Meta:
         model = Sighting
         fields = ('type', 'free_text', 'location', 'lat', 'lng')
 
 
 class QuestionForm(forms.ModelForm):
-    
+
     class Meta:
         model = Answer
         fields = ('value',)
 
 
 class CommentSightingForm(forms.ModelForm):
-    
+
     class Meta:
         model = UserComment
         fields = ('body',)
@@ -44,6 +44,8 @@ class SignupUserForm(forms.Form):
     password2 = forms.CharField(
         min_length=4,
         widget=forms.PasswordInput(attrs={'class': 'form-control'}))
+
+    phone = forms.IntegerField(label='phone', required=True)
 
     photo = forms.ImageField(required=False)
 

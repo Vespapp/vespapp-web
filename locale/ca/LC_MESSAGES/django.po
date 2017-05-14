@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-13 12:41+0200\n"
+"POT-Creation-Date: 2017-05-13 17:23+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -26,39 +26,39 @@ msgstr "Castellà"
 msgid "Catalan"
 msgstr "Català"
 
-#: web/forms.py:54
+#: web/forms.py:56
 msgid "Nombre de usuario ya registrado."
 msgstr "Nom d'usuari ja registrat."
 
-#: web/forms.py:61
+#: web/forms.py:63
 msgid "Ya existe un email igual en la db."
 msgstr "Ja existeix un email igual a base de dades."
 
-#: web/forms.py:69 web/forms.py:144
+#: web/forms.py:71 web/forms.py:146
 msgid "Las contraseñas no coinciden."
 msgstr "Les contrasenyes no coincideixen."
 
-#: web/forms.py:95
+#: web/forms.py:97
 msgid "Ya existe un usuario con este email."
 msgstr "Ja existeix un usuari amb aquest email."
 
-#: web/forms.py:106
+#: web/forms.py:108
 msgid "Ya existe un usuario con este nombre."
 msgstr "Ja existeix un usuari amb aquest nom."
 
-#: web/forms.py:113 web/templates/user_profile.html.py:50
+#: web/forms.py:115 web/templates/user_profile.html.py:50
 msgid "Contraseña actual"
 msgstr "Contrasenya actual"
 
-#: web/forms.py:118 web/templates/user_profile.html.py:52
+#: web/forms.py:120 web/templates/user_profile.html.py:52
 msgid "Nueva contraseña"
 msgstr "Nova contrasenya"
 
-#: web/forms.py:123
+#: web/forms.py:125
 msgid "Repetir contraseña"
 msgstr "Repeteix la contrasenya"
 
-#: web/forms.py:136
+#: web/forms.py:138
 msgid "Contraseña inválida"
 msgstr "Contrasenya invàlida"
 
@@ -759,7 +759,7 @@ msgstr "Envia"
 msgid "Nombre : "
 msgstr "Nom :"
 
-#: web/templates/contact.html:41 web/templates/signup.html.py:58
+#: web/templates/contact.html:41 web/templates/signup.html.py:60
 #: web/templates/user_profile.html:71
 msgid "\\nCorreo electrónico: "
 msgstr "\\nAdreça electrònica: "
@@ -772,7 +772,7 @@ msgstr "\\nMissatge: "
 msgid "Lucha contra la avispa asiática"
 msgstr "Lluita contra la vespa asiàtica"
 
-#: web/templates/info.html:84 web/templates/signup.html.py:46
+#: web/templates/info.html:84 web/templates/signup.html.py:48
 msgid "Cerrar"
 msgstr "Tanca"
 
@@ -797,7 +797,7 @@ msgstr "Registra't ara"
 msgid "Nombre de usuario"
 msgstr "Nom d'usuari"
 
-#: web/templates/login.html:17 web/templates/signup.html.py:20
+#: web/templates/login.html:17 web/templates/signup.html.py:22
 msgid "Contraseña"
 msgstr "Contrasenya"
 
@@ -1058,27 +1058,31 @@ msgstr ""
 msgid "Correo electrónico"
 msgstr "Adreça electrònica"
 
-#: web/templates/signup.html:22 web/templates/user_profile.html.py:54
+#: web/templates/signup.html:20
+msgid "Teléfono"
+msgstr "Telèfon"
+
+#: web/templates/signup.html:24 web/templates/user_profile.html.py:54
 msgid "Repita la contraseña"
 msgstr "Repeteix la contrasenya"
 
-#: web/templates/signup.html:23
+#: web/templates/signup.html:25
 msgid "REGISTRARSE"
 msgstr "REGISTRE"
 
-#: web/templates/signup.html:24
+#: web/templates/signup.html:26
 msgid "Registrándote aceptas los "
 msgstr "Quan et registres acceptes els "
 
-#: web/templates/signup.html:24
+#: web/templates/signup.html:26
 msgid "términos legales"
 msgstr "termes legals"
 
-#: web/templates/signup.html:36
+#: web/templates/signup.html:38
 msgid "Términos legales"
 msgstr "Termes legals"
 
-#: web/templates/signup.html:39
+#: web/templates/signup.html:41
 msgid ""
 "En cumplimiento del que dispone la Ley Orgánica 15/1999, de 13 de diciembre, "
 "de Protección de Datos de Carácter Personal, os informamos que los datos "
@@ -1096,7 +1100,7 @@ msgstr ""
 "aquesta finalitat i, per tant, el fet de no obtenir-les impedeix aconseguir-"
 "la."
 
-#: web/templates/signup.html:43
+#: web/templates/signup.html:45
 msgid ""
 "La UIB es la responsable del tratamiento de los datos y, como tal, os "
 "garantiza los derechos de acceso, rectificación, cancelación y oposición en "
@@ -1116,15 +1120,15 @@ msgstr ""
 "confidencialitat de les vostres dades i a utilitzar-les d'acord amb la "
 "finalitat dels fitxers."
 
-#: web/templates/signup.html:55 web/templates/user_profile.html.py:68
+#: web/templates/signup.html:57 web/templates/user_profile.html.py:68
 msgid "Nombre de usuario: "
 msgstr "Nom d'usuari: "
 
-#: web/templates/signup.html:61 web/templates/user_profile.html.py:78
+#: web/templates/signup.html:63 web/templates/user_profile.html.py:78
 msgid "\\nContraseña: "
 msgstr "\\nContrasenya: "
 
-#: web/templates/signup.html:64 web/templates/user_profile.html.py:81
+#: web/templates/signup.html:66 web/templates/user_profile.html.py:81
 msgid "\\nRepita la contraseña: "
 msgstr "\\nRepeteix la contrasenya: "
 
@@ -1248,15 +1252,15 @@ msgid "No hay sesión iniciada"
 msgstr "No hi ha sessió iniciada"
 
 # -*- coding: utf-8 -*-
-#: web/views.py:301
+#: web/views.py:302
 msgid "Nombre de usuario o contraseña no válido"
 msgstr "Nom de usuari o contrasenya no vàlids"
 
-#: web/views.py:309
+#: web/views.py:310
 msgid "Has cerrado sesión. ¡Vuelve pronto!"
 msgstr "Has tancat sessió. Torna aviat!"
 
-#: web/views.py:417
+#: web/views.py:418
 msgid "Te contestaremos lo antes posible"
 msgstr "Et contestarem el més aviat possible"
 

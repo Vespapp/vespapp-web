@@ -35,7 +35,7 @@ load_locations:
 
 # Lenguages
 compile-lang:
-	docker-compose run --rm dev compilemessages
+	docker-compose run --rm web compilemessages
 update-lang:
 	docker-compose run --rm web makemessages -a
 

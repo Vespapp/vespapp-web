@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 from django.db import models
 from django.contrib.auth.models import User
 from django.conf import settings
@@ -51,7 +51,7 @@ class Question(models.Model):
     title_ca = models.CharField(max_length=128, null=False, blank=False, verbose_name='Títol_ca')
     title_en = models.CharField(max_length=128, null=False, blank=True, verbose_name='Title_en')
     title_de = models.CharField(max_length=128, null=False, blank=True, verbose_name='Titel_de')
-    
+
     question_type = models.IntegerField(verbose_name="Tipo de pregunta")
     sighting_type = models.IntegerField(null=False, blank=False, verbose_name="Tipo de avistamiento")
     is_active = models.BooleanField(default=True, null=False, blank=False, verbose_name="Activa")
@@ -140,7 +140,7 @@ class Sighting(models.Model):
             return self.pictures.first()
         else:
             return None
-    
+
     def foto_avispamiento(self):
         pictures= self.pictures.all()
         images=''
@@ -260,28 +260,28 @@ class SightingInfo(models.Model):
     title_ca = models.CharField(null=False, blank=False, max_length=128, verbose_name='Títol_ca')
     title_en = models.CharField(null=False, blank=True, max_length=128, verbose_name='Title_en')
     title_de = models.CharField(null=False, blank=True, max_length=128, verbose_name='Titel_de')
-    
+
     body = models.TextField(verbose_name='Explicación más detallada')
     body_ca = models.TextField(verbose_name='Explicació més detallada_ca')
     body_en = models.TextField(blank=True, verbose_name='Further explanation_en')
-    body_de = models.TextField(blank=True, verbose_name='Weitere Erklärung_de')    
-    
+    body_de = models.TextField(blank=True, verbose_name='Weitere Erklärung_de')
+
     quickBody = models.TextField(null=False, blank=False, default="Clic para más información", max_length=128, verbose_name='Breve explicación')
     quickBody_ca = models.TextField(null=False, blank=False, default="Clic per a més informació", max_length=128, verbose_name='Breu explicació_ca')
     quickBody_en = models.TextField(null=False, blank=True, default="Click for more information", max_length=128, verbose_name='Short explanation_en')
     quickBody_de = models.TextField(null=False, blank=True, default="Klicken Sie für weitere Informationen", max_length=128, verbose_name='Kurze Erklärung_de')
-    
-    
+
+
     image = models.ImageField(upload_to="info_images/", blank=True, null=True)
     image_ca = models.ImageField(upload_to="info_images/", blank=True, null=True)
     image_en = models.ImageField(upload_to="info_images/", blank=True, null=True)
     image_de = models.ImageField(upload_to="info_images/", blank=True, null=True)
-    
+
     imageCover = models.ImageField(upload_to="info_images/", blank=True, null=True)
     imageCover_ca = models.ImageField(upload_to="info_images/", blank=True, null=True)
     imageCover_en = models.ImageField(upload_to="info_images/", blank=True, null=True)
     imageCover_de = models.ImageField(upload_to="info_images/", blank=True, null=True)
-    
+
     def foto_portada(self):
         return '<a href="%s"><img src="%s" width=250px heigth=250px/></a>'%(self.imageCover.url, self.imageCover.url)
     def foto_portada_ca(self):
@@ -295,7 +295,7 @@ class SightingInfo(models.Model):
     foto_portada_ca.allow_tags = True
     foto_portada_en.allow_tags = True
     foto_portada_de.allow_tags = True
-    
+
     def foto_info(self):
         return '<a href="%s"><img src="%s" width=250px heigth=250px/></a>'%(self.image.url, self.image.url)
     def foto_info_ca(self):
@@ -322,7 +322,8 @@ class UserProfile(models.Model):
 
     user = models.OneToOneField(settings.AUTH_USER_MODEL, related_name='user_profile')
     photo = models.ImageField(upload_to='profiles', blank=True, null=True)
-    
+    phone = models.BigIntegerField(null=True, blank=True, verbose_name='Teléfono')
+
     def foto_usuario(self):
         return '<a href="%s"><img src="%s" width=250px heigth=250px/></a>'%(self.photo.url, self.photo.url)
 
@@ -334,25 +335,24 @@ class UserProfile(models.Model):
 
     def __str__(self):
         return self.user.username
-      
+
 class AppVersion(models.Model):
-  
+
     version = models.CharField(null=False, blank=False, max_length=128, verbose_name='Versión')
-    
+
     is_last = models.BooleanField(null=False, blank=False, default=False, verbose_name='Es última versión')
-    
+
     message = models.TextField(null=False, blank=False, default="Está usando una versión antigua de Vespapp.", max_length=512, verbose_name='Mensaje')
-    
+
     message_ca = models.TextField(null=False, blank=False, default="Està utilitzant una versió antiga de Vespapp.", max_length=512, verbose_name='Missatge_ca')
-    
+
     message_en = models.TextField(null=False, blank=False, default="You are using an old version of Vespapp.", max_length=512, verbose_name='Message_en')
-    
+
     message_de = models.TextField(null=False, blank=False, default="Sie verwenden eine ältere Version von Vespapp.", max_length=512, verbose_name='Nachricht_de')
-    
+
     class Meta:
         verbose_name = 'Versión App Android'
         verbose_name_plural = 'Versiones App Android'
-        
+
     def __str__(self):
         return self.message
-    
