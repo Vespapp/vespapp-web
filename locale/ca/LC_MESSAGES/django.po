@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-13 17:23+0200\n"
+"POT-Creation-Date: 2017-05-14 10:08+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -846,10 +846,18 @@ msgid "Selecciona población"
 msgstr "Selecciona població"
 
 #: web/templates/new_sighting.html:66
+msgid ""
+"Por favor, es importante que sitúes el marcador exactamente donde se realizó "
+"el avispamiento"
+msgstr ""
+"Per favor, és important que situïs el marcador exactament on es va realitzar "
+"l'avispamient"
+
+#: web/templates/new_sighting.html:70
 msgid "Mueve el marcador para ajustar la posición"
 msgstr "Mou el marcador per ajustar la posició"
 
-#: web/templates/new_sighting.html:76
+#: web/templates/new_sighting.html:80
 msgid "Enviar avispamiento"
 msgstr "Envia la detecció"
 
@@ -1124,11 +1132,17 @@ msgstr ""
 msgid "Nombre de usuario: "
 msgstr "Nom d'usuari: "
 
-#: web/templates/signup.html:63 web/templates/user_profile.html.py:78
+#: web/templates/signup.html:63
+#, fuzzy
+#| msgid "Teléfono"
+msgid "\\nTeléfono: "
+msgstr "Telèfon"
+
+#: web/templates/signup.html:66 web/templates/user_profile.html.py:78
 msgid "\\nContraseña: "
 msgstr "\\nContrasenya: "
 
-#: web/templates/signup.html:66 web/templates/user_profile.html.py:81
+#: web/templates/signup.html:69 web/templates/user_profile.html.py:81
 msgid "\\nRepita la contraseña: "
 msgstr "\\nRepeteix la contrasenya: "
 
@@ -1252,15 +1266,15 @@ msgid "No hay sesión iniciada"
 msgstr "No hi ha sessió iniciada"
 
 # -*- coding: utf-8 -*-
-#: web/views.py:302
+#: web/views.py:303
 msgid "Nombre de usuario o contraseña no válido"
 msgstr "Nom de usuari o contrasenya no vàlids"
 
-#: web/views.py:310
+#: web/views.py:311
 msgid "Has cerrado sesión. ¡Vuelve pronto!"
 msgstr "Has tancat sessió. Torna aviat!"
 
-#: web/views.py:418
+#: web/views.py:419
 msgid "Te contestaremos lo antes posible"
 msgstr "Et contestarem el més aviat possible"
 
