@@ -22,8 +22,13 @@
       <label for="password"><span class="fa fa-lock"></span> {% trans "Contraseña" %}</label>
       <input type="password" id="password2" name="password2"/>
       <label for="password2"><span class="fa fa-lock"></span> {% trans "Repita la contraseña" %}</label>
+
+      <input type="checkbox" id="terms" value="terms" value="1">
+      <span>{% trans "Confirmo que he leído y acepto los " %} <a data-toggle="modal" data-target="#privacity">{% trans "términos legales" %}</a></span>
+      {# <p><span class="asterisc">*</span>{% trans "Registrándote aceptas los " %}<a data-toggle="modal" data-target="#privacity">{% trans "términos legales" %}</a></p>#}
+
       <input type="submit" id="submit" value= {% trans "REGISTRARSE" %} >
-      <p><span class="asterisc">*</span>{% trans "Registrándote aceptas los " %}<a data-toggle="modal" data-target="#privacity">{% trans "términos legales" %}</a></p>
+
     </form>
   </div>
 </div>
@@ -38,11 +43,11 @@
         <h4 class="modal-title modalFont">{% trans "Términos legales" %}</h4>
       </div>
       <div class="modal-body">
-            {% trans "En cumplimiento del que dispone la Ley Orgánica 15/1999, de 13 de diciembre, de Protección de Datos de Carácter Personal, os informamos que los datos recogidos en vuestra solicitud serán incluidos en varios ficheros gestionados por la UIB, la finalidad de los cuales es poder contactar con usted en caso de que fuera necesario. Los datos solicitados son necesarios para cumplir con la mencionada finalidad y, por lo tanto, el hecho de no obtenerlos impide conseguirla." %}
 
-            <br>
-
-            {% trans "La UIB es la responsable del tratamiento de los datos y, como tal, os garantiza los derechos de acceso, rectificación, cancelación y oposición en cuanto a los datos facilitados. Para ejercer los cuales os tenéis que dirigir por escrito a: Universitat de les Illes Balears, Secretaría General, a la atención del responsable de seguridad, cra. de Valldemossa, km 7,5, 07122 Palma (Islas Baleares). Del mismo modo, la UIB se compromete a respetar la confidencialidad de vuestros datos y a utilizarlos de acuerdo con el fin de los ficheros." %}
+        {% trans "En cumplimiento del que dispone la Ley Orgánica 15/1999, de 13 de diciembre, de protección de datos de carácter personal, os informamos que los datos recogidos serán incluidas en uno o más ficheros gestionados por la UIB, la finalidad de los cuales es contactar con el responsable del avistamento de la avispa asiática en caso de que sea necesario para obtener más información del avistamento. Los datos solicitados son necesarias para cumplir con la mencionada finalidad y, por lo tanto, el hecho de no obtenerlas impide conseguirla." %}
+        <br>
+        <br>
+        {% trans "La UIB es la responsable del tratamiento de los datos y como tal os garantiza los derechos de acceso, rectificación, cancelación y oposición en cuanto a los datos facilitados, para ejercer los cuales os tenéis que dirigir por escrito a: Universitat de les Illes Balears, Secretaría General, a la atención del responsable de seguridad, fichero de datos Vespapp, cra. de Valldemossa, km 7,5, 07122 Palma (Islas Baleares). Del mismo modo, la UIB se compromete a respetar la confidencialidad de vuestros datos y a utilizarlas de acuerdo con el fin de los ficheros." %}
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">{% trans "Cerrar" %}</button>

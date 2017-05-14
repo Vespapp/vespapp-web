@@ -8,7 +8,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: PACKAGE VERSION\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2017-05-14 10:08+0200\n"
+"POT-Creation-Date: 2017-05-14 16:51+0200\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
 "Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
 "Language-Team: LANGUAGE <LL@li.org>\n"
@@ -759,7 +759,7 @@ msgstr "Envia"
 msgid "Nombre : "
 msgstr "Nom :"
 
-#: web/templates/contact.html:41 web/templates/signup.html.py:60
+#: web/templates/contact.html:41 web/templates/signup.html.py:64
 #: web/templates/user_profile.html:71
 msgid "\\nCorreo electrónico: "
 msgstr "\\nAdreça electrònica: "
@@ -772,7 +772,7 @@ msgstr "\\nMissatge: "
 msgid "Lucha contra la avispa asiática"
 msgstr "Lluita contra la vespa asiàtica"
 
-#: web/templates/info.html:84 web/templates/signup.html.py:48
+#: web/templates/info.html:84 web/templates/signup.html.py:52
 msgid "Cerrar"
 msgstr "Tanca"
 
@@ -848,10 +848,10 @@ msgstr "Selecciona població"
 #: web/templates/new_sighting.html:66
 msgid ""
 "Por favor, es importante que sitúes el marcador exactamente donde se realizó "
-"el avispamiento"
+"el avispamento para posibilitar su eliminación."
 msgstr ""
 "Per favor, és important que situïs el marcador exactament on es va realitzar "
-"l'avispamient"
+"l'avispament per a posibilitar la seva eliminació."
 
 #: web/templates/new_sighting.html:70
 msgid "Mueve el marcador para ajustar la posición"
@@ -1074,75 +1074,79 @@ msgstr "Telèfon"
 msgid "Repita la contraseña"
 msgstr "Repeteix la contrasenya"
 
-#: web/templates/signup.html:25
-msgid "REGISTRARSE"
-msgstr "REGISTRE"
+#: web/templates/signup.html:27
+#, fuzzy
+#| msgid "Confirmo que he leído y acepto los "
+msgid "Confirmo que he leído y acepto los "
+msgstr "Confirmo que he llegit i accepto els "
 
-#: web/templates/signup.html:26
-msgid "Registrándote aceptas los "
-msgstr "Quan et registres acceptes els "
-
-#: web/templates/signup.html:26
+#: web/templates/signup.html:27
 msgid "términos legales"
 msgstr "termes legals"
 
-#: web/templates/signup.html:38
+#: web/templates/signup.html:30
+msgid "REGISTRARSE"
+msgstr "REGISTRE"
+
+#: web/templates/signup.html:43
 msgid "Términos legales"
 msgstr "Termes legals"
 
-#: web/templates/signup.html:41
+#: web/templates/signup.html:47
 msgid ""
 "En cumplimiento del que dispone la Ley Orgánica 15/1999, de 13 de diciembre, "
-"de Protección de Datos de Carácter Personal, os informamos que los datos "
-"recogidos en vuestra solicitud serán incluidos en varios ficheros "
-"gestionados por la UIB, la finalidad de los cuales es poder contactar con "
-"usted en caso de que fuera necesario. Los datos solicitados son necesarios "
-"para cumplir con la mencionada finalidad y, por lo tanto, el hecho de no "
-"obtenerlos impide conseguirla."
+"de protección de datos de carácter personal, os informamos que los datos "
+"recogidos serán incluidas en uno o más ficheros gestionados por la UIB, la "
+"finalidad de los cuales es contactar con el responsable del avistamento de "
+"la avispa asiática en caso de que sea necesario para obtener más información "
+"del avistamento. Los datos solicitados son necesarias para cumplir con la "
+"mencionada finalidad y, por lo tanto, el hecho de no obtenerlas impide "
+"conseguirla."
 msgstr ""
-"En compliment del que disposa la Llei orgànica 15/1999, de 13 de desembre, "
+"En compliment del que disposa la Llei Orgànica 15/1999, de 13 de desembre, "
 "de protecció de dades de caràcter personal, us informam que les dades "
-"recollides a la vostra sol·licitud seran incloses en diversos fitxers "
-"gestionats per la UIB, la finalitat dels quals és poder contactar amb vós en "
-"cas que fos necessari. Les dades sol·licitades són necessàries per complir "
-"aquesta finalitat i, per tant, el fet de no obtenir-les impedeix aconseguir-"
-"la."
+"recollides seran incloses en un o més fitxers gestionats per la UIB, la "
+"finalitat dels quals és contactar amb el responsable del avistament de la "
+"vespa asiàtica en cas de que sigui necessari per obtenir més informació del "
+"avistament. Les dades sol·licitades són necessàries per complir amb "
+"l’esmentada finalitat i, per tant, el fet de no obtenir-les impedeix "
+"aconseguir-la."
 
-#: web/templates/signup.html:45
+#: web/templates/signup.html:49
 msgid ""
-"La UIB es la responsable del tratamiento de los datos y, como tal, os "
+"La UIB es la responsable del tratamiento de los datos y como tal os "
 "garantiza los derechos de acceso, rectificación, cancelación y oposición en "
-"cuanto a los datos facilitados. Para ejercer los cuales os tenéis que "
+"cuanto a los datos facilitados, para ejercer los cuales os tenéis que "
 "dirigir por escrito a: Universitat de les Illes Balears, Secretaría General, "
-"a la atención del responsable de seguridad, cra. de Valldemossa, km 7,5, "
-"07122 Palma (Islas Baleares). Del mismo modo, la UIB se compromete a "
-"respetar la confidencialidad de vuestros datos y a utilizarlos de acuerdo "
-"con el fin de los ficheros."
+"a la atención del responsable de seguridad, fichero de datos Vespapp, cra. "
+"de Valldemossa, km 7,5, 07122 Palma (Islas Baleares). Del mismo modo, la UIB "
+"se compromete a respetar la confidencialidad de vuestros datos y a "
+"utilizarlas de acuerdo con el fin de los ficheros."
 msgstr ""
-"La UIB és la responsable del tractament de les dades i, com a tal, us "
-"garanteix els drets d'accés, rectificació, cancel·lació i oposició quant a "
-"les dades facilitades. Per exercir aquests drets us heu d'adreçar per escrit "
-"a: Universitat de les Illes Balears, Secretaria General, a l'atenció del "
-"responsable de seguretat, cra. de Valldemossa, km 7.5, 07122 Palma (Illes "
-"Balears). De la mateixa manera, la UIB es compromet a respectar la "
-"confidencialitat de les vostres dades i a utilitzar-les d'acord amb la "
-"finalitat dels fitxers."
+"La UIB és la responsable del tractament de les dades i com a tal us "
+"garanteix els drets d’accés, rectificació, cancel·lació i oposició quant a "
+"les dades facilitades, per exercir els quals us heu d’adreçar per escrit a: "
+"Universitat de les Illes Balears, Secretaria General, a l’atenció del "
+"responsable de seguretat, fitxer de dades Vespapp, cra. de Valldemossa, km "
+"7,5, 07122 Palma (Illes Balears). De la mateixa manera, la UIB es compromet "
+"a respectar la confidencialitat de les vostres dades i a utilitzar-les "
+"d'acord amb la finalitat dels fitxers."
 
-#: web/templates/signup.html:57 web/templates/user_profile.html.py:68
+#: web/templates/signup.html:61 web/templates/user_profile.html.py:68
 msgid "Nombre de usuario: "
 msgstr "Nom d'usuari: "
 
-#: web/templates/signup.html:63
+#: web/templates/signup.html:67
 #, fuzzy
 #| msgid "Teléfono"
 msgid "\\nTeléfono: "
 msgstr "Telèfon"
 
-#: web/templates/signup.html:66 web/templates/user_profile.html.py:78
+#: web/templates/signup.html:70 web/templates/user_profile.html.py:78
 msgid "\\nContraseña: "
 msgstr "\\nContrasenya: "
 
-#: web/templates/signup.html:69 web/templates/user_profile.html.py:81
+#: web/templates/signup.html:73 web/templates/user_profile.html.py:81
 msgid "\\nRepita la contraseña: "
 msgstr "\\nRepeteix la contrasenya: "
 
