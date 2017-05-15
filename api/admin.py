@@ -1,4 +1,4 @@
-# -*- coding: utf-8 -*- 
+# -*- coding: utf-8 -*-
 from django.contrib import admin
 
 from api.models import *
@@ -6,8 +6,8 @@ from api.models import *
 class SightingAdmin(admin.ModelAdmin):
 
     list_display = ('id', 'user', 'location','created_at')
-    fieldsets = [('Información básica', {'fields': ['id',('created_at', 'source')]}), 
-    ('Datos del usuario', {'fields': [('user', 'contact')]}), 
+    fieldsets = [('Información básica', {'fields': ['id',('created_at', 'source')]}),
+    ('Datos del usuario', {'fields': [('user', 'contact_name', 'contact', 'contact_phone')]}), 
     ('Localización del avispamiento', {'fields': [('location', 'lat', 'lng')]}),
     ('Datos del avispamiento', {'fields': [('type','glosario_tipos'), 'free_text', 'foto_avispamiento', ('respuestas_preguntas')]}),
     ('Estado del avispamiento', {'fields': [('public'), ('status', 'glosario_estados'), ('is_valid', 'moderator')]}),
@@ -39,7 +39,7 @@ class UserProfileAdmin(admin.ModelAdmin):
 
 class SightingInfoAdmin(admin.ModelAdmin):
     list_display = ('title',)
- 
+
     fieldsets = [('Título', {'fields': [('title', 'title_en'), ('title_ca', 'title_de')]}),
     ('Breve explicación', {'fields': ['quickBody', 'quickBody_ca', 'quickBody_en','quickBody_de']}),
     ('Explicación más detallada', {'fields':['body', 'body_ca', 'body_en', 'body_de']}),
@@ -47,7 +47,7 @@ class SightingInfoAdmin(admin.ModelAdmin):
                        ('foto_portada_en', 'imageCover_en'), ('foto_portada_de', 'imageCover_de'),
                        ('foto_info', 'image'), ('foto_info_ca', 'image_ca'),
                        ('foto_info_en', 'image_en'), ('foto_info_de', 'image_de')]}),]
- 
+
     readonly_fields = ['foto_portada', 'foto_info', 'foto_portada_ca', 'foto_info_ca', 'foto_portada_en', 'foto_info_en', 'foto_portada_de', 'foto_info_de']
 
 
@@ -65,11 +65,11 @@ class UserCommentAdmin(admin.ModelAdmin):
 class ExpertCommentAdmin(admin.ModelAdmin):
     list_display = ('user', 'body', 'sighting', 'is_valid')
     list_filter = ('sighting', 'user', 'is_valid')
-    
+
 class AppVersionAdmin(admin.ModelAdmin):
     list_display = ('version', 'message')
     list_filter = ('version', 'message')
-    
+
     fieldsets = [('App Android',{'fields': ['version', 'is_last', 'message', 'message_ca', 'message_en', 'message_de']})]
 
 

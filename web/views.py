@@ -147,6 +147,16 @@ class SightingView(TemplateView):
         return render_to_response('sighting.html', context=context, context_instance=RequestContext(request))
 
 
+class PersonalDataView(object):
+    """Ask the personal data (optional) before the questions and after send sighting"""
+
+    def personal_data(request):
+        if "session_id" in request.session:
+            context = {}
+            return render(request, 'personal_data.html', {'context': context})
+        else:
+            raise Http404(gettext("No hay sesión iniciada"))
+
 class SightQuestionView(TemplateView):
 
     @csrf_exempt
@@ -162,8 +172,23 @@ class SightQuestionView(TemplateView):
             s = Sighting.objects.get(id=sighting_id)
 
             if request.POST:
-                form_question = QuestionForm(request.POST)
 
+                # Check if exists personal_data to save
+                if request.POST.get('emailContact'):
+                    emailContact = request.POST.get('emailContact')
+                    s.contact = emailContact
+
+                if request.POST.get('phoneContact'):
+                    phoneContact = request.POST.get('phoneContact')
+                    s.contact_phone = phoneContact
+
+                if request.POST.get('nameContact'):
+                    nameContact = request.POST.get('nameContact')
+                    s.contact_name = nameContact
+
+                s.save()
+
+                form_question = QuestionForm(request.POST)
 
                 if form_question.is_valid():
                     if request.FILES == None:

@@ -115,6 +115,9 @@ class Sighting(models.Model):
     free_text = models.CharField(null=True, blank=True, max_length=512, verbose_name='Texto sobre localización')
 
     contact = models.CharField(null=True, blank=True, max_length=128, verbose_name='Contacto')
+    contact_phone = models.BigIntegerField(null=True, blank=True, verbose_name='Móvil de Contacto')
+    contact_name = models.CharField(null=True, blank=True, max_length=128, verbose_name='Nombre del Contacto')
+
     user = models.ForeignKey(User, related_name="user_sighthing", verbose_name='Avispamiento de', null=True,
                                     blank=True)
 

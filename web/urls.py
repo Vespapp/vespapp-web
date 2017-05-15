@@ -13,6 +13,7 @@ from web.views import ContactView
 from web.views import AboutView
 from web.views import TeamView
 from web.views import GameView
+from web.views import PersonalDataView
 
 
 urlpatterns = [
@@ -22,6 +23,7 @@ urlpatterns = [
     url(r'^sightings/$', SightingsView.as_view(), name='sightings'),
     url(r'^sighting/(?P<sighting_id>[0-9]+)/$', SightingView.sighting_view, name="sighting_id"),
     url(r'^sight_question/$', SightQuestionView.sight_question, name='sight_question'),
+    url(r'^personal_data/$', PersonalDataView.personal_data, name='personal_data'),
 
     url(r'^signup/$', UserSignupView.signup_user_view, name='signup'),
     url(r'^login/$', UserLoginView.login_view, name='login'),
