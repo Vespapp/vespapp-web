@@ -12,7 +12,7 @@
 </div>
 <script type="text/javascript">
 jQuery(function($) {
-    // Asynchronously Load the map API 
+    // Asynchronously Load the map API
     var script = document.createElement('script');
     script.src = "http://maps.googleapis.com/maps/api/js?sensor=false&callback=initialize&key=AIzaSyDdu6wWUWkf9A3b6L9i0M1YitIBt0wR6as";
     document.body.appendChild(script);
@@ -24,20 +24,24 @@ function initialize() {
   var mapOptions = {
       mapTypeId: 'roadmap'
   };
-                  
+
   // Display a map on the page
   map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
   map.setTilt(45);
 
   // Spider effect
   //var oms = new OverlappingMarkerSpiderfier(map);
-      
+
   // Multiple Markers
   var markers = [
       {% for sighting in sightings_list %}
-          ['{{ sighting.location }}', parseFloat('{{sighting.location.lat}}'.replace(',','.')), parseFloat('{{sighting.location.lng}}'.replace(',','.')), parseFloat('{{sighting.lat}}'.replace(',','.')), parseFloat('{{sighting.lng}}'.replace(',', '.')), '{{ sighting.user.username }}', '{{ sighting.is_valid }}'],    
+          ['{{ sighting.location }}', parseFloat('{{sighting.location.lat}}'.replace(',','.')), parseFloat('{{sighting.location.lng}}'.replace(',','.')), parseFloat('{{sighting.lat}}'.replace(',','.')), parseFloat('{{sighting.lng}}'.replace(',', '.')), '{{ sighting.user.username }}', '{{ sighting.is_valid }}'],
       {% endfor %}
   ];
+
+  {% for sighting in sightings_list %}
+    console.log('{{sighting.location}}');
+  {% endfor %}
 
   // Info Window Content
   var infoWindowContent = [
@@ -48,15 +52,15 @@ function initialize() {
         {% elif sighting.type == 2 %}
         '<h3>{% trans "Avistamiento nido" %}</h3>' +
         {% else %}
-        '<h3>{% trans "Avistamiento" %}</h3>' +      
-        {% endif %}   
+        '<h3>{% trans "Avistamiento" %}</h3>' +
+        {% endif %}
 
         {% if sighting.type == 1 %}
         '<i class="fa fa-bug"></i><span>{% trans "Avispa" %}</span>' +
         {% elif sighting.type == 2 %}
         '<i class="fa fa-fort-awesome"></i><span>{% trans "Nido" %}</span>' +
-        {% endif %} 
-        
+        {% endif %}
+
         {% if sighting.is_valid == True %}
         '<span class="label-status">{% trans "Resultado:" %}</span><span class="label label-success">{% trans "Positivo" %}</span>' +
         {% elif sighting.is_valid == False %}
@@ -71,32 +75,32 @@ function initialize() {
         '<span class="label-status">{% trans "Estado:" %}</span><span class="label label-warning">{% trans "Procesando" %}</span>' +
         {% elif sighting.status == 2%}
         '<span class="label-status">{% trans "Estado:" %}</span><span class="label label-success">{% trans "Procesado" %}</span>' +
-        {% endif %}    
+        {% endif %}
 
         '<div class="details {% if sighting.first_picture %}details-with-photo{% endif %}  ">' +
         '<div class="image">' +
         {% if sighting.first_picture %}
         '<img src="{{ sighting.first_picture.file.url }}" class="img-responsive sighting-image"/>' +
-        {% endif %}  
+        {% endif %}
         '</div>' +
         '<div class="text">' +
         {% if sighting.user %}
-        '<p class="text-content"><b>{% trans "Usuario:" %}</b> {{sighting.user}}</p>' + 
+        '<p class="text-content"><b>{% trans "Usuario:" %}</b> {{sighting.user}}</p>' +
         {% else %}
-        '<p class="text-content"><b>{% trans "Usuario:" %}</b> {% trans "Anónimo" %}</p>' + 
-        {% endif %} 
+        '<p class="text-content"><b>{% trans "Usuario:" %}</b> {% trans "Anónimo" %}</p>' +
+        {% endif %}
         '<p class="created-content"><b>{% trans "Fecha:" %}</b> {{sighting.created_at}}</p>' +
 
 
-        '<a href="{% url 'sighting_id' sighting.id %}" class="btn btn-sm btn-primary pull-right">{% trans "Más información" %}</a> '   +    '</div></div></div>'], 
+        '<a href="{% url 'sighting_id' sighting.id %}" class="btn btn-sm btn-primary pull-right">{% trans "Más información" %}</a> '   +    '</div></div></div>'],
       {% endfor %}
   ];
-      
+
   // Display multiple markers on a map
   var infoWindow = new google.maps.InfoWindow(), marker, i;
 
 
-  // Loop through our array of markers & place each one on the map  
+  // Loop through our array of markers & place each one on the map
   for( i = 0; i < markers.length; i++ ) {
       var lat = markers[i][3];
       var lng = markers[i][4];
@@ -137,8 +141,8 @@ function initialize() {
               title: markers[i][0],
               icon: icon
           });
-          
-          //Allow each marker to have an info window    
+
+          //Allow each marker to have an info window
           google.maps.event.addListener(marker, 'click', (function(marker, i) {
               return function() {
                   infoWindow.setContent(infoWindowContent[i][0]);
@@ -157,7 +161,7 @@ function initialize() {
     });
 
 
-        
+
     }
   </script>
 
@@ -174,6 +178,6 @@ function initialize() {
       </div>
     </div>
   </div>
-</div>  
+</div>
 {% endif %}
 {% endblock %}

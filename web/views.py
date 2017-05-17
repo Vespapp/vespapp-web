@@ -105,7 +105,6 @@ class SightingsView(ListView):
     template_name = "sightings.html"
     model = Sighting  # Defino el modelo que utilizo
     context_object_name = "sightings_list"  # Defino la lista donde se cargan los objetos del modelo
-    paginate_by = 50  # Control de la paginacion
 
     def get_queryset(self, **kwargs):
         if self.request.user.is_authenticated():
