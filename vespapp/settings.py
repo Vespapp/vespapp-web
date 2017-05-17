@@ -20,10 +20,10 @@ PROJECT_DIR = os.path.dirname(os.path.realpath(__file__))
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '@7xvv!(2p469*!j7d)g^tc-e*$spkkj+g#rly6m+b7%p3hift&'
+SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = config('DEBUG')
 ALLOWED_HOSTS = ['*']
 
 
@@ -81,7 +81,7 @@ TEMPLATES = [
         },
     },
 ]
-	    
+
 from django.utils.translation import ugettext_lazy as _
 _ = lambda s: s
 LANGUAGES = (
@@ -99,25 +99,13 @@ WSGI_APPLICATION = 'vespapp.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-if not DEBUG:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.postgresql_psycopg2',
-            'NAME': config("DB_NAME"),
-            'USER': config("DB_USER"),
-            'PASSWORD': config("DB_PASSWORD", default='supersecret'),
-            'HOST': config("DB_HOST"),
-            'PORT': config("DB_PORT", default="5432"),
-        }
-    }
 
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.sqlite3',
-            'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-        }
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.sqlite3',
+        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
     }
+}
 
 
 # Password validation
@@ -186,7 +174,7 @@ REST_FRAMEWORK = {
 }
 
 
-# Registration form 
+# Registration form
 ACCOUNT_ACTIVATION_DAYS = 7
 LOGIN_URL = '/accounts/login/'
 LOGOUT_URL = '/accounts/logout/'
@@ -194,10 +182,7 @@ LOGOUT_URL = '/accounts/logout/'
 
 #Email
 EMAIL_HOST = 'smtp.gmail.com'
-EMAIL_HOST_USER = 'vespapp.uib@gmail.com'
-EMAIL_HOST_PASSWORD = 'asiakoliztorra25'
-EMAIL_PORT = 587
+EMAIL_HOST_USER = config('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = config('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = config('EMAIL_PORT')
 EMAIL_USE_TLS = True
-
-
-
