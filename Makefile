@@ -33,6 +33,12 @@ gulp-watch:
 load_locations:
 	docker-compose run --rm --service-ports web load_locations
 
+# Deploy
+check-deploy:
+	docker-compose run --rm --service-ports web check --deploy
+deploy:
+	docker-compose run -d --rm --service-ports nginx
+
 # Lenguages
 compile-lang:
 	docker-compose run --rm web compilemessages

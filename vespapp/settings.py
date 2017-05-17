@@ -24,8 +24,47 @@ SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = config('DEBUG')
-ALLOWED_HOSTS = ['*']
 
+if DEBUG:
+
+    ALLOWED_HOSTS = ['*']
+
+else:
+
+    ALLOWED_HOSTS = ['localhost', 'www.vespapp.uib.es', 'vespapp.uib.es']
+
+    # HTTP Strict Transport Security
+    # Which indicates browsers that future requests for the next year should use only HTTPS.
+    # SECURE_HSTS_SECONDS = 31536000
+
+    # Only set this to True if you are certain that all subdomains of your domain should be served exclusively via SSL
+    # SECURE_HSTS_INCLUDE_SUBDOMAINS = True
+
+    # so your pages will not be served with an 'x-content-type-options: nosniff' header.
+    # You should consider enabling this header to prevent the browser from identifying content types incorrectly.
+    SECURE_CONTENT_TYPE_NOSNIFF = True
+
+    # so your pages will not be served with an 'x-xss-protection: 1; mode=block' header.
+    # You should consider enabling this header to activate the browser's XSS filtering and help prevent XSS attacks.
+    SECURE_BROWSER_XSS_FILTER = True
+
+    # Unless your site should be available over both SSL and non-SSL connections, you may want to either set
+    # this setting True or configure a load balancer or reverse-proxy server to redirect all connections to HTTPS.
+    # SECURE_SSL_REDIRECT = True
+
+    # Using a secure-only session cookie makes it more difficult for network traffic sniffers to hijack user sessions.
+    # SESSION_COOKIE_SECURE = True
+
+    #  Using a secure-only CSRF cookie makes it more difficult for network traffic sniffers to steal the CSRF token.
+    # which means browsers may ensure that the cookie is only sent under an HTTPS connection.
+    # CSRF_COOKIE_SECURE = True
+
+    # Using an HttpOnly CSRF cookie makes it more difficult for cross-site scripting attacks to steal the CSRF token.
+    # CSRF_COOKIE_HTTPONLY = True
+
+    # The default is 'SAMEORIGIN', but unless there is a good reason for your site to serve other parts of itself
+    # in a frame, you should change it to 'DENY'.
+    X_FRAME_OPTIONS = 'DENY'
 
 # Application definition
 
