@@ -81,3 +81,6 @@ web/static/
 
 
 bower_components/
+
+#Python Decouple
+.env
