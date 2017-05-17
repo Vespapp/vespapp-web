@@ -31,7 +31,7 @@ if DEBUG:
 
 else:
 
-    ALLOWED_HOSTS = ['localhost', 'www.vespapp.uib.es', 'vespapp.uib.es']
+    ALLOWED_HOSTS = ['127.0.0.1', 'localhost', 'www.vespapp.uib.es', 'vespapp.uib.es']
 
     # HTTP Strict Transport Security
     # Which indicates browsers that future requests for the next year should use only HTTPS.
