@@ -1,12 +1,56 @@
 # vespapp-web
-Plataforma web per a la detecció de la vespa asiàtica
+Web Platform for Asian Wasp Detection
 
 ## Minimun instructions to run
 Install frontend dependencies
+
 ```
 make install
 ```
-Rock docker!
+
+Run gulp and collects static files from each of the applications
+
 ```
-docker-compose up -d dev
+make collectstatic
+```
+
+Propagate changes make to the models into the database schem
+
+```
+make makemigrations
+make migrate
+```
+
+## Rock docker!
+
+Development
+
+```
+make devel
+```
+Deployment
+
+```
+make deploy
+```
+
+## Load DB
+
+```
+make load_locations
+```
+
+
+## Lenguages
+
+Supported languages:
+
+- Spanish
+- Catalan
+
+If you need more, fork and pull request ;)
+
+```
+make compile-lang
+make update-lang
 ```
