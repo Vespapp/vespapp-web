@@ -35,4 +35,4 @@ urlpatterns += i18n_patterns(
     url(r'^api/', include('api.urls')),
     url(r'^', include('web.urls')),
     url(r'^jsi18n/$', javascript_catalog, js_info_dict, name='javascript-catalog'),
-) + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+)
