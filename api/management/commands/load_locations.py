@@ -27,5 +27,6 @@ class Command(BaseCommand):
             l.lat = location.get('lat')
             l.lng = location.get('lng')
             l.name = location.get('name')
+            l.name_ca = location.get('name')
             l.province = province
             l.save()
