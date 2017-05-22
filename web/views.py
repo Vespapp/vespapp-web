@@ -152,7 +152,11 @@ class PersonalDataView(object):
     def personal_data(request):
         if "session_id" in request.session:
             context = {}
-            return render(request, 'personal_data.html', {'context': context})
+            if request.user.is_authenticated():
+                url = reverse('sight_question')
+                return HttpResponseRedirect(url)
+            else:
+                return render(request, 'personal_data.html', {'context': context})
         else:
             raise Http404(gettext("No hay sesión iniciada"))
 
