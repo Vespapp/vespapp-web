@@ -7,29 +7,41 @@
 
 {% block body %}
 
-<h1>{% trans "Por favor, te agradeceríamos que nos facilitaras tus datos personales para poder ponernos en contacto contigo si el avispamento es positivo." %}</h1>
+<div class="container">
+
+  <h1>{% trans "Por favor, te agradeceríamos que nos facilitaras tus datos personales para poder ponernos en contacto contigo si el avispamento es positivo." %}</h1>
 
 
-<form method="post" action="{% url 'sight_question' %}" enctype="multipart/form-data">
-  {% csrf_token %}
-  <div class="container">
-    <div class="form-group col-md-offset-3 col-xs-12 col-md-6">
-      <label for="nameContact">{% trans "Nombre" %}</label>
-      <input class="form-control" type="text" id="nameContact" name="nameContact" placeholder={% blocktrans %}"¿Cuál es tu nombre?"{%endblocktrans%} />
-      <br>
-      <label for="emailContact">{% trans "Correo" %}</label>
-      <input class="form-control" type="text" id="emailContact" name="emailContact" placeholder={% trans "ejemplo@email.com" %} />
-      <br>
-      <label for="phoneContact">{% trans "Móvil" %}</label>
-      <input class="form-control" type="text" id="phoneContact" name="phoneContact" />
+  <form method="post" action="{% url 'sight_question' %}" enctype="multipart/form-data">
+    {% csrf_token %}
+    <div class="container">
+      <div class="form-group col-md-offset-3 col-xs-12 col-md-6">
+        <label for="nameContact">{% trans "Nombre" %}</label>
+        <input class="form-control" type="text" id="nameContact" name="nameContact" placeholder={% blocktrans %}"¿Cuál es tu nombre?"{%endblocktrans%} />
+        <br>
+        <label for="emailContact">{% trans "Correo" %}</label>
+        <input class="form-control" type="text" id="emailContact" name="emailContact" placeholder={% trans "ejemplo@email.com" %} />
+        <br>
+        <label for="phoneContact">{% trans "Móvil" %}</label>
+        <input class="form-control" type="text" id="phoneContact" name="phoneContact" />
 
-      <br>
-      <br>
+        <br>
+        <br>
 
-      <button class="btn btn-primary col-md-offset-3 col-xs-12 col-md-6" type="submit">{% trans "Enviar" %}</button>
+        <button class="btn btn-primary col-md-offset-3 col-xs-12 col-md-6" type="submit">{% trans "Enviar" %}</button>
+      </div>
     </div>
-  </div>
 
-</form>
+  </form>
+
+  <p>
+    {% trans "En cumplimiento del que dispone la Ley Orgánica 15/1999, de 13 de diciembre, de protección de datos de carácter personal, os informamos que los datos recogidos serán incluidas en uno o más ficheros gestionados por la UIB, la finalidad de los cuales es contactar con el responsable del avistamento de la avispa asiática en caso de que sea necesario para obtener más información del avistamento. Los datos solicitados son necesarias para cumplir con la mencionada finalidad y, por lo tanto, el hecho de no obtenerlas impide conseguirla." %}
+    <br>
+    <br>
+    {% trans "La UIB es la responsable del tratamiento de los datos y como tal os garantiza los derechos de acceso, rectificación, cancelación y oposición en cuanto a los datos facilitados, para ejercer los cuales os tenéis que dirigir por escrito a: Universitat de les Illes Balears, Secretaría General, a la atención del responsable de seguridad, fichero de datos Vespapp, cra. de Valldemossa, km 7,5, 07122 Palma (Islas Baleares). Del mismo modo, la UIB se compromete a respetar la confidencialidad de vuestros datos y a utilizarlas de acuerdo con el fin de los ficheros." %}
+  </p>
+  <br>
+
+</div>
 
 {% endblock %}
