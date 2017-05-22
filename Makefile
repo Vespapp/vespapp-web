@@ -32,6 +32,8 @@ gulp-watch:
 	docker-compose run --rm -T gulp watch
 load_locations:
 	docker-compose run --rm --service-ports web load_locations
+update_locations_ca:
+	docker-compose run --rm --service-ports web update_locations_ca
 
 # Deploy
 check-deploy:
